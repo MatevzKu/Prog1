@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            function zaderiSe(tekst,deri=false){
+                if(deri == true){
+                    alert(tekst);
+                }else{
+                    console.log(tekst);
+                }
+            }
+            
+            var x = 1;
+            var y = 2;
+            var vsota = 15;
+            
+            function matematika(prva,druga){
+               var vsota = prva+druga;
+               var razlika = prva - druga;
+               var produkt = prva * druga;
+               console.log(razlika);
+               return [vsota,razlika,produkt,"deluje",false];
+            }
+            
+            matematika(x,y);
+            
+            function printzbirke(skatla){
+                for(i = 0; i < skatla.length;i++){
+                    console.log(skatla[i]);
+                    }
+                return 0;
+            }
+            
+            var rez = matematika(12,23);
+            
+            
+            function postevanka(cifre = 5, maxPotenca = 5){
+                var matrika = [];
+                for(i = 0; i < cifre; i++){
+                    matrika[i] = [];
+                }
+                for(i = 0; i < cifre; i++){
+                    for(j = 0; j < maxPotenca; j++){
+                        matrika[i][j] = Math.pow(i,j);
+                        }
+                    }
+                return matrika;
+            }
+            
+            var t = postevanka();
+        </script>
+    </body>
+</html>

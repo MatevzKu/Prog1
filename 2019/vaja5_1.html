@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <script>
+                function mojaPrvaFunkcija(besedilo){
+                    console.log(besedilo);
+                }
+                
+                function sestevam(a,b){
+                    var vsota = a + b;
+                    console.log("Vsota je " + vsota);
+                    return vsota;
+                    console.log("Če se tole izpiše sem ob službo");
+                }
+                
+                function prestopno(leto=1600){
+                    if(leto % 400 == 0){
+                        return true;
+                    }
+                    else if(leto % 100 == 0){
+                        return false;
+                    }
+                    else if(leto % 4 == 0){
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
+                }
+                
+                function kalkuliram(a = 3, b = 4){
+                    var vsota = a+b;
+                    var razlika = a-b;
+                    var produkt = a*b;
+                    return {"vsota":vsota, "razlika" : razlika, "produkt": produkt};
+                    return [vsota,razlika,produkt];
+                }
+                
+                mojaPrvaFunkcija("A tole dela?");
+                suma =  sestevam(3,4);
+                rezko = kalkuliram(5,6);
+                
+                /*
+                 * Poštevanka
+                 * vhod - dimenzije x in y
+                 * x = vrstice
+                 * y = stolpci
+                 * izhod - 2D martika kjer so v vrstici vsi elementi x do potence na y
+                 */
+                function matrikaPotenc(x = 5,y = 5){
+                    var mojaMatrika = [];
+                    for(i = 0; i < x; i++){
+                        mojaMatrika[i] = [];
+                    }
+                    
+                    for(i = 0; i < x; i++){
+                        for(j = 0; j < y; j++){
+                            mojaMatrika[i][j] = Math.pow((i+1),j);
+                        }
+                    }
+                    
+                    return mojaMatrika
+                }
+                matrikaPotenc();
+                
+                /*
+                 * vhod : vektor
+                 * izhod : vektor, kjer je vsakemu členu prišteta vsota prejšnjih
+                 * 
+                 */
+                function prejsni(zbirka){
+                    for(i = 1; i < zbirka.length;i++){
+                        zbirka[i] += zbirka[i-1];
+                    }
+                    return zbirka;
+                }
+                console.log(prejsni(prejsni(prejsni([9,0,3,5,1,8,7]))));
+                
+            </script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var x = 5;
+            var prva = 8,druga = 18,tretja = 42;  //Stranice trikotnika
+            console.log("Če tole ne vidim ne smem biti asistent...");
+            console.log(x);
+            console.log("Vrednost x = " + x + " vrednost prva = " + prva);
+            
+            /*
+             * Primer prvega algoritma ali srečanje z if stavkom...
+             */
+            var max = 0;
+            if(prva > druga){
+                if(prva > tretja){
+                    max = prva;
+                }else{
+                    max = tretja;
+                }
+            }else{
+                if(druga > tretja){
+                    max = druga;
+                }else{
+                    max = tretja;
+                }
+            }
+            console.log("Največja vrednost = " + max);
+            
+        </script>
+    </body>
+</html>

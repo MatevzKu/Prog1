@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+
+         <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       
+    </head>
+    <body>
+        <div>
+            <script>
+                var x = 1, y = 2;
+                x = y+1;
+                console.log(x);
+                //y+2 = x+y+4;
+                console.log(y);
+                x = 2;
+                x+1;
+                console.log("x = " + x);
+                
+                /*
+                 * Prestopno leto
+                 * če je deljivo z 400 DA
+                 * če je deljivo z 100 NI
+                 * če je deljivo z 4 DA
+                 */
+                
+                var leto = prompt("Katero leto te zanima")*1;
+                console.log("Vpisal si " + leto);
+                var prestop = false;
+                /*if(leto % 400 == 0){
+                    prestop = true;
+                }
+                else if(leto % 100 == 0){
+                    prestop = false;
+                }
+                else if(leto % 4 == 0){
+                    prestop = true;
+                }*/
+                
+                if((leto%400==0)||((leto%100!=0)&&(leto%4==0))){
+                    prestop = true;
+                }else{
+                    prestop = false;
+                }
+    
+                if(prestop == true){
+                    console.log("Leto je prestopno");
+                }else{
+                    console.log("Leto ni prestopno");
+                }
+                
+                document.write("Ojla");
+                
+            </script>
+        </div>
+    </body>
+</html>

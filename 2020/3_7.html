@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var x = 34;
+            var y = x;
+            x++;
+            console.log("x = " + x + " y= " + y);
+            
+            var a = [1,2,3,4];
+            b = a;
+            c = b;
+            console.log(a + " \n" + b + " \n" + c);
+            c[1] = 99;
+            console.log(a + " \n" + b + " \n" + c);
+            
+            function mesajMe(g){
+                g[0] = g[1];
+                g[3] = 299;
+            }
+            console.log(a);
+            mesajMe(a);
+            console.log(a);
+            
+            a = [1,2,3,4];
+            b = [];
+            for(i = 0; i < a.length; i++){
+                b.push(a[i]);
+            }
+            console.log(a + "\n" + b);
+            c = b.slice();
+            
+            skatla = [];
+            stevilo = 2000;
+            for(i = 0; i < stevilo; i++){
+                skatla.push(Math.random());
+            }
+            backup = skatla.slice();
+            
+            start_t = performance.now();
+            for(i = 0; i < (stevilo-1); i++){
+                for(j = 0; j < (stevilo - 1); j++){
+                    if(skatla[j] > skatla[j+1]){
+                        temp = skatla[j];
+                        skatla[j] = skatla[j+1];
+                        skatla[j+1] = temp;
+                    }
+                }
+            }
+            stop_t = performance.now();
+            console.log("Sortirano v " + (stop_t-start_t) + " ms");
+            skatla = backup.slice();
+            start_t = performance.now();
+            nadaljuj = true;
+            while(nadaljuj){
+                nadaljuj = false;
+                for(j = 0; j < (stevilo - 1); j++){
+                    if(skatla[j] > skatla[j+1]){
+                        temp = skatla[j];
+                        skatla[j] = skatla[j+1];
+                        skatla[j+1] = temp;
+                        nadaljuj = true;
+                    }
+                }
+            }    
+            stop_t = performance.now();
+            console.log("Bubble " + (stop_t - start_t) + " ms");
+ 
+            skatla = backup.slice();
+            start_t = performance.now();
+            nadaljuj = true;
+            while(nadaljuj){
+                nadaljuj = false;
+                for(j = 0; j < (stevilo - 1); j++){
+                    if(skatla[j] > skatla[j+1]){
+                        temp = skatla[j];
+                        skatla[j] = skatla[j+1];
+                        skatla[j+1] = temp;
+                        nadaljuj = true;
+                    }
+                }
+                for(; j > 1; j--){
+                    if(skatla[j-1] > skatla[j]){
+                        temp = skatla[j];
+                        skatla[j] = skatla[j-1];
+                        skatla[j-1] = temp;
+                        nadaljuj = true;
+                    }
+                }
+            }    
+            stop_t = performance.now();
+            console.log("Bubble " + (stop_t - start_t) + " ms");
+  
+    
+        
+        </script>
+    </body>
+</html>

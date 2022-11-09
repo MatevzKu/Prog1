@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <script>
+                var x = 2;
+                var y = 3;
+
+                function prva() {
+                    vsota = x + y;
+                    razlika = x - y;
+                    produkt = x * y;
+                }
+
+                prva();
+
+                function druga(x = 4, y = 99) {
+                    console.log(x);
+                    vsota = x + y;
+                    razlika = x - y;
+                    produkt = x * y;
+                }
+
+                druga(5, 7);
+                console.log(x);
+                druga();
+
+                function tretja(x = 99, y = - 1) {
+                    var vsota2 = x + y;
+                    var razlika2 = x - y;
+                    var produkt2 = x * y;
+                    
+                    return [vsota2,razlika2,produkt2];
+                    console.log("Če se tole izpiše sem ob službo");
+                    return razlika2;
+                    return produkt2;
+                }
+                
+                function prestopno(leto=1600){
+                    if(leto%400==0){
+                        return true;
+                    }
+                    else if(leto % 100 == 0){
+                        return false;
+                    }
+                    else if(leto %4 == 0){
+                        return true;
+                    }
+                    return false;
+                }
+                
+                function fancyReturn(x = 2, y = 15){
+                    var sum = x+y;
+                    var dif = x-y;
+                    var prod = x*y;
+                    return {"vsota" : sum, "razlika" : dif, "produkt" : prod};
+                }
+                
+                temp = tretja();
+                temp2 = fancyReturn();
+                
+                function postevanka(cifraMax = 5, potMax = 5){
+                    var matrika = [];
+                    for(i = 0; i < cifraMax; i++){
+                        matrika[i] = [];
+                    }
+                    for(i = 0; i < cifraMax; i++){
+                        for(j = 0; j< potMax; j++){
+                            matrika[i][j] = Math.pow(i,j);
+                        }
+                    }
+                    return matrika;
+                }
+                
+                console.log(postevanka());
+            </script>
+        </div>
+    </body>
+</html>

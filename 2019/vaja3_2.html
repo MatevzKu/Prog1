@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <script>
+                var prva = 2;
+                var druga = 3;
+                var vsota = 0;
+                while(druga > 0){
+                    vsota += prva;
+                    druga--;
+                }
+                console.log("Produkt je " + vsota);
+                vsota = 0;
+                for(i = 0; i < 3; i++){
+                    vsota += prva;
+                }
+                console.log("Produkt je " + vsota);
+                vsota = 0;
+                i = 0;
+                for(;i < 3;){
+                    vsota += prva;
+                    i++;
+                }
+                console.log("Produkt je " + vsota);
+                
+                var priblizek = 1;
+                var zacetek = 0;
+                var n = 35;
+                var temp = 0;
+                for(i = 0; i < n; i++){
+                    zacetek = Math.sqrt(2 + zacetek);
+                    console.log(zacetek);
+                    priblizek *= zacetek/2;
+                }           
+                
+                console.log("Po " + n  + " členih je pi/2 = " + priblizek);
+                
+                priblizek = 1;
+                var stari_p = 0;
+                zacetek = 0;
+                n = 0;
+                while(Math.abs(stari_p-priblizek) > 1e-32){
+                    n++;
+                    stari_p = priblizek;
+                    zacetek = Math.sqrt(2 + zacetek);
+                    priblizek *= zacetek/2;
+                    console.log(priblizek);
+                }
+                console.log("Po " + n  + " členih dobimo " + priblizek);
+            </script>
+        </div>
+    </body>
+</html>

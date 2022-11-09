@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <script>
+                a = [1, 2, 3, 4];
+                b = a;
+                b[2] = 12;
+                console.log(a);
+                console.log(b);
+
+                function zmesaj(c) {
+                    c[0] = 99;
+                }
+
+                zmesaj(a);
+                console.log(a);
+
+                d = a.slice();
+
+                size = 200000;
+                skatla = [];
+                for (i = 0; i < size; i++) {
+                    skatla.push(Math.random());
+                }
+                //console.log(skatla);
+                backup = skatla.slice();
+
+                t_start = performance.now()
+                for (j = 0; j < skatla.length - 1; j++) {
+                    for (i = 0; i < skatla.length - 1; i++) {
+                        if (skatla[i] > skatla[i + 1]) {
+                            temp = skatla[i];
+                            skatla[i] = skatla[i + 1];
+                            skatla[i + 1] = temp;
+                        }
+                    }
+                }
+                t_stop = performance.now();
+                //console.log(skatla);
+                console.log("Porabil sem " + (t_stop - t_start) + " ms");
+
+                skatla = backup.slice();
+                t_start = performance.now()
+                menjava = true;
+                while (menjava) {
+                    menjava = false;
+                    for (i = 0; i < skatla.length - 1; i++) {
+                        if (skatla[i] > skatla[i + 1]) {
+                            menjava = true;
+                            temp = skatla[i];
+                            skatla[i] = skatla[i + 1];
+                            skatla[i + 1] = temp;
+                        }
+                    }
+                }
+                t_stop = performance.now();
+                console.log("Porabil sem " + (t_stop - t_start) + " ms");
+
+                skatla = backup.slice();
+                t_start = performance.now()
+                menjava = true;
+                while (menjava) {
+                    menjava = false;
+                    for (i = 0; i < skatla.length - 1; i++) {
+                        if (skatla[i] > skatla[i + 1]) {
+                            menjava = true;
+                            temp = skatla[i];
+                            skatla[i] = skatla[i + 1];
+                            skatla[i + 1] = temp;
+                        }
+                    }
+                    if (menjava) {
+                        for (i = skatla.length - 2; i > 1; i--) {
+                            if (skatla[i] > skatla[i + 1]) {
+                                menjava = true;
+                                temp = skatla[i];
+                                skatla[i] = skatla[i + 1];
+                                skatla[i + 1] = temp;
+                            }
+                        }
+                    }
+                }
+                t_stop = performance.now();
+                console.log("Porabil sem " + (t_stop - t_start) + " ms");
+
+
+            </script>
+        </div>
+    </body>
+</html>

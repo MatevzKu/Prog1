@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Objekti</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div><script>
+            sklad = Object();
+            sklad.podatki = [];
+            sklad.vrh = 0;
+            sklad.maxSize = 5;
+
+            sklad.push = function (element) {
+                if (sklad.vrh < sklad.maxSize) {
+                    sklad.podatki[sklad.vrh] = element;
+                    sklad.vrh = sklad.vrh + 1;
+                } else {
+                    console.log("Stack overflow!");
+                }
+            }
+
+            sklad.pop = function () {
+                if (sklad.vrh > 0) {
+                    sklad.vrh = sklad.vrh - 1;
+                    return sklad.podatki[sklad.vrh];
+                }
+                else{
+                    console.log("Stack underflow!");
+                    return 0;
+                }
+            }
+
+            sklad.size = function () {
+                return sklad.vrh;
+            }
+
+            sklad.clear = function () {
+                sklad.vrh = 0;
+            }
+            
+            stevilo_poslanih = 15;
+            stevilo_prejetih = 0;
+            T_branja = 10;
+            T_pisanja = 4;
+            i = 1;
+            while(stevilo_poslanih > 0 || sklad.size() > 0){
+                if(i % T_branja == 0 ){
+                    if(sklad.pop() != 0){
+                        stevilo_prejetih += 1;
+                    }
+                }
+                if(i % T_pisanja == 0 && stevilo_poslanih > 0){
+                    sklad.push(99);
+                    stevilo_poslanih -= 1;
+                }
+                i++;            
+            }
+            
+            console.log("Sprejel sem " + stevilo_prejetih + " paketov.");
+            
+
+            </script></div>
+    </body>
+</html>

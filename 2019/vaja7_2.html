@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div><script>
+            a = [1,2,3,0];
+            b = [4,5,6,0];
+            
+            function mesajEna(c,d){
+                temp = 0;
+                for(var i= 0; c[i]!=0; i++){
+                    temp = c[i];
+                    c[i] = d[i];
+                    d[i] = temp;
+                }
+                return true;
+            }
+            
+            function mesajDve(c,d){
+                var i;
+                for(i = 0; c[i]!= 0; i++){
+                    c[i] = c[i]+d[i];
+                    d[i] = c[i]-d[i];
+                    c[i] = c[i]-d[i];
+                }
+                return true;
+            }
+            
+            console.log(a,b);
+            mesajEna(a,b);
+            console.log(a,b);
+            mesajDve(a,b);
+            console.log(a,b);
+            
+            
+            </script></div>
+    </body>
+</html>

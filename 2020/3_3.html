@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var prvi = 1;
+            var drugi = 1;
+            var meja = 5000;
+            var stevec = 2;
+            var izpis = "";
+            while(meja > drugi){
+                var temp = drugi + prvi;
+                prvi = drugi;
+                drugi = temp;
+                stevec += 1;
+            }
+            izpis += "Prvi člen večji od " + meja;
+            izpis += " je " + drugi;
+            izpis += " \nIzračunali smo " + stevec + " členov";
+            console.log(izpis);
+            stevec = 1;
+            while(1){
+                stevec += 1;
+                if(stevec > 10){
+                    break;
+                }
+            }
+            console.log("Uf rešil sem se zanke");
+            
+            /*var vnos;
+            do{
+                vnos = prompt("Kero cifro sem si zmislil?")*1;
+            }while(vnos != Math.random());*/
+    
+            //console.log("Prvi člen večji od " + meja);
+            //console.log("Je " + drugi);
+            //console.log("Izračunali smo " + stevec + " členov");
+            /* izračun prafaktorjev števila */
+            
+            var cifra = 220;
+            var k = 2;
+            var tekst = "Prafaktorji števila " + cifra + " so: ";
+            while(cifra > 1){
+                if(cifra % k == 0){
+                    tekst += k + " ";
+                    cifra /= k;
+                }else{
+                    k += 1;
+                }
+            }
+            cifra = 220;
+            k = 1;
+            temp = 0;
+            while(k < cifra){
+                if(cifra % k == 0){
+                    console.log(k);
+                    temp += k;
+                }
+                k += 1;
+            }
+            
+            console.log(tekst);
+            console.log(temp);
+            
+            
+            
+            
+      
+      
+        </script>
+    </body>
+</html>

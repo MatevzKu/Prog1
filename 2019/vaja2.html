@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <script>
+                // prafaktor generator
+                var k = 2;
+                var n = 2032;
+                var output = "Prafaktorji so: "
+                
+                while(n > 1){
+                    if(n%k == 0){
+                        n = n/k;
+                        console.log(k);
+                        output += k + " ";
+                    }
+                    else{
+                        k = k +1;
+                    }
+                }
+                console.log(output);
+                console.log("That's all folks");
+            </script>  
+            
+            <script>
+                var cifra = 50000e500;
+                var n_0 = 0;
+                var n_1 = 1;
+                var temp = 0;
+                while(n_1 < cifra && (n_1 >= n_0)){
+                    temp = n_1 + n_0;
+                    n_0 = n_1;
+                    n_1 = temp;
+                }
+                console.log("Od števila " + cifra + " je prvi večji člen: " + n_1);
+                
+                while(prompt("Katero cifro sem si zmislil?")*1 != 5){
+                    alert("Zgrešil! HAHA!");
+                }
+                
+            </script>
+        </div>
+    </body>
+</html>

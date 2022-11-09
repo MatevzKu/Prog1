@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+ var slovar = ['a','b','c','č',0];
+
+ function getIndex(znak){
+     for(i = 0; slovar[i] != 0; i++){
+         if(slovar[i]==znak){
+             return i;
+         }
+     }
+     return -99;
+ }
+
+ kodirnik = new Object();
+ kodirnik.slovarcek = ['a','b','c','č','d',0];
+ kodirnik.zamik = 3;
+
+ kodirnik.najdiZnak = function(char){
+     for(i = 0; kodirnik.slovarcek[i] != 0; i++){
+         if(kodirnik.slovarcek[i] == char){
+             return i;
+         }
+     }
+     return -99;
+ }
+
+ kodirnik.zakodiraj = function(znak){
+     var temp = kodirnik.najdiZnak(znak);
+     console.log((temp+kodirnik.zamik));
+ }
+
+ function vzamiSkatlo(kista){
+     kista.zamik = 234;
+     kista.novost = 99;
+ }
+
+ function matematika(a,b){
+     return {"vsota": (a+b), "razlika": (a-b), "produkt" : (a*b), "kvocient" : (a/b), "ostanek" :(a%b)};
+     //return [(a+b),(a-b),(a*b),(a/b),(a%b)];
+ }
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+function fakulteta(n){
+    var temp = 1;
+    if(n > 0){
+        while(n > 0){
+            temp = temp * n;
+            n = n -1;
+        }
+    }
+    else{
+        console.log("Tole deluje samo za pozitivne cifre!");
+    }
+    return temp;
+}
+function rekurz(n){
+    if(n < 0){
+        return;
+    }
+    if(n == 0){
+        return 1;
+    }
+    return n * rekurz(n-1);
+}
+
+function ugani(tekst){
+    if(tekst == "") return "";
+    return ugani(tekst.substring(1)) + tekst[0];
+}
+
+console.log(ugani("nekaj"));
+
+
+</script>
+</body>
+</html>

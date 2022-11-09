@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var x = 4;
+        console.log("pri x = " + x );
+        console.log("2 < x < 5");
+        console.log("vrne " + (2<x<5));
+/*
+        var kot = prompt("Vnesi kot v stopnijah")*1;
+        var radiani = kot * Math.PI/180;
+        console.log("sin kota je " + Math.sin(radiani));
+*/
+
+        var N = 15;
+        var prib = 1;
+        var imen = 0;
+        for(i=0; i < N; i++){
+            imen = Math.sqrt(2 + imen);
+            prib = prib * 2 / imen;
+        }
+        console.log("Približek = " + prib);
+        console.log("Prava vrednost pa = " + (Math.PI/2));
+
+        prib = 1;
+        imen = 0;
+        stevec = 0;
+        while(Math.abs(prib-(Math.PI/2))>1e-6){
+            imen = Math.sqrt(2 + imen);
+            prib = prib * 2 / imen;
+            stevec++;
+        }
+        console.log("približek = " + prib);
+        console.log("porabil sem " + stevec + " členov");
+
+
+    </script>
+</body>
+</html>

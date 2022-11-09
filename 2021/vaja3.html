@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //Določi prafaktorje stevila
+    var stevilo = 8976;
+    var prafaktor = 2;
+    var besedilo = "Prafaktorji števila " + stevilo + " so\n";
+    var nasel = false;
+    while (stevilo > 1) {
+        if (stevilo % prafaktor == 0) {
+            stevilo /= prafaktor;
+            //console.log(prafaktor);
+            besedilo += prafaktor + " ";
+            nasel = true;
+        } else {
+            prafaktor++;
+            if (nasel) {
+                besedilo += "\n";
+                nasel = false;
+            }
+        }
+    }
+    console.log(besedilo);
+    //Fibonachi
+
+    var prvi = 0;
+    var drugi = 1;
+    var N = 200;
+    var temp;
+    var skatla = [];
+    var tekst = "Členi zaporedja so:\n1: 0\n2: 1\n";
+    for(i = 0; i < N; i++){
+        temp = prvi+drugi;
+        prvi = drugi;
+        drugi = temp;
+        tekst += (i+2) + ": " + temp + "\n";
+        skatla.push(temp);
+    }
+    console.log(tekst);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UNI prva vaja</title>
+</head>
+<body>
+    <script>
+        console.log("Pozdravljen svet!");
+        var x = 12;
+        var y,z;
+        console.log("Vrednost spremenljivke x = " + x + " metrov");
+        y = x + 33 * 14;
+        z = y*y + 14*x;
+        console.log("x = " + x + ", y = " + y + ", z = " + z);
+        x = y - 45;
+        var letnica = prompt("Vpiši letnico:")*1;
+        if(letnica%400==0){
+            console.log("leto je prestopno");
+        }
+        else if(letnica%100==0){
+            console.log("leto ni prestopno");
+        }
+        else if(letnica%4==0){
+            console.log("leto je prestopno");
+        }
+        else{
+            console.log("leto ni prestopno");
+        }
+
+        if( ((letnica%4==0)&&(letnica%100!=0))||(letnica%400==0) ){
+            console.log("Prestopno 2");
+        }
+        else{
+            console.log("Ni prestopno 2");
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var prva = 3;
+            var druga = 4;
+            var produkt = 0;
+            while(druga > 0){
+                produkt += prva;
+                druga--;
+            }
+            console.log(prva + " * " + druga + " = " + produkt);
+            produkt = 0;
+            druga = 4;
+            for(i = 0; i < druga; i++){
+                produkt += prva;
+            }
+            console.log(prva + " * " + druga + " = " + produkt);
+            produkt = 0;
+            var i = 0;
+            for(;i<druga;){
+                produkt += prva;
+                i++;
+            }
+            console.log(produkt);
+            
+            
+            var priblizek = 1;
+            var imenovalec = 0;
+            var num = 15;
+            for(i = 0; i < num; i++){
+                imenovalec = Math.sqrt(2 + imenovalec);
+                priblizek *= (2/imenovalec);
+                console.log(i + " : " + priblizek);
+            }
+            natancnost = 1e-4;
+            for(i = 0; i < 16; i++){
+            priblizek = 1;
+            imenovalec = 0;
+            priblizek_stari = 999999;          
+            clen = 0;
+            do{
+                priblizek_stari = priblizek;
+                imenovalec = Math.sqrt(2 + imenovalec);
+                priblizek *= (2/imenovalec);
+                clen++;
+            }while(Math.abs(priblizek-priblizek_stari) > natancnost);
+            console.log(clen + ": " + priblizek + " ;" + natancnost);
+            natancnost /= 10;
+        }
+        
+        
+        /** Izpiši vsa števila od 1 do 1000
+         * če je deljivo s 3 napiši bum
+         * če je deljivo s 5 napiši bam
+         * če velja oboje napiši bumbam
+         * 
+         */
+            
+            
+            
+            for(i = 0; i < 5; i++){
+                for(j = 0; j < 5; j++){
+                    console.log("ping");
+                }
+            }
+            
+        </script>
+    </body>
+</html>

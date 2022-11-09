@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <script>
+                var cifra = 8976;
+                var k = 2;
+                var out_t = "Prafaktorji števila ";
+                out_t += cifra + " so ";
+                while(cifra > 1){
+                    if(cifra % k == 0){
+                        cifra /=  k;
+                        out_t += k + " ";
+                        console.log(k);
+                    }
+                    else{
+                        k += 1;
+                    }
+                }
+                console.log(out_t);
+                console.log("That's all folks");
+                /*
+                var test = Math.random();
+                while(prompt("Kero cifro sem si zmislil?")*1 != test){
+                    alert("HAHA, zgrešil si! Mislil sem " + test);
+                    test = Math.random();
+                }*/
+                var meja = 754564645645645645644544564564;
+                var n_1 = 1;
+                var n_0 = 0;
+                var temp = 0;
+                while(n_1 < meja){
+                    temp = n_0 + n_1;
+                    n_0 = n_1;
+                    n_1 = temp;
+                }
+                console.log("Prvi večji člen je " + n_1);
+    
+                
+            </script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var slovar = ["a","b","c","č","d",0];
+            
+            function najdiIndeks(crka){
+                for(var i = 0; slovar[i] != 0; i++ ){
+                    if(slovar[i] == crka){
+                        return i;
+                    }
+                }
+                return -1;
+            }
+            
+            function kodiraj(crka="a",zamik=3){
+                var indeks = najdiIndeks(crka);
+                indeks += zamik;
+                
+                return slovar[indeks];
+            }
+            
+            // Objekti
+            var student = Object();
+            student.ime = "Matevž";
+            student.priimek = "Kunaver";
+            student.vpisna = 6499012345;
+            
+            function pisiIndeks(ime,priimek,vpisna){}
+            
+            function pisiObjekt(student){
+                console.log(student.ime);
+                console.log(student.priimek);
+            }
+            
+            student.ocena = 8;
+            student.naredil = function(ocena){
+                if(ocena > 5){
+                    console.log("Čestitam naredil si izpit");
+                }else{
+                    console.log("Več sreče prihodnjič");
+                }
+            };
+            
+            student.izpisOcene = function(){
+                console.log(student.ocena);
+            }
+            
+            datum = Object();
+            datum.nastavi = function(sekunde){
+                datum.sek = sekunde;
+            }
+            
+        i = 10;
+        
+        function opsi(){
+            for(var i = 0; i < 5; i++){}
+        }
+            
+           
+        </script>
+    </body>
+</html>

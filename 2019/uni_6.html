@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <script>
+                a = [1, 2, 3, 4];
+                c = a;
+                d = c;
+                e = d;
+
+                function zmesajMe(b) {
+                    b[1] = b[3];
+                    b[0] = 99;
+                }
+                console.log(a);
+                zmesajMe(a);
+                console.log(a);
+                console.log(e);
+
+                b = [];
+                for (i = 0; i < a.length; i++) {
+                    b.push(a[i]);
+                }
+                console.log(a);
+                console.log(b);
+                a[0] = 1;
+                console.log(a);
+                console.log(b);
+                console.log("še slice");
+                c = b.slice();
+                console.log(c);
+                console.log(b);
+                c[2] = 25;
+                console.log(c);
+                console.log(b);
+
+                skatla = [];
+                stevilo = 1000;
+                for (i = 0; i < stevilo; i++) {
+                    skatla.push(Math.random());
+                }
+                backup = skatla.slice();
+                
+                start_t = performance.now();
+                for (i = 0; i < skatla.length - 1; i++) {
+                    for (j = 0; j < skatla.length - 1; j++) {
+                        if (skatla[j] > skatla[j + 1]) {
+                            temp = skatla[j];
+                            skatla[j] = skatla[j + 1];
+                            skatla[j + 1] = temp;
+                        }
+                    }
+                }
+                
+                stop_t = performance.now();
+                skatla = backup.slice();
+                //console.log(skatla);
+                console.log("Porabil sem " + (stop_t - start_t) + " ms");
+
+
+                // Bubble sort
+                start_t = performance.now();
+                menjava = true;
+                while(menjava){
+                    menjava = false;
+                    for (j = 0; j < skatla.length - 1; j++) {
+                        if (skatla[j] > skatla[j + 1]) {
+                            menjava = true;
+                            temp = skatla[j];
+                            skatla[j] = skatla[j + 1];
+                            skatla[j + 1] = temp;
+                        }
+                    }
+                }
+                stop_t = performance.now();
+                console.log("Porabil sem " + (stop_t - start_t) + " ms");
+            </script>
+        </div>
+    </body>
+</html>

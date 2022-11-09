@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div><script>
+            var x = 1;
+            var y = 2;
+            
+            function prva(){
+                vsota = x+y;
+                produkt = x*y;
+                razlika = x-y;
+            }
+            prva();
+            
+            function druga(x,y){
+                var vsota2 = x+y;
+                var produkt2 = x*y;
+                var razlika2 = x-y;
+                console.log("suma = " + vsota2);
+            }
+            druga(4,5);
+            
+            function tretja(x,y){
+                var vsota2 = x+y;
+                var produkt2 = x*y;
+                return [vsota2,produkt2];
+                return produkt2;
+                console.log("Če se tole izpiše sem ob službo");
+            }
+            
+            function prestopno(leto=1600){
+                if(leto % 400 == 0){
+                    return true;
+                }
+                else if(leto % 100 == 0){
+                    return false;
+                }
+                else if(leto % 4 == 0){
+                    return true;
+                }
+                return false;
+            }
+            
+            temp = tretja(12,23);
+            
+            function fancyIzpis(x=3,y=5){
+                return {"vsota" : x+y, "razlika" : x-y, "produkt" : x*y};
+            }
+            
+            temp2 = fancyIzpis();
+            
+            /* poštevanka
+             * vhod : x - do katere številke
+             *        y - do katere potence
+             *        
+             * izhod 2D zbirka       
+             */
+            postevanka(12,23);
+            function postevanka(cifre = 5, maxPotenca = 5){
+                matrika = [];
+                for(i = 0; i < cifre; i++){
+                    matrika[i] = [];
+                }
+                
+                for(i = 0; i < cifre; i++){
+                    for(j = 0; j < maxPotenca; j++){
+                        matrika[i][j] = Math.pow(i,j);
+                    }
+                }
+                return matrika;
+            }
+            
+            console.log(postevanka());
+            
+            
+            </script>        
+        </div>
+    </body>
+</html>

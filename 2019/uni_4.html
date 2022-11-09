@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div><script>
+            
+            var priblizek = 1;
+            var temp = 0;
+            for(i = 0; i < 35; i++){
+                temp = Math.sqrt(2+temp);
+                priblizek *= temp/2;
+            }
+            console.log("Po " + i + " členih je priblizek = " + (1/priblizek));
+            
+            priblizek = 1;
+            var stari_p = 0;
+            temp = 0;
+            natancnost = 1e-16;
+            var n = 0;
+            while(Math.abs(stari_p-priblizek)>natancnost){
+                stari_p = priblizek;
+                temp = Math.sqrt(2+temp);
+                priblizek *= temp/2;  
+                n++;
+                console.log(priblizek);
+            }
+            console.log("Za natančnost " + natancnost + " sem porabil " + n + " členov");
+            console.log("Približek je " + priblizek);
+            
+            var t = [-6,33,12,-7];
+            var min = t[0];
+            var max = t[0];
+            for(i = 0; i < t.length;i++){
+                if(t[i] < min){
+                    min = t[i];
+                }
+                if(t[i]>max){
+                    max = t[i];
+                }
+            }
+            console.log("Min je " + min + " Max je " + max);
+            
+            var t2 = [];
+            n = t.length;
+            for(i = 0; i< n;i++){
+                t2.push(t.pop());
+                t2[]=t[];
+            }
+            console.log(t2);
+            
+            </script>        
+        </div>
+    </body>
+</html>

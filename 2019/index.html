@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <div>
+            <script>
+                console.log("blabla");
+                // Tole naj bi poiskalo max vrednost!
+                var x = 10, y = 35, z = 35;
+                var max = null;
+                
+                if(x > y){
+                    if(x > z){
+                        max = x;
+                    }
+                    else{
+                        max = z;
+                    }
+                }
+                else{
+                    if(y > z){
+                        max = y;
+                    }
+                    else{
+                        max = z;
+                    }
+                }
+                console.log("največja cifra je " + max);    
+                // prestropno leto
+                var leto = 1500;
+                var prestopno = false;
+                
+                if(leto % 400 == 0){
+                    prestopno = true;
+                }                
+                else if(leto % 100 == 0){
+                    prestopno = false;
+                }
+                else if(leto % 4 == 0){
+                    prestopno = true;
+                }
+                else{
+                    prestopno = false;
+                }
+                
+                if(prestopno){
+                    console.log("Leto " + leto  + " je prestopno!");
+                }
+                else{
+                    console.log("Leto " + leto + " ni prestopno!");
+                }
+                
+                
+            </script>
+        </div>
+    </body>
+</html>

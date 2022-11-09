@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function sumDel(cifra){
+        var sum = 0;
+        for(i = 0; i <= cifra/2; i++){
+            if(cifra%i == 0){
+                sum += i;
+            }
+        }
+        return sum;
+    }
+    var start = performance.now()
+    for(cifra1 = 1; cifra1 < 2000; cifra1++){
+        sum1 = sumDel(cifra1);
+        //for(cifra2 = cifra1+1; cifra2 < 2000; cifra2++){
+
+            sum2 = sumDel(sum1);
+            if(sum2 == cifra1){
+                console.log(cifra1 + " " + sum1);
+            }
+        //}
+    }
+    var stop = performance.now();
+    console.log("Porabil sem " + (stop-start) + "ms");
+
+    skatla = [];
+    for(i = 4000; i > 0; i--){
+        skatla.push(i); // skatla.push(Math.random());
+    }
+
+    for(i = 0; i < 4000; i++){
+        menjava = false;
+        for(j = 0; j < 4000; j++){
+            if(skatla[j]>skatla[j+1]){
+                temp = skatla[j];
+                skatla[j] = skatla[j+1];
+                skatla[j+1] = temp;
+                menjava = true;
+            }
+        }
+        if(!menjava){
+            break;
+        }
+    }
+
+</script>
+</body>
+</html>

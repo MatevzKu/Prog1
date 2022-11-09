@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var n = 6;
+            var f = 1;
+            while(n>0){
+                f *= n;
+                n--;
+            }
+            
+            console.log(f);
+            
+            
+            function fact(n){
+                if(n < 0){
+                    console.log("Total fail");
+                    return;
+                }
+                
+                if(n == 0){
+                    return 1;
+                }
+                
+                return n * fact(n-1);
+            }
+            
+            
+            function ugani(t){
+                if(t == ''){
+                    return '';
+                }
+                return ugani(t.substr(1)) + t[0];
+            }
+            
+            console.log(ugani("nekaj"));
+        </script>
+    </body>
+</html>

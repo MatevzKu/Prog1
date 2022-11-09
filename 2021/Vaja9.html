@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+pretvornik = new Object();
+
+pretvornik.hex = [[0,0],[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],
+[7,7],[8,8],[9,9],['A',10],['B',11],['C',12],['D',13],['E',14],['F',15]];
+pretvornik.konec = 16;
+
+var test = ['A','A','F',9,-1];
+
+pretvornik.najdiKljuc = function(key){
+    for(var n = 0; n < pretvornik.konec; n++){
+        if(key == pretvornik.hex[n][0]){
+            return pretvornik.hex[n][1];
+        }
+    }
+    return -99;
+}
+
+pretvornik.hex2dec = function(zbirka){
+    var dec = 0;
+    for(j = 0; zbirka[j] != -1;j++){};
+    var potenca = j-1;
+
+    for(var i = 0; zbirka[i] != -1;i++){
+        dec += pretvornik.najdiKljuc(zbirka[i])*Math.pow(16,potenca);
+        potenca--;
+    }
+    return dec;
+}
+
+pretvornik.strHex2dec = function(niz){
+    var skatla;
+    skatla = niz.toUpperCase().split("");
+    skatla.push(-1);
+    return pretvornik.hex2dec(skatla);
+}
+
+
+
+
+</script>
+</body>
+</html>

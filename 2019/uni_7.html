@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <script>
+                // vhod [1,2,3,0][4,5,6,0]
+                // izhod [4,5,6,0][1,2,3,0]
+                
+                function prviMix(tab1,tab2){
+                    for(i = 0; i < tab1.length; i++){
+                        temp = tab1[i];
+                        tab1[i] = tab2[i];
+                        tab2[i] = temp;/*
+                        console.log("prvi mix vmes");
+                        console.log(tab1);
+                        console.log(tab2);*/
+                    }
+                }
+                
+                function drugiMix(tab1,tab2){
+                    var i;
+                    for(i = 0; tab1[i]!=0; i = i+1){
+                        tab1[i] = tab1[i] + tab2[i];
+                        tab2[i] = tab1[i] - tab2[i];
+                        tab1[i] = tab1[i] - tab2[i];/*
+                        console.log("drugi mix vmes");
+                        console.log(tab1);
+                        console.log(tab2);*/
+                    }
+                }
+                
+                
+                prva = [1,2,3,0];
+                druga = [4,5,6,0];
+                console.log(prva,druga);
+                prviMix(prva,druga);
+                console.log(prva,druga);
+                drugiMix(prva,druga);
+                console.log(prva,druga);
+                
+                console.log(prva);
+                prviMix(prva,prva);
+                console.log(prva);
+                drugiMix(prva,prva);
+                console.log(prva);
+                
+                slovnica = ["a","b","c"];
+                shift = 1;
+                
+                crka = "b";
+                index = 0;
+                for(i = 0; i < slovnica.length;i++){
+                    if(slovnica[i] == crka){
+                        index = i;
+                    }
+                }
+                
+                console.log("Original " + crka  + " kripto :" + slovnica[index+shift]); 
+                
+                
+                
+            </script>        
+        </div>
+    </body>
+</html>
