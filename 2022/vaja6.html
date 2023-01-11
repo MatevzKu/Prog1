@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+function sumDel(cifra){
+    var delitelj = 1;
+    var sum = 0;
+    while(delitelj <= cifra/2){
+        if(cifra%delitelj==0){
+            sum += delitelj;
+        }
+        delitelj++;
+    }
+    return sum;
+}
+N = 3000;
+start = performance.now();
+for(var cifra1 = 1; cifra1 < N; cifra1++){
+    a = sumDel(cifra1);
+    /*for(var cifra2 = cifra1+1; cifra2 < N; cifra2++){
+        b = sumDel(cifra2);
+        if(a == cifra2 && b == cifra1){
+            console.log(cifra1 + " in " + cifra2 + " sta prijateljski!");
+        }
+    }*/
+    if(sumDel(a)==cifra1 && a > cifra1){
+        console.log(a + " in " + cifra1 + " sta prijateljski!");
+    }
+}
+stop = performance.now();
+console.log("Porabili smo " + (stop-start) + " ms");
+
+prenos = [[0, 1, 1, 1, 0, 1, 0, 1],
+        [1, 1, 1, 1, 1, 1, 0, 0],
+        [0, 1, 0, 1, 0, 0, 1, 1],
+        [1, 1, 0, 1, 0, 0, 1, 0]]
+
+var dolzina = 8;
+var visina = 4;
+for(i = 0; i < visina; i++){
+    checkSum = 0;
+    for(j = 0; j < dolzina; j++){
+        checkSum += prenos[i][j];
+    }
+    if(checkSum%2==0){
+        console.log("Vrstica " + (i+1) + " nima napake");
+    }
+    else{
+        console.log("Vrstica " + (i+1) + " ima napako");
+    }
+}
+
+</script>
+</body>
+</html>

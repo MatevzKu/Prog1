@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    console.log("2. vaja");
+    prib = 1;
+    imen = 0;
+    i = 0;
+    for(; i < 5; ) {
+        imen = Math.sqrt(2 + imen);
+        prib *= 2 / imen;
+        console.log(prib);
+        i++;
+    }
+    console.log(Math.PI/2);
+
+    prib = 1;
+    imen = 0;
+    stevec = 0;
+    while(Math.abs(prib-(Math.PI/2))>1e-6) {
+        imen = Math.sqrt(2 + imen);
+        prib *= 2 / imen;
+        console.log(prib);
+        stevec++;
+    }
+    console.log(Math.PI/2);
+    console.log("Porabili smo " + stevec + " členov");
+/*
+    geslo = 1234;
+    do{
+        vnos = prompt("Vnesi geslo")*1;
+        geslo = Math.random();
+    }while(vnos != geslo);*/
+    cifra = prompt("cifra")*1;
+    if(cifra%2==0) {
+    }
+  {
+        console.log("Cifra je soda");
+    }
+   /* i = 0;
+    while(i < 10);{
+        i++;
+    }*/
+</script>
+</body>
+</html>

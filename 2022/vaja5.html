@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  skatla = [1,2,3,4,5];
+
+  function karnekaCifra(stevilka){
+    //tule se nekaj zgodi
+    return Math.round(Math.random()*stevilka)
+  }
+  a = skatla;
+  skatla[2] = 99;
+
+  function premeciSkatlo(box){
+    box[0] = 99;
+    box = [4,5,6,7,8,9];
+    box[2] = 1234;
+    box[4] = 45;
+    return;
+  }
+
+  boks = [];
+  stElem = 2000;
+  for(i = 0; i < stElem; i++){
+    boks.push(Math.random());
+  }
+
+  rezerva = boks.slice();
+  menjava = true;
+  start = performance.now()
+  while(menjava){
+    menjava = false;
+    for(j = 0; j < stElem -1;j++){
+     if(boks[j]>boks[j+1]){
+      menjava = true;
+      temp = boks[j];
+      boks[j] = boks[j+1];
+      boks[j+1] = temp;
+     }
+    }
+  }
+  stop = performance.now()
+  console.log("Tole sortiranje pokuri " + (stop-start) + " ms");
+
+  boks = rezerva.slice()
+  //menjava = true;
+  start = performance.now()
+  for(m=0; m < stElem; m++){
+    //menjava = false;
+    for(j = 0; j < stElem -1;j++){
+      if(boks[j]>boks[j+1]){
+        //menjava = true;
+        temp = boks[j];
+        boks[j] = boks[j+1];
+        boks[j+1] = temp;
+      }
+    }
+  }
+  stop = performance.now()
+  console.log("Drugo sortiranje pa pokuri " + (stop-start) + " ms");
+
+
+
+</script>
+</body>
+</html>

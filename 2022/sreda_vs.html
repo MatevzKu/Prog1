@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  console.log("Deluje!");
+  cifra = 23;
+  if(cifra%2 == 0){
+    console.log("Tole je soda cifra!");
+  }else{
+    console.log("Tole je liha cifra!");
+  }
+
+  /*
+  if(vsi pogoji ki me zanimajo){
+    koda ki se izvede če pogoji držijo
+    }
+  else if (dodatni pogoji){
+   koda ki se izvede če velja drugi set pogojev
+   }
+   .....
+   else {
+    če vse proprade se izvede tole
+   }
+
+   */
+
+  /*
+  x == 10   ali je x enak 10
+  x < 2     x manjši od 2?
+  x%4==0    ali je x deljiv s 4
+  x%8 != 0  ali x NI deljiv z 8
+   */
+  rezulat = 80;
+  if(rezulat > 79){
+    console.log("Dobil si 9");
+  } else if(rezultat > 69){
+    console.log("Dobil si 8");
+  }else if(rezultat > 59){
+    console.log("Dobil si 7");
+  } else if(rezultat > 49){
+    console.log("Dobil si 6");
+  } else {
+    console.log("Več sreče prihodnjič...");
+  }
+
+  leto = prompt("Vnesi letnico")*1;
+  if(leto%400 == 0){
+    console.log("Leto "+ leto +" je prestopno");
+  }else if(leto%100 == 0){
+    console.log("ni prestopno");
+  } else if(leto%4==0){
+    console.log("je prestopno");
+  }else{
+    console.log("ni prestopno in pika!");
+  }
+
+  // || je logični ALI
+  // && je logični IN
+
+  if(((leto%4==0)&&(leto%100!=0))||(leto%400==0)   ){
+    console.log("Leto" + leto + " je prestopno");
+  }else{
+    console.log("Leto " + leto + " ni prestopno");
+  }
+
+  x = 10;
+  y = 12;
+  temp = x;
+  x = y;
+  y = temp;
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  console.log("Danes pa strukture..");
+  prvi = 0;
+  drugi =  1;
+  N = 20;
+  skatla = [];
+  skatla[0] = prvi;
+  skatla.push(drugi);
+  tekst = "1: " + prvi + "\n2: " + drugi;
+  for(i = 0; i < N; i++){
+    temp = prvi + drugi;
+    //console.log(temp);
+    tekst += "\n" + (i+3) + ": " + temp;
+    prvi = drugi;
+    drugi = temp;
+    skatla.push(temp);
+  }
+  console.log(tekst);
+
+  t = [1,1,2,3,4,5,6,7,4,2,8];
+  N = 11;
+  stevec = [0,0,0,0,0,0,0,0,0,0,0];
+  for(i =0; i <N; i++){
+    stevec[t[i]]++;
+  }
+
+  N = 20;
+  skatla = [0,1];
+  tekst = "1: " + skatla[0] + "\n2: " + skatla[1];
+  for(i = 0; i < N; i++){
+    skatla[i+2] = skatla[i] + skatla[i+1];
+    // skatla.push(skatla[i]+skatla[i+1])
+  }
+  console.log(skatla);
+
+
+</script>
+</body>
+</html>

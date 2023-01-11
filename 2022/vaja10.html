@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  var n = 6;
+  var f = 1;
+  while(n > 0){
+    f *= n;
+    n--;
+  }
+  console.log("Fakulteta števila je " + f);
+
+  function fact(n){
+    if(n < 0){
+      console.log("Total fail!");
+      return
+    }
+    if(n==0){
+      return 1;
+    }
+
+    return n * fact(n-1);
+  }
+
+  function ugani(t){
+    if(t == ""){
+      return "";
+    }
+    return ugani(t.substring(1)) + t[0];
+  }
+  console.log(ugani("nekaj"));
+
+</script>
+</body>
+</html>

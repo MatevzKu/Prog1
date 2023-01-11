@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+function pametnoIme(tekst,cilj=false){
+    if(cilj){
+        alert(tekst);
+    }
+    else{
+        console.log(tekst);
+    }
+    return;
+}
+
+function kalkulator(cifra){
+    //cifra = 13;
+    y = cifra*cifra - 12*cifra + 123;
+    z = y*2 + Math.pow(cifra,4) - 12345;
+    w = y*4 - 34*z + 12;
+
+    pametnoIme("y =  " + y);
+    pametnoIme("z =  " + z);
+    pametnoIme("w =  " + w);
+    return [y,z,w];
+}
+
+t = [-6,-33,-12,-7]
+t_len = 4
+maks = t[0]
+min = t[0]
+for(i = 0; i < t_len; i++){
+    if(t[i]>maks){
+        maks = t[i]
+    }
+    if(t[i]<min){
+        min = t[i]
+    }
+}
+console.log("Max je : " + maks + " Min pa je : " + min);
+
+
+</script>
+</body>
+</html>
