@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Arrayi tretjič</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            td {
+                height: 50px;
+                width: 50px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div>Iskanje po arrayu</div>
+
+        <script>
+            var krneki = [4, 7, 4, 2, -3, 7, -3, 4, 1, 7];
+            var najdi = 99;
+            var notFound = true;
+
+            function poisciIndeks(original, iscem)
+            {
+                for (i = 0; i < original.length; i++)
+                {
+                    if (original[i] == iscem)
+                    {
+                        document.write("<br>Nasel " + iscem + " na poziciji: " + i);
+                        notFound = false;
+                    }
+
+
+                }
+                if (notFound)
+                    document.write("<br>Nisem našel.");
+            }
+
+            poisciIndeks(krneki, najdi);
+            najdi = 7;
+            poisciIndeks(krneki, najdi);
+
+            document.write("<br>Javascript ne najde 99 " + krneki.indexOf(99));
+            document.write("<br>Javascript najde 7 " + krneki.indexOf(najdi));
+
+            var krneki = [4, 7, 4, 2, -3, 7, -3, 4, 1, 7];
+            var kopija = [];
+            document.write("<br>Original = " + krneki);
+            for (i = 0; i < krneki.length; i++)
+            {
+                if (krneki.indexOf(krneki[i]) == i)
+                    kopija.push(krneki[i]);
+            }
+            document.write("<br>Kopija = " + kopija);
+            document.write("<br>Urejena kopija = " + kopija.sort());
+
+
+        </script>
+        <div id="tarca"></div>
+        <div><h1>Sedaj pa bonus za lab. vajo</h1>
+
+            <script>
+
+                var grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+
+                function pisiTabelo() {
+                    var content = "";
+                    content += "<table border='1'>";
+                    for (i = 0; i < 3; i++)
+                    {
+                        content +="<tr>";
+                        for (j = 0; j < 3; j++)
+                        {
+                            content +="<td onclick='spremeniStanje("+ i + "," + j+")'>";
+                            content +=grid[i][j];
+                            content +="</td>";
+                        }
+                        content +="<tr>";
+                    }
+                    content +="</table>";
+                    document.getElementById("tarca").innerHTML = content;
+                }
+
+                pisiTabelo();
+                
+
+                function spremeniStanje(x,y) {
+                    grid[1][1] = grid[x][y];
+                    grid[x][y] = " ";
+
+                    pisiTabelo();
+                }
+                
+                
+            </script>    
+            <button onclick="spremeniStanje()">Premakni figuro</button>
+        </div>
+        
+    </body>
+</html>

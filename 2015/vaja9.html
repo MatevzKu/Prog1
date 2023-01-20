@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Arrayi 3 - indeks, pametni izris</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            td {width: 50px;
+                height: 50px;
+                text-align: center;}
+            </style>
+        </head>
+        <body>
+            <div>Array indeks</div>
+            <script>
+                var original = [4, 7, 4, 2, -3, 7, -3, 4, 1, 7];
+                var iscem = -3;
+                var found = false;
+                for (i = 0; i < original.length; i++)
+                {
+                    if (original[i] == iscem)
+                    {
+                        document.write("<br>Nasel " + iscem + " na indeksu: " + i);
+                        found = true;
+                    }
+                }
+                if (!found)
+                    document.write("<br>Nisem našel");
+
+                document.write("<br>Pa še javascript verzija <br>");
+                document.write(original.indexOf(iscem));
+                document.write("<br>In kaj če iščem nekaj kar ne obataja?<br>");
+                document.write(original.indexOf(99));
+
+            </script>
+
+            <div>
+                <h1>Copy control</h1>
+                <script>
+                    var original = [4, 7, 4, 2, -3, 7, -3, 4, 1, 7];
+                    var kopija = [];
+                    for (i = 0; i < original.length; i++)
+                    {
+                        /*   4 4   original[i]  // trenutna vrednost
+                         0 2    i // kje sem
+                         0 0   original.indexOf(original[i]) // prvi indeks kjer se pojavi tren. vrednost
+                         */      if (original.indexOf(original[i]) == i)
+                            kopija.push(original[i]);
+                    }
+                    document.write("Original = " + original);
+                    document.write("<br>Kopija = " + kopija);
+
+                </script>
+            </div>
+
+
+            <div>Sedaj pa prvi del 5. vaje</div>
+            <div id="tarca"></div>
+        <script>
+            var grid = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+
+            function pisiMe()
+            {
+                var content = "";
+                content += '<table border="1">'
+                for (i = 0; i < 3; i++)
+                {
+                    content += "<tr>";
+                    for (j = 0; j < 3; j++)
+                    {
+                        content += "<td onclick='spremeniMe("+ i + "," + j + ")'>";
+                        content += grid[i][j];
+                        content += "</td>";
+                    }
+                    content += "</tr>";
+                }
+                content += '</table>';
+                document.getElementById("tarca").innerHTML = content;
+
+            }
+
+            pisiMe();
+
+            function spremeniMe()
+            {
+                grid[1][1] = grid[0][1];
+                grid[0][1] = " ";
+                pisiMe();
+            }
+        </script>
+        <button onclick="spremeniMe()">Premik figure</button>
+    </body>
+</html>

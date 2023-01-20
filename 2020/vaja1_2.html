@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script>
+            var leto = prompt("katero leto te zanima")*1;
+            /*  Pogoji ki jih imamo
+             *  če je deljivo s 4 JE prestopno
+             *  če je deljivo s 100 NI prestopno
+             *  če je deljivo s 400 JE prestopno
+             */
+            
+            //poskus 1 - težave z IF
+            if(leto %400 == 0){
+                console.log("Leto je prestopno");
+            }
+            else if(leto % 100 == 0){
+                console.log("leto ni prestopno");
+            }else if(leto % 4 == 0){
+                console.log("leto je prestopno");
+            }else{
+                console.log("leto ni prestopno");
+            }
+            
+            if(((leto%4==0)&&(leto%100!=0))||(leto%400==0)){
+                console.log("LETO je prestopno");
+            }else{
+                console.log("LETO ni prestopno");
+            }
+    
+    
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        </script>
+            
+        
+        
+    </body>
+</html>

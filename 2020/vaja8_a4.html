@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="koda_a4.js"></script>
+    </head>
+    <body>
+        <script>
+            var slovar = ['a', 'b', 'c', 'č', 'd', 0];
+
+            function najdiZnak(crka) {
+                for (i = 0; slovar[i] != 0; i++) {
+                    if (slovar[i] == crka) {
+                        return i;
+                    }
+                }
+                return -99;
+            }
+
+
+            
+            function test(skatla){
+                console.log(skatla.najdiZnak('a'));
+                skatla.zamik = 4;
+            }
+            
+            datum = Object();
+            
+            datum.nastavi = function(sekunde){
+                datum.sekunde = sekunde;
+            }
+            
+            datum.nastavi(Math.floor(Date.now()/1000));
+            
+            datum.povejCas = function(u){
+                var sek;
+                sek = datum.sekunde%(24*60*60);  // sekunde od danes (polnoč)
+                
+                u[0] = Math.floor(sek/3600)+1;
+                u[1] = Math.floor(sek/60)%60;
+                u[2] = Math.floor(sek%60);      
+            }
+            
+            var timer = [];
+            datum.povejCas(timer);
+            console.log(timer);
+            
+            
+
+
+        </script>
+    </body>
+</html>

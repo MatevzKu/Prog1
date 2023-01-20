@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <canvas id="ura" width="250" height="250"></canvas>
+        <button onclick="pocisti()">Clear canvas</button>
+        <script>
+            var platno = document.getElementById("ura");
+            var k = platno.getContext("2d");
+            
+            k.beginPath();
+            var x = "#" + "D4B483";
+            k.fillStyle = x;
+            k.fillRect(20,20,40,80); // (x,y,širina,višina)
+            k.fillStyle = "red";
+            k.fillRect(30,30,50,60);
+            k.stroke();
+            
+            k.beginPath();
+            k.lineWidth="8";
+            k.strokeStyle="green";
+            k.lineCap = "round";
+            k.moveTo(30,30);
+            k.lineTo(100,100);
+            k.lineTo(100,200);
+            k.moveTo(200,200);
+            k.lineTo(500,99);
+            k.stroke();
+            
+            k.beginPath()
+            k.strokeStyle = "black";
+            k.fillText("Ali me vidiš?",150,50);
+            k.fillStyle = "white";
+            
+            //k.strokeText("Kaj pa tole?",200,100);
+            k.stroke();
+            
+            k.beginPath();
+            k.lineWidth = "1";
+            k.arc(80,80,100,0,Math.PI);
+            k.fillStyle = "green";
+            k.fill();
+            k.stroke();
+            
+            
+            function pocisti(){
+                platno.width = 250;
+            }
+        </script>
+        
+        
+    </body>
+</html>

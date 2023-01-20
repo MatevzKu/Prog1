@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            td {
+                width: 70px;
+                height: 50px;
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <script>
+                document.write(Math.PI);
+                document.write("<br>" + Math.sin(Math.PI));
+            </script>
+        </div>
+        <div>
+            <h1>Sin v tabelarni obliki 0-360</h1>
+            <script>
+                document.write("<table border='1'><tr>");
+                
+                var k = 10;
+                
+                var x = 0;
+                var cifra = 1;
+                
+                var win_w = window.innerWidth;
+                var num = Math.floor(win_w / 100);
+                
+                
+                while(x<=360)
+                {
+                    document.write("<td>");
+                    
+                    document.write(Math.sin(svr(x)).toPrecision(4));
+                    
+                    document.write("</td>");
+                    
+                    x += k;
+                    
+                    if(cifra % num == 0)
+                    {
+                        document.write("</tr><tr>");
+                    }
+                    cifra++;
+                }
+                
+                
+                document.write("</tr></table>")
+                
+                function svr(stop)
+                {
+                    var rad = 0;
+                    rad = stop * Math.PI / 180;
+                    return rad;
+                }
+            </script>
+        </div>
+        
+        <div>
+            <script>
+                var ime = "Janez";
+                var priimek = "Novak";
+                var vpisna = 649902133;
+                var ocena = "Ocena";
+                
+                var ocene = [1,2,3,10,10,10,9,10,10,10,9]
+                
+                /**
+                 * 
+                 * @type Array
+                 * 0 = ime
+                 * 1 = priimek
+                 * 2 = vpisna
+                 * 3 = ocena
+                 */
+                
+                var student = ["Janez","Novak", 649900000, "Ocena"];
+                
+                document.write("Student = " + student);
+                document.write("<br>Ime = " + student[0]);
+                document.write("<br>Priimek = " + student[1]);
+                document.write("<br>Vpisna = " + student[2]);
+                student[3] = 10;
+                document.write("<br>Ocena = " + student[3]);
+                student[4] = true;
+                document.write("<br>Naredil? = " + student[4]);
+                
+                document.write("<br>Student ima " + student.length + "polj");
+                
+                student[7] = "krneki";
+                document.write("<br>" + student);
+                
+                student.push("pa še neki");
+                
+                document.write("<br>" + student);
+            </script>
+        </div>
+    </body>
+</html>

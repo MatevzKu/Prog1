@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Zbirke...</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            Tipkaj številke dokler se ti da, zaključim ko vtpikaš negativno cifro.
+        </div>
+        <div id="tekst"></div>
+        <script>
+            var cifra;
+            var cifra_old = 0; //prejšnji vnos
+            var max_count = 0; // najdaljše zaporedje do zdaj
+            var curr_count = 0; // trenutno zaporedje
+            do {
+                cifra = prompt("Cifro prosim") * 1;
+                if (cifra > cifra_old) {
+                    curr_count++;
+
+                } else {
+                    if (curr_count > max_count) {
+                        max_count = curr_count; //lahko tudi max_count++
+                    }
+                    curr_count = 0;
+                }
+                document.getElementById("tekst").innerHTML += cifra + ",";
+                cifra_old = cifra;
+            } while (cifra >= 0 && !isNaN(cifra));
+            console.log("Najdaljše zaporedje je bilo " + max_count + " številk.");
+
+
+        </script>
+        <div>
+            Zdaj pa še z zbirkami.
+        </div>
+        <div id="tekst2"></div>
+        <script>
+            var zaporedje = [0];
+            var curr_count2 = 0;
+            var max_count2 = 0;
+            do{
+                zaporedje.push(prompt("Še eno cifro:")*1);
+                var k = zaporedje.length-1;
+                if(zaporedje[k-1] < zaporedje[k]){
+                    curr_count2++;
+                }else{
+                    if(curr_count2 > max_count2){
+                        max_count2 = curr_count2;
+                    }
+                    curr_count2 = 0;
+                }
+                
+            }while(zaporedje[zaporedje.length-1] >= 0 && !isNaN(zaporedje[zaporedje.length-1]));
+            console.log("Najdaljše zaporedje v tej rundi je " + max_count2);
+            console.log(zaporedje);
+            
+        </script>
+            
+    </body>
+</html>

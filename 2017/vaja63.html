@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Textify</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Cifra: <input type="number" id="num">
+            <br><span onclick="pisi()">Textify</span>
+        </div>
+        <div id="pisiSem"></div>
+        <script>
+            var slovar = ["", "ena", "dva", "tri", "štiri", "pet", "šest", "sedem", "osem", "devet"];
+
+
+            function nadTri(cifra) {
+                //var cifra = document.getElementById("num").value * 1;
+                var beseda = "";
+                var temp = cifra % 10;
+                if (temp > 0) {
+                    beseda += slovar[temp] + "in";
+                }
+                beseda += slovar[Math.floor(cifra / 10)] + "deset";
+                return beseda;
+                //document.getElementById("pisiSem").innerHTML += beseda + "<br>";
+            }
+
+            function dvajsetke(cifra) {
+                var beseda = "";
+                var temp = cifra % 10;
+                if (temp > 0) {
+                    beseda += slovar[temp] + "in";
+                }
+                beseda += "dvajset";
+                return beseda;
+                //document.getElementById("pisiSem").innerHTML += beseda + "<br>";
+            }
+            
+            function desetke(cifra){
+                var beseda = "";
+                var slov = ["","e","dva","tri","štiri","pet","šest","sedem","osem","devet"];
+                beseda = slov[cifra%10] + "najst";
+                return beseda;
+            }
+
+            function pisi() {
+                var stevilka = document.getElementById("num").value * 1;
+                var beseda = null;
+                if (stevilka > 29) {
+                    beseda = nadTri(stevilka);
+                } else if (stevilka > 19) {
+                    beseda = dvajsetke(stevilka);
+                } else if(stevilka > 10){
+                    beseda = desetke(stevilka);
+                } else {
+                    switch(stevilka){
+                        case 10: beseda = "deset"; break;
+                        case 9: beseda = "devet"; break;
+                        case 8: beseda = "osem"; break;
+                        case 7: beseda = "sedem"; break;
+                        case 6: beseda = "šest"; break;
+                        case 5: beseda = "pet"; break;
+                        case 4: beseda = "štiri"; break;
+                        case 3: beseda = "tri"; break;
+                        case 2: beseda = "dva"; break;
+                        case 1: beseda = "ena"; break;
+                        default: beseda = "Nimam pojma";
+                            
+                    }
+                }
+                document.getElementById("pisiSem").innerHTML += beseda + "<br>";
+            }
+        </script>
+
+    </body>
+</html>

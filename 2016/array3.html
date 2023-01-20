@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .skritSem {
+                display : none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="xy"></div>
+            
+            
+        <script> 
+            
+            var vsebina = '<table><t';
+            vsebina += 'r><td>Koliko členov';
+            vsebina += ' naj uporabim.</td><td><input type="number" id="cifra"></td></tr></table>';
+            
+            var tar = document.getElementById("xy");
+            tar.innerHTML = vsebina;
+       </script>   
+       
+       <div>
+           <button onclick="skrij()">Zdaj me ne vidiš</button>
+           <button onclick="prikazi()">Zdaj me vidiš</button>
+           <button onclick="toggle()">Jaz pa delam vse</button>
+           <button onclick="racunaj()">Priblizek PI prosim</button>
+       </div>
+       <script>
+           function skrij(){
+               document.getElementById("xy").className += " skritSem"; 
+           }
+           
+           function prikazi(){
+               var tar = document.getElementById("xy");
+               tar.className = tar.className.replace(" skritSem","");
+           }
+           
+           function toggle(){
+               var tar = document.getElementById("xy");
+               
+               if(tar.className.match(" skritSem"))
+               {
+                   tar.className = tar.className.replace(" skritSem","");
+               }
+               else
+               {
+                   tar.className += " skritSem";
+               }
+           }
+       </script>
+       
+       <div id="izpis"></div>
+
+       <script>
+           /*
+            *  računamo približek PI
+            *  PI = 4/1 - 4/3 + 4/5 - 4/7
+            * 
+            */
+           
+           
+           function racunaj() {
+               var priblizek = 0;
+               var predznak = 1;
+               var imenovalec = 1;
+               var zaporedje = [];
+               var limit = document.getElementById("cifra").value *1;
+               var tar = document.getElementById("izpis");
+               
+               for(i = 0; i < limit; i++)
+               {
+                   priblizek += 4.0 * predznak / imenovalec;
+                   zaporedje.push(priblizek);
+                   predznak *= -1;
+                   imenovalec += 2;
+                   tar.innerHTML += "<br>Približek = " + priblizek;
+               }
+               
+               tar.innerHTML += "<br>V zbirki se nahaja " + zaporedje.length + " Elementov";
+               
+               tar.innerHTML += "<br>Vsebina zbirke = " + zaporedje;
+               
+               tar.innerHTML += "<br>Sedmi člen = " + zaporedje[6];
+               
+               
+           }
+           var miniSudoku = [[1,2,3],[4,5,6],[7,8,9]];
+           var tar = document.getElementById("izpis");
+           tar.innerHTML += "<br>" + miniSudoku;
+           tar.innerHTML += "<br>" + miniSudoku[0];
+           tar.innerHTML += "<br>" + miniSudoku[0][2];
+           
+           
+           var student = ["Janez","Novak",64990123,"Ljubljana",1000,true];
+           var indeks = [student,student,student];
+           
+           tar.innerHTML += "Ime 2 študenta = " + indeks[1][0];
+       </script> 
+       
+    </body>
+</html>

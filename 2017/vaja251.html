@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <table>
+                <tr>
+                    <td>Prva stranica:</td>
+                    <td><input type="number" id="strA" value="0" ></td>
+                </tr><tr>
+                    <td>Druga stranica:</td>
+                    <td><input type="number" id="strB" ></td>
+                </tr><tr>
+                    <td>Tretja stranica:</td>
+                    <td><input type="number" id="strC" onchange="skrij('#kot')" ></td>
+                </tr><tr>
+                    <td>Kot:</td>
+                    <td><input type="number" id="kot" onchange="skrij('#strC')" ></td>
+                </tr>
+            </table>
+            <button onclick="Beri()">Procesiraj</button>
+            <script>
+var krneki = 0; 
+var stranicaB = 0;
+
+function skrij(id){
+    $(id).hide();
+}
+                
+function Beri(){
+    krneki = document.getElementById("strA").value;
+    console.log(krneki);
+    console.log(krneki+1);
+    stranicaB = $('#strB').val();
+    console.log(stranicaB);
+    console.log(stranicaB+1);
+}
+
+            </script>
+
+            
+        </div>
+        <div>
+            Ok zdaj znam brat, kaj pa pisat?
+            <button onclick='pisi()'>Piši nekaj</button>
+        </div>
+        <div id='tabla'></div>
+        <script>
+            function pisi(){
+                var tmp = $('#tabla').html();
+                tmp += "<b>A dela?</b>";
+                $('#tabla').html(tmp);
+            }
+        </script>
+        <div>
+            Višina: <input type='number' id='rows'>
+            Širina: <input type='number' id='cols'>
+        </div>
+        <button onclick='risi()'>Tabela time</button>
+        <div id='canv'></div>
+        <script>
+            function risi() {
+                var height = $("#rows").val()*1;
+                var length = $("#cols").val()*1;
+                var input = "<table style='border : 1px solid;'>";
+                for(i = 0; i < height; i++){
+                    input += "<tr>";
+                    var j = 0;
+                    for(;j<length;){
+                        input += "<td>";
+                        input += (i+j);
+                        input += "</td>";
+                        j++;
+                    }
+                    input += "</tr>";
+                }
+                input += "</table>";
+                $("#canv").html(input);
+                
+            }
+        </script>
+        
+        
+    </body>
+</html>

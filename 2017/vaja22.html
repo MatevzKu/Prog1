@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Koledar</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Leto je prestopno če:<br>
+            <ul>
+                <li>deljivo s 4 (leto % 4 == 0)</li>
+                <li>ni deljivo s 100 (leto % 100 != 0)</li>
+                <li>je deljivo 400 (leto % 400 == 0)</li>
+            </ul>
+        </div>
+        <script>
+            var leto = prompt("Katero leto te zanima?", 2016) * 1;
+            if (isNaN(leto)) {
+                console.log("Hočem letnico, ne pa tekst!");
+            }
+            if (leto % 400 == 0) {
+                console.log("Leto je prestopno");
+            } else if (leto % 4 == 0) {
+                if (leto % 100 != 0) {
+                    console.log("Leto je prestopno");
+                } else {
+                    console.log("Leto ni prestopno");
+                }
+            } else if (leto % 123 == 0) {
+                console.log("To je zmajevo leto");
+            } else {
+                console.log("Leto ni prestopno");
+            }
+            
+            if( (leto % 4 == 0 && leto % 100 != 0 )|| leto % 400 == 0) {
+                console.log("Leto je prestopno");
+            }else{
+                console.log("Leto ni prestopno");
+            }
+
+            var prestopno = ( (leto % 4 == 0 && leto % 100 != 0 )|| leto % 400 == 0);
+            
+            console.log("Leto " + (prestopno ? "je" : "ni") + " prestopno");
+
+            var min = 0;
+            var max = 10;
+            var ponovi = true;
+            var highScore = 0;
+            
+            while(ponovi){
+            var cifra1 = Math.floor(Math.random()*(max-min+1)+min);
+            var cifra2 = Math.floor(Math.random()*(max-min+1)+min);          
+            var rezultat = cifra1 * cifra2;
+            var input = prompt("Koliko je " + cifra1 + "*" + cifra2)*1;
+            if(rezultat == input){
+                console.log("Bravo, znaš poštevanko");
+                highScore++;
+            }else{
+                console.log("več sreče prihodnjič");
+                ponovi = false;
+            }
+        }
+        console.log("Pravilno si odgovoril na "+ highScore + " vprašanj");
+
+
+        </script>
+    </body>
+</html>

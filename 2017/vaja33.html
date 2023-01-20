@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Praštevila</title>
+        <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            Katero število te zanima?<input type="number" id="cifr"><br>
+            Koliko praštevil iščem?<input type="number" id="stopN"><br>
+            Klikni <span onclick="prastevila()">TULE</span> da se bo nekaj zgodilo.
+        </div>
+        <div id="out1"></div>
+        <script>
+            function prastevila() {
+                var num = document.getElementById("cifr").value * 1;
+                var stopNum = document.getElementById("stopN").value * 1;
+                console.log("Vpisal si " + num);
+
+
+                for (;stopNum > 0;num++){
+
+                    var delitelji = 0;
+                    for (i = num; i > 1; i--) {
+                        if (num % i == 0) {
+                            delitelji++;
+                        }
+                    }
+                    if(delitelji == 1){
+                        stopNum--;
+                    }
+                    
+                    document.getElementById("out1").innerHTML += "Številka " + num + (delitelji == 1 ? " je" : " ni") + " praštevilo.<br>";
+                    //console.log("Številka " + num + (delitelji == 1 ? " je" : " ni") + " praštevilo.");
+                }
+
+
+                /*
+                 if(delitelji == 1){
+                 console.log("Številka " + num + " je praštevilo");
+                 }
+                 else{
+                 console.log("Številka " + num + " ni praštevilo");
+                 }*/
+
+
+            }
+            /*  var x = -1;
+             while ( x < 0 || isNaN(x) ) {
+             x = prompt("Katera številka te zanima?") * 1;
+             }*/
+
+        </script>
+        <div>
+            <h2>Čas za PI</h2>
+            Koliko členov naj seštejem?<input type="number" id="numC"><br>
+            <span onclick="piCalc()">Klik!</span>
+        </div>
+        <script>
+            function piCalc(){
+                // 4 - 4/3 + 4/5 - 4/7.......
+                var st = document.getElementById("numC").value*1;
+                var osnova = 4;
+                var pred = 1;
+                var base = 3;
+                for(j = 0; j < st;  j += 2){
+                    pred *= -1; // pred = pred * -1
+                    osnova += pred*4/base;
+                    base += 2;
+                }
+                console.log("Dobim približek: " + osnova);
+            }
+        </script>
+    </body>
+</html>

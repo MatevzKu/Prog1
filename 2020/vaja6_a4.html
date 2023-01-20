@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var cifra1 = 220;
+            var cifra2 = 284;
+            
+            function sumDeli(cifra){
+                var delitelj = 1;
+                var sum = 0;
+                while(delitelj < (1+cifra/2)){
+                    if(cifra%delitelj==0){
+                        sum += delitelj;
+                    }
+                    delitelj++;
+                }
+                return sum;
+            }
+            /*
+            var start = performance.now();
+            //console.log(sumDeli(cifra1));
+            var meja = 2000;
+            for(cifra1 = 1;cifra1<meja;cifra1++){
+                var sum1 = sumDeli(cifra1);
+                for(cifra2 = (cifra1+1); cifra2<meja;cifra2++){                    
+                    var sum2 = sumDeli(cifra2);
+                    if(sum1 == cifra2 && sum2 == cifra1){
+                        console.log(cifra1 + " " + cifra2);
+                    }
+                }
+            }
+            var stop = performance.now();
+            console.log("Porabili smo " + (stop-start) + " ms");
+            
+            var start = performance.now();
+            var meja = 2000;
+            for(cifra1 = 1;cifra1<meja;cifra1++){
+                var sum1 = sumDeli(cifra1);
+                if(sum1 > cifra1 && sumDeli(sum1)==cifra1){
+                        console.log(sum1 + " " + cifra1);
+                    }
+                }
+            var stop = performance.now();
+            console.log("Porabili smo " + (stop-start) + " ms");
+            */
+            
+            
+            
+            var tab = [];
+            for(i = 0; i < 2000; i++){
+                tab.push(Math.random());
+            }
+            tab2 = tab.slice();
+            
+            var start = performance.now();
+            for(i = 0; i < tab.length;i++){
+                for(j = 0; j < tab.length-1;j++){
+                    if(tab[j]>tab[j+1]){
+                        temp = tab[j];
+                        tab[j] = tab[j+1];
+                        tab[j+1] = temp;
+                    }
+                }
+            }
+            var stop = performance.now();
+            console.log("Porabili smo " + (stop-start) + " ms");           
+            
+            var start = performance.now();
+            for(i = 0; i < tab2.length-1;i++){
+                min = i;
+                for(j=i+1;j <tab2.length;j++){
+                    if(tab2[j] < tab2[min]){
+                        min = j;
+                    }
+                }
+                temp = tab2[min];
+                tab2[min] = tab2[i];
+                tab2[i] = temp;
+            } 
+            var stop = performance.now();
+            console.log("Porabili smo " + (stop-start) + " ms");        
+            
+            
+        </script>
+    </body>
+</html>

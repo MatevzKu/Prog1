@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+
+                font : bold 15px arial, sans-serif;
+                font-style: italic;
+            }
+
+            td, tr {
+                font-size: 30px;
+            }
+
+            td {
+                background-color: #0066FF;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script>
+            var tekst = "tole bi rad videl na zaslonu.";
+            document.write(tekst);
+        </script>
+        <table>
+            <caption>mini tabela</caption>
+            <tr>
+                <td>bla</td>
+            </tr>
+        </table>
+
+        <script>
+            document.write(tekst);
+            document.write(typeof tekst);
+            tekst = 123;
+            document.write(tekst);
+            document.write(typeof tekst);
+            var x = prompt("Zmisli si številko:")*1;
+            document.write("<br>x = " + x + "<br>");
+            document.write("x + x = " + (x + x) + "<br>");
+        </script>
+        
+        <script>
+            document.write("<br><h2>Poštevanka</h2>");
+            var y = prompt("Katera cifra te zanima?")*1;
+            document.write("<table><tr><td>vrednost</td><td>kvadrat</td>");
+            document.write("<td>kub</td></tr>");
+            document.write("<tr><td>" + y + "</td><td>" + (y*y) + "</td>");
+            document.write("<td>" + (y*y*y) + "</td></tr></table>");
+            
+            var tekst = "<br><table><tr><td>vrednost</td><td>kvadrat</td>";
+            tekst += "<td>kub</td></tr>";
+            tekst += "<tr><td>" + y + "</td><td>" + (y*y) + "</td>";
+            tekst += "<td>" + (y*y*y) + "</td></tr></table>";
+            document.write(tekst);
+            
+            document.write("hočem \"tole\" v navednicah");
+            document.write("<button onclick='alert(\"ratalo!\")'>Klikni me</button>");
+            
+            var x1 = NaN;
+            var x2 = Infinity;
+            var x3 = true;
+            var x4 = "10";
+            
+            var j_e_p; /* jakost električnega polja*/
+            
+            
+            
+        </script>
+
+
+
+    </body>
+</html>

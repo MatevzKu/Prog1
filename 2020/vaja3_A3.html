@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Zbirke in zanke</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var prib = 1;
+            var imen = 0;
+            var n = 15;
+            for(i = 0; i<n; i++){
+                imen = Math.sqrt(imen+2);
+                prib *= 2/imen;
+                console.log(prib);
+            }
+            console.log(Math.PI/2);
+            
+            prib = 1;
+            imen = 0;
+            var stari = 0;
+            var natancnost = 1e-2;
+            var stevec = 0;
+            while(Math.abs(prib-stari)>natancnost){
+                stari = prib;
+                imen = Math.sqrt(imen+2);
+                prib *= 2/imen;    
+                stevec++;
+            }
+            console.log("prejšnji korak: " + stari );
+            console.log("zdaj: " + prib);
+            console.log("razlika:" + (stari-prib));
+            console.log("Porabili smo : " + stevec + " korakov");
+            
+            var out2 = "prejšnji korak: " + stari;
+            out2 += "\nzdaj: " + prib;
+            out2 += "\nrazlika:" + (stari-prib);
+            out2 += "\nPorabili smo : " + stevec + " korakov";
+            console.log(out2);
+            
+            var cifra = 8976;
+            var faktor = 2;
+            var tisk = "Število " + cifra + " je sestavljeno iz: ";
+            while(cifra >1){
+                if(cifra%faktor==0){
+                    console.log(faktor);
+                    tisk += faktor + "  \n";
+                    cifra /= faktor;
+                }
+                else{
+                    faktor++;
+                }
+            }
+            console.log(tisk);
+            
+            t = [-6,33,12,-7];
+            
+            var prvi = 0;
+            var drugi = 1;
+            var N = 20;
+            var cleni = [prvi,drugi];
+            for(i = 0; i<N; i++){
+                temp = drugi;
+                drugi = prvi + drugi;
+                prvi = temp;
+                cleni.push(drugi);
+            }
+            console.log(cleni);
+            console.log(t + " - " + t2);
+            var t2 =  [];
+            var meja = t.length;
+            for(i = 0; i < meja;i++){
+                t2.push(t.pop());
+            }
+            console.log(t + " - " + t2 );
+            
+            var boks = [];
+            
+            for(i=0;i<500;i++){
+                boks.push(Math.random());
+            }
+            
+            for(j = 0; j < boks.length-1;j++){
+                for(i = 0; i < boks.length-1;i++){
+                    if(boks[i]>boks[i+1]){
+                        temp  = boks[i];
+                        boks[i] = boks[i+1];
+                        boks[i+1] = temp;
+                    }
+                }
+            }
+            console.log(boks);
+            
+            
+        </script>
+    </body>
+</html>

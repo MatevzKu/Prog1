@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>vaja na daljavo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            console.log("Pozdravljen svet");
+            var x = 4;
+            x = prompt("Kateri x?")*1;
+            console.log(x);
+            console.log("Vrednost x = " + x + " V/m");
+            
+            console.log((2<x<5));
+            console.log(((2<x)&&(x<5)));
+            
+            // 2.7 - prestopno leto
+            var leto = prompt("Vpiši letnico")*1;
+            
+            /**
+             *  if (p1 p2 p3){
+             *      koda če pogoji veljajo
+             *      }
+             *  else if(p4 p5 p6){
+             *      koda če veljajo ti
+             *      }
+             *  ....
+             *  else{
+             *      koda če ni izpolnjen noben pogoj
+             *  } 
+             */
+            if(leto%400==0){
+                console.log("Leto je prestopno");
+            }
+            else if(leto%100==0){
+                console.log("Leto ni prestopno");
+            }
+            else if(leto%4==0){
+                console.log("Leto je prestopno");
+            }
+            else{
+                console.log("Leto ni prestopno");
+            }
+          
+            if((leto%400==0)||(leto%4==0 && leto%100!=0)){
+                console.log("je prestopno");
+            }
+            else{
+                console.log("ni prestopno");
+            }
+           
+            var N = 15;
+            var prib = 1;
+            var imen = 0;
+            var i = 0;
+            while( i < N){
+                imen = Math.sqrt(2 + imen);
+                prib = prib * 2 /imen;
+                console.log(prib);
+                i++;
+            }
+            
+            console.log(Math.PI/2);
+            
+            
+            
+            
+            
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

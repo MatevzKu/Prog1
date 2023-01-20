@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            
+            function zaderiSe(tekst,kanal=1){
+                if(kanal == 0){
+                    alert(tekst);
+                    return;
+                }
+                else{
+                    console.log(tekst);
+                    return;      
+                }      
+            }
+            
+            zaderiSe("prvi poskus");
+            var out = "drugi poskus";
+            zaderiSe(out);
+            console.log("po funkciji je moj out enak:");
+            console.log(out);
+            zaderiSe("Pazi zdaj",0);
+            
+            var x = 1;
+            function nekaj(x){
+                x = 15;
+                console.log(x);
+                return x;
+                alert("Asistent nima pojma!");
+            }
+            x = nekaj(x);
+            console.log(x);
+            
+            function matematika(x,y){
+                var vsota = x+y;
+                var razlika = x-y;
+                var produkt = x*y;
+                var kvocient = x/y;
+                return [vsota,razlika,produkt,kvocient];
+            }
+            
+            matematika(2,4);
+            
+            function postevanka(vrstice,maxPotenca){
+                var matrika = [];
+                for(i = 0; i < vrstice;i++){
+                    matrika[i] = [];
+                }
+                
+                for(i=0;i<vrstice;i++){
+                    for(j=0;j<maxPotenca;j++){
+                        matrika[i][j] = Math.pow(i,j);
+                    }
+                }
+                
+                return matrika;
+            }
+            
+            
+            
+        </script>            
+    </body>
+</html>

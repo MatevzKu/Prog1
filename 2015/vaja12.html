@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="funkcije.js"></script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+
+        <script>
+            document.write("Klasični izpis");
+            pisi("Tole bi moralo it v novo vrstico");
+            pisi("Tole pa ne", false);
+        </script>
+
+        <script>
+            var x = prompt("Vnesi cifro:") * 1;
+
+            function sodoLiho(X)
+            {
+                var num = X % 2;
+                if (num == 0)
+                    console.log("Cifra je soda");
+                else
+                    console.log("Cifra je liha!");
+            }
+
+            sodoLiho(x);
+        </script>
+
+        <table width="50%" border="1">
+            <tr>
+                <td id="11" onclick="premik1('11')">1</td>
+                <td id="12" onclick="premik1('12')">2</td>
+            </tr>
+            <tr>
+                <td id="21" onclick="premik1('21')">3</td>
+                <td id="22" onclick="premik1('22')">4</td>
+            </tr>
+        </table>
+
+        <script>
+
+            var prviKlik = "";
+            var akcija = 1;
+
+            function premik1(id)
+            {
+                if (id == prviKlik)
+                {
+                    console.log("Ne velja");
+                }
+                else
+                {
+                    if (akcija == 1) {
+                        var celica = document.getElementById(id);
+                        prviKlik = id;
+                        akcija = 2;
+                        console.log(celica.innerHTML);
+                    }
+                    else
+                    {
+                        var cel1 = document.getElementById(id);
+                        var cel2 = document.getElementById(prviKlik);
+                        cel1.innerHTML = cel2.innerHTML;
+                        cel2.innerHTML = "";
+                        prviKlik = "";
+                        akcija = 1;
+                    }
+                }
+            }
+
+
+        </script>
+
+        <table border="1" width="50%">
+            <tr>
+                <td onclick="premik2(this)">bla</td>
+                <td onclick="premik2(this)">blabla</td>
+            </tr>
+            <tr>
+                <td onclick="premik2(this)">bla2</td>
+                <td onclick="premik2(this)">blabla2</td>
+            </tr>
+        </table>
+        
+        <script>
+            var vsebina="";
+            var akcija=1;
+            function premik2(celica)
+            {
+                if(akcija == 1)
+                {
+                    vsebina = celica.innerHTML;
+                    //celica.innerHTML = "";
+                    celica.style.color = "red";
+                    akcija = 2;
+                }
+                else
+                {
+                    celica.innerHTML = vsebina;
+                    vsebina = "";
+                    akcija = 1;
+                }
+            }
+        </script>
+    </body>
+</html>

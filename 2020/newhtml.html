@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="linked-list.js"></script>
+    </head>
+    <body>
+        <script>
+            const list = new LinkedList();
+
+// add an item to the end
+list.add("foo");
+
+// insert an item
+list.insertBefore("bar", 0);
+list.insertAfter("baz", 1);
+
+// get the value at an index
+let value = list.get(0);
+
+// get the number of items
+let count = list.size;
+
+// get the index of a value
+let index = list.indexOf("foo");
+
+// convert to an array using iterators
+let array1 = [...list.values()];
+let array2 = [...list];
+
+// remove an item at the given index and return the data that was removed
+let data = list.remove(0);
+
+// remove all items
+list.clear();   
+        </script>
+    </body>
+</html>

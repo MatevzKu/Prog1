@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            table, td {
+                border : 1px solid black;
+            }
+            body {
+                font-size: 25px;
+            }
+            .skrit {
+                display: none;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="prvi">
+            <table>
+                <tr>
+                    <td>Število Členov:</td>
+                    <td><input id="num"></td>
+                </tr>  
+                <tr>
+                    <td>Vrednost X:</td>
+                    <td><input id="var_x"></td>
+                </tr> 
+            </table>
+            <button onclick="procesiraj()">Izračunaj sinus</button>
+        </div>
+        <div>
+            <button onclick="prikazi()">Premislil sem si.</button>
+        </div>
+        <script>
+            function procesiraj() {
+                document.getElementById("prvi").className += " skrit";
+                sin_prib();
+            }
+
+            function prikazi() {
+                document.getElementById("prvi").className = "";
+                //document.getElementById("prvi").className.replace( /(?:^|\s)skrit(?!\S)/g ,"");
+            }
+        </script>
+
+
+        <div>
+            Naša naloga je sin(x) = x - x^3 / 3! + x^5 / 5!.....
+        </div>
+        <div id="rezultat"></div>
+
+        <script>
+
+
+            function sin_prib() {
+                var priblizek = 0;
+                var zbirka = [];
+                var x = document.getElementById("var_x").value * 1;
+                var numb = document.getElementById("num").value * 1;
+                var predzn = 1;
+
+                for (i = 0; i <= numb; i++)
+                {
+
+                    var indeks = 1 + i * 2;
+                    var temp = Math.pow(x, indeks);
+                    temp = temp * predzn;
+                    predzn = predzn * (-1);
+                    var num = 1.0;
+                    for (j = indeks; j > 1; j--)
+                        num *= j;
+
+                    temp = temp / num;
+
+                    priblizek += temp;
+                    zbirka.push(priblizek);
+                    document.getElementById("rezultat").innerHTML += "<h3>Izračunani približek je " + priblizek + "</h3>";
+
+                }
+                document.getElementById("rezultat").innerHTML += "<h3>Vsebina zbirke je " + zbirka + "</h3>";
+                alert("Dolžina zbirke je" + zbirka.length);
+                alert("peti element zbirke je" + zbirka[0]);
+
+            }
+            
+            
+            var student = ["Janez","Novak",649901234, "Ljubljana",1000,True];
+            var sudoku_1 = [1,0,0,0,3,0,5,0,9];
+        </script>
+
+
+    </body>
+</html>

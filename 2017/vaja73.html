@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <canvas width="250px" height="250px" id="urca"></canvas>
+        <button onclick="pucaj()">Počisti za sabo</button>
+        <button onclick="krog()">Vrti se mi</button>
+        <button onclick="pisi()">Text</button>
+        <button onclick="kocka()">Oglato</button>
+        <script>
+            var platno = document.getElementById("urca");
+            var k = platno.getContext("2d");
+            
+            k.beginPath();
+            k.moveTo(50,50);
+            k.lineTo(50,100);
+            k.lineTo(100,100);
+            k.stroke();
+            
+            k.beginPath();
+            k.moveTo(0,0);
+            k.lineWidth = "5";
+            k.strokeStyle = "red";
+            k.lineCap = "round";
+            k.lineTo(2500,2500);
+            k.stroke();
+            
+            function pucaj(){
+                platno.width = 250;
+            }
+            
+            function krog(){
+                k.beginPath();
+                k.arc(125,125,125/2,0,Math.PI*2);
+                k.fillStyle = "black";
+                k.fill();
+                k.beginPath();
+                k.arc(125/2,125/2,125/4,0,Math.PI*2);
+                k.fill();
+                k.beginPath();
+                k.arc(125/2*3,125/2,125/4,0,Math.PI*2);
+                k.fill();
+                k.beginPath();
+                k.arc(125,125,125/4,0,Math.PI);
+                k.strokeStyle="white";
+                k.stroke();
+            }
+            
+            function pisi(){
+                k.font ="20px Arial";
+                k.fillText("Ali me vidiš",100,100);
+                k.stroke();
+                k.strokeText("Kaj pa tole?",100,200);
+                k.stroke();
+            }
+            
+            function kocka(){
+                k.beginPath();
+                grad = k.createLinearGradient(0,125,250,125);
+                grad.addColorStop(0,"#30C5FF");
+                grad.addColorStop(0.5, "yellow");
+                grad.addColorStop(1,"cyan");
+                k.fillStyle = grad;
+                k.fillRect(0,0,250,250);
+                k.stroke();
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-size: 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="pisiSem"></div>
+        <div id="pisiSem2"></div>
+        
+        <script>
+            var cifra = 4;
+            var cilj = document.getElementById("pisiSem");
+            var cilj2 = document.getElementById("pisiSem2");
+            
+            if(cifra%2 == 0 && cifra%4== 0)
+            {
+                cilj.innerHTML = "<h3>Cifra je soda in deljiva s 4!</h3>";
+            }
+            else if (cifra%2 == 0 )
+            {
+                cilj.innerHTML = "<h3>Cifra je soda!</h3>";
+            }
+            else
+            {
+                cilj.innerHTML = "<h3>Cifra je liha!</h3>";
+            }
+            
+            if(cifra%2 == 0 && cifra%4== 0)
+            {
+                cilj2.innerHTML += "<h3>Cifra je deljiva s 4!</h3>";
+            }
+            if (cifra%2 == 0 )
+            {
+                cilj2.innerHTML += "<h3>Cifra je soda!</h3>";
+            }
+            if (cifra %2 != 0)
+            {
+                cilj2.innerHTML += "<h3>Cifra je liha!</h3>";
+            } 
+            /*else{
+                cilj2.innerHTML = "<h3>To ni cifra!</h3>";
+            }*/
+            
+            
+            cifra = prompt("zmisli si cifro buksl")*1;
+            
+            
+            if(cifra % 2 == 0)
+            {
+                if(cifra % 4 == 0)
+                {
+                    cilj.innerHTML = "<h3>Cifra je soda in deljiva s 4.</h3>";
+                }
+                else{
+                    cilj.innerHTML = "<h3>Cifra je soda!</h3>";
+                }
+            }
+            else
+            {
+                cilj.innerHTML = "<h3>Cifra je liha</h3>";
+            }
+            
+            cilj.innerHTML += "<br>Če tvoji cifri " +  cifra;
+            cifra = cifra + 5;
+            cilj.innerHTML += " prištejem 5 potem dobim " + cifra;
+            
+        
+        </script>
+        <div id="postevanka"></div>
+        <script>
+            var tar = document.getElementById("postevanka");
+            
+            var vsebina = "<table style='border : 1px solid black;'>";
+            //vsebina += '<tr><th>cifra</th><th>kvadrat</th><th>kub</th></tr>';
+            
+            for(i = 0; i <= 100; i++)
+            {
+                vsebina += "<tr style=\"border: 1px solid;\">";
+                for(j = 0; j < 20; j++)
+                {
+                    vsebina += "<td style='border : 1px solid black;'>" + Math.pow(i,(j+1)) + "</td>";
+                }
+                vsebina += "</tr>"
+            }
+            vsebina += "</table>";
+            tar.innerHTML = vsebina;
+            
+            //alert("Vrednost i = " + i);
+            
+        </script>
+        
+    </body>
+</html>

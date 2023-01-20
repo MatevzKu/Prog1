@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Zbirkoslovje</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Zaporedja na vač načinov
+            <br>1,2,3,4,1,2,3,1,2,3,4,5,-1
+        </div>
+        <script>
+            //Zacnimo z zbirkami
+            var skatla = [];
+            console.log(skatla.length);
+            var box = Array();
+            var box2 = Array(13);
+            skatla = [1,2,3];
+            skatla = Array(1,2,3);
+        </script>
+        <script>
+            /*var cifra = 0;
+            while(cifra >= 0 && !isNaN(cifra)){
+                cifra = prompt("Zmisli si cifro:")*1;
+            }*/
+            
+            var temp = 0;
+            var max_count = 0;
+            var curr_count = 0;
+            
+            do{
+                var cifra2 = prompt("Pa še eno:")*1;
+                if(cifra2 > temp){
+                    curr_count++;
+                }
+                else{
+                    if(curr_count > max_count){
+                        max_count = curr_count;
+                    }
+                    curr_count = 0;
+                }
+                temp = cifra2;
+                console.log(cifra2);
+            }while(cifra2 >= 0 && !isNaN(cifra2));
+            console.log("MaxCount = " + max_count);
+        </script>
+        <script>
+            var vnosi = [0];
+            var max = 0;
+            var curr = 0;
+            do{
+                vnosi.push(prompt("In še eno:")*1);
+                var k = vnosi.length -1;
+                if(vnosi[k]>vnosi[k-1]){
+                    curr++;
+                }
+                else{
+                    if(curr > max){
+                        max = curr;
+                    }
+                    curr = 0;
+                }
+            }while(vnosi[k] >= 0 && !isNaN(vnosi[k]));
+            console.log(vnosi);
+            console.log("Max = " + max);
+        </script>
+    </body>
+</html>

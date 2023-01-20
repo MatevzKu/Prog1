@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .desni {
+                border-right: solid 2px red;
+            }
+            .modri {
+                color : blue;
+            }
+            td {
+                border: solid 1px black;
+            }
+            table {
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="tabla"></div>
+        <script>
+            var tar = document.getElementById("tabla");
+            var vsebina = "";
+
+            vsebina = "<table style='border: solid black 1px;'>";
+
+            for (i = 1; i <= 13; i++)
+            {
+                vsebina += "<tr>";
+
+                for (j = 1; j <= 13; j++)
+                {
+                    vsebina += "<td class='";
+                    if (j % 3 == 0)
+                    {
+                        vsebina += "desni ";
+                    }
+                    if (j % 4 == 0)
+                    {
+                        vsebina += "modri ";
+                    }
+                    vsebina += "'>";
+
+                    if (i >= j)
+                    {
+                        vsebina += Math.pow(i, j);
+                    }
+
+                    vsebina += "</td>";
+                }
+
+
+                vsebina += "</tr>";
+            }
+            vsebina += "</table>";
+            tar.innerHTML = vsebina;
+
+        </script>
+
+        <div id="prastevila"></div>
+        <script>
+            var cifra = 100; //Koliko številk preverjam
+            var tar2 = document.getElementById("prastevila");
+
+            var vseb = "<h2>Kaj je in kaj ni praštevilo</h2>";
+            for (m = cifra; m > 1; m--)
+            {
+
+                var stevec = 0;
+                for (i = m; i > 1; i--)
+                {
+
+                    if (m % i == 0)
+                    {
+
+                        stevec++;
+                    }
+                }
+
+                if (stevec == 1) {
+                    vseb += m + " JE " + "prastevilo<br>";
+                }
+                else
+                {
+                    vseb += m + " NI " + "prastevilo<br>";
+                }
+            }
+
+
+            tar2.innerHTML = vseb;
+
+
+
+        </script>
+    </body>
+</html>

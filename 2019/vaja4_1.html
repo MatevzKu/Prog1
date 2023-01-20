@@ -11,62 +11,38 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>
-            <script>
-                var priblizek = 1;
-                var temp = 0;
-                var n = 300;
-                var kanta = [];
-                for (i = 0; i < n; i++) {
-                    temp = Math.sqrt(2 + temp);
-                    priblizek *= temp / 2;
-                    kanta.push(priblizek);
+        <script>
+            var x = 5;
+            var y = 15, z = 35; // Enojni komentar
+            /*
+             * Tu lahko napišem cel roman
+             * in ascii art če ga znam
+             */
+            
+            console.log("Če se tole ne vidi");
+            console.log("Nisem primeren za učit");
+            console.log("x = " + x);
+            console.log("y = " + y);
+            
+            //Algoritem 1 - največja vrednost
+            var prva = 100, druga = 21, tretja = 4;
+            var max = 0;
+            
+            if(prva > druga){
+                if(prva > tretja){
+                    max = prva;
+                }else{
+                    max = tretja;
                 }
-                console.log("Po " + n + " členih dobim " + (1 / priblizek));
-
-
-                priblizek = 1;
-                var stari = 0;
-                temp = 0;
-                n = 0;
-                while (Math.abs(priblizek - stari) > 1e-10) {
-                    temp = Math.sqrt(2 + temp);
-                    stari = priblizek;
-                    priblizek *= temp / 2;
-                    n++;
+            }else{
+                if(druga > tretja){
+                    max = druga;
+                }else{
+                    max = tretja;
                 }
-                console.log("Po " + n + " členih je natančnost " + 1e-6 + " : " + (1 / priblizek));
-
-                var t = [-6, 33, 12, -7];
-                min = t[0];
-                max = t[0];
-                for (i = 0; i < t.length; i++) {
-                    if (t[i] < min) {
-                        min = t[i];
-                    }
-                    if (t[i] > max) {
-                        max = t[i];
-                    }
-                }
-                console.log("Min = " + min + ", Max = " + max, ", razlika = " + (max - min));
-
-                t = [8, 14, -4, 2, 77];
-                d = [];
-                for (i = 0; i < t.length; i++) {
-                    d[i] = t[t.length - i - 1];
-                }
-                console.log(t);
-                console.log(d);
-
-                t = [8, 14, -4, 2, 77];
-                d = [];
-                meja = t.length;
-                for (i = 0; i < meja; i++) {
-                    d.push(t.pop());
-                }
-                console.log(t);
-                console.log(d);
-            </script>
-        </div>
+            }
+            console.log("Največja je:" + max);
+            
+        </script>
     </body>
 </html>

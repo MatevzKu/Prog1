@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                
+                font-size: 40px;
+                font: bold 15px arial, sans-serif;
+                font-style: italic;
+            }
+            
+            td, div, span {
+                font-size: 40px;
+                color: red;
+            }
+            
+            td {
+                width: 100px;
+                height: 100px;
+                border: 1px solid black;
+                background: #0000FF;
+            }
+        </style>
+    </head>
+    <body>
+        <div>Testna vsebina</div>
+        <table>
+            <tr>
+                <td>test</td>
+            </tr>
+        </table>
+        
+        <script>
+            var tekst = "Tole bi rad videl na zaslonu.";
+            document.write(tekst);
+        </script>
+        
+        <script>
+            var x = prompt("Katera številka te zanima?");
+            document.write("<table><caption>Poštevanka</caption>");
+            document.write("<tr><td>Cifra</td><td>Kvadrat</td>");
+            document.write("<td>Kub</td></tr>")
+            document.write("<tr><td>" + x);
+            document.write("</td><td>" + (x*x));
+            document.write("</td><td>" + (x*x*x));
+            document.write("</td></tr></table><br>");
+            
+            var vsebina = "";
+            vsebina += "<table><caption>Poštevanka</caption>";
+            vsebina += "<tr><td>Cifra</td><td>Kvadrat</td>";
+            vsebina += "<td>Kub</td></tr>";
+            vsebina += "<tr><td>" + x;
+            vsebina += "</td><td>" + (x*x);
+            vsebina += "</td><td>" + (x*x*x);
+            vsebina += "</td></tr></table><br>";
+            document.write(vsebina);
+        </script>
+        
+        <br> Opcija 3:
+        <br><table>
+            <caption>Tretja tabela</caption>
+            <tr>
+                <td>Cifra</td>
+                <td>Kvadrat</td>
+                <td>Kub</td>
+            </tr>
+            <tr>
+                <td><script>document.write(x);</script></td>
+                <td><script>document.write(x*x);</script></td>
+                <td><script>document.write(x*x*x);</script></td>
+            </tr>
+        </table>
+        
+        <script>
+            var y = prompt("Še eno cirfo prosim")*1;
+            //var true
+            //var TRue
+            var j_el_po /* jakost električnega polja */
+            document.write("<br>Tip spremenljivke y = " + (typeof y));
+            document.write("<br>Vrednost y = " + y);
+            document.write("<br>Vrednost y + y = " + (y+y));
+            var x1 = NaN;
+            var x2 = Infinity;
+            var x3 = true;
+            
+            document.write("<br>Nan je " + (typeof x1));
+            document.write("<br>Infinity je" + (typeof x2));
+            document.write("<br>true je" + (typeof x3));
+            document.write("<br>true +1 = " + (true +1));
+            
+            document.write('tole je "citat" nekoga pametnega');
+            document.write("<br><button onclick='alert(\"pazi se!\")'>klikni me</button>");
+            
+            
+        </script>
+    </body>
+</html>

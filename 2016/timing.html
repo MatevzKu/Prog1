@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script>
+            var datum = new Date();
+            console.log(datum);
+            console.log(datum.getDay());
+            console.log(datum.getHours());
+            console.log(datum.getTime());
+            var datum2 = new Date(2000,2,12);
+            console.log(datum2);
+            
+            var temp1 = new Date();
+            var timestamp1  = temp1.getTime();
+            var timestamp2  = null;
+            function tempomat(){
+                var temp = new Date();
+                timestamp2 = temp.getTime();
+                if((timestamp2 - timestamp1) < 1000)
+                {
+                    document.getElementById("stanje").innerHTML = "on the dot";
+                }
+                else
+                {
+                    document.getElementById("stanje").innerHTML = "missed me";
+                }
+                timestamp1 = timestamp2;
+            }
+        </script>
+        <div id="stanje">Slabo</div>
+        <div>
+            <button onclick="tempomat()">Klik</button>
+        </div>
+        
+        <script>
+            var niz = "ABCDGHIJKLM";
+            console.log(niz[2]);
+            niz[3] = "G";
+            console.log(niz);
+            
+            var temp = niz.substr(0,2);
+            console.log(temp);
+            var temp2 = niz.substr(3);
+            console.log(temp2);
+            var rezultat = temp + "G" + temp2;
+            console.log(rezultat);
+            
+            function menjajZnak(crke, indeks, znak){
+                return crke.substr(0,indeks) + znak + crke.substr((indeks+1));
+            }
+            console.log(menjajZnak(niz,2,"G"));
+            
+        </script>
+        
+        
+        <div id="tar2"><input type="number" id="tarca" value="5"><br>
+            <button onclick="cistiMe()">Počisti</button>
+        </div>
+        <script>
+            function cistiMe(){
+                document.getElementById("tarca").value = "";
+                document.getElementById("tar2").innerHTML = "";
+            }
+        </script>
+    </body>
+</html>

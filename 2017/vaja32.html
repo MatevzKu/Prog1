@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            Katera cifra: <input type="number" id="cifra"><br>
+            Koliko praštevil iščemo? <input type="number" id="stopN"><br>
+            Jaz se delam <span onclick="prastevila()">da sem gumb</span> :D
+        </div>
+
+        <script>
+            function prastevila() {
+                var x = document.getElementById("cifra").value * 1;
+                var stopNum = document.getElementById("stopN").value * 1;
+                console.log("Vpisana je " + x);
+                /*console.log(x%2);
+                 console.log(x%3);
+                 console.log(x%4);
+                 console.log(x%5);
+                 if( x%2 != 0 && x%3 != 0 && x%4 != 0 && x%5 == 0 ){
+                 console.log("Juhu tole je praštevilo");
+                 }*/
+                for (;stopNum > 0;x++){
+                    var delitelji = 0;
+                    for (i = x; i > 1; i--) {
+                        if (x % i == 0) {
+                            delitelji++;
+                        }
+                    }
+                    if (delitelji == 1) {
+                        stopNum--;
+                    }
+                        console.log("Cifra " + x +( delitelji == 1 ? " je" : " ni") + " praštevilo");              
+                }
+            }
+
+        </script>
+        <div>
+            <h2>Približek PI</h2>
+            Koliko členov naj probam?<input type="number" id="numC"><br>
+            <span onclick="piCalc()">Klik!</span>
+        </div>
+        <script>
+            function piCalc(){
+                var num = document.getElementById("numC").value*1;
+                // 4 -4/3 + 4/5 - 4/7 + 4/9......
+                var osnova = 4;
+                var temp = 1;
+                var base = 3;
+                for(i = 0; i < num; i++){
+                   temp *= -1; // temp = temp * -1
+                   osnova += 4/base*temp;
+                   base += 2;
+                }
+                console.log("Po " + num + " členih je pi = " + osnova);
+                
+            }
+        </script>
+    </body>
+</html>

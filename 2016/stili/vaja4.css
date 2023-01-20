@@ -1,0 +1,51 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 21, 2016, 11:49:52 AM
+    Author     : matevzk
+*/
+
+#logo {
+    background-color: lightgreen;
+    font-size: 40px;
+}
+
+#navbar {
+    background-color: lightyellow;
+    float: left;
+    min-height: 200px;
+    width: 30%;
+}            
+
+#vsebina {
+    background-color: lightblue;
+    float: left;
+    min-height: 200px;
+    width: 69%;
+}
+
+#zasluge {
+    clear: both;
+    background-color: lightsteelblue;
+}
+
+div {
+    color: blue;
+}
+
+.zelena {
+    color: green;
+}
+
+#cilj {
+    color : red;
+}
+
+.obroba {
+    border: 3px red solid;
+}
+
+

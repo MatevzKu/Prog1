@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <script>
+                var osnova = 2;
+                var stevec = 3;
+                var vsota = 0;
+                var izpis = osnova + "x" + stevec + "=";
+                while (stevec > 0) {
+                    vsota += osnova;
+                    stevec -= 1;
+                }
+                console.log(izpis + vsota);
+                vsota = 0;
+                osnova = 2;
+                for (i = 0; i < 3; i++) {
+                    vsota += osnova;
+                }
+                console.log(vsota);
+
+                vsota = 0;
+                osnova = 2;
+                i = 0;
+                for (; i < 3; ) {
+                    vsota += osnova;
+                    i++;
+                }
+                console.log(vsota);
+
+                /** podaj številko n
+                 * izpiši vsa števila od 0 do n vendar!
+                 * če je deljivo s 3 napiši bim
+                 * če je deljivo s 5 napiši bam
+                 * če je deljivo s 3 in 5 napiši bimbam
+                 */
+
+                var n = 100;
+                var output = "";
+                var test = false;
+                for (i = 0; i <= n; i++) {
+                    
+                    if (i % 3 == 0) {
+                        output += "bim";
+                        test = true;
+                    }
+                    if (i % 5 == 0) {
+                        output += "bam";
+                        test = true;
+                    }
+                    if (!test) {
+                        output += i;
+                    }
+                    output += " ";
+                    test = false;
+                }
+                console.log(output);
+                
+                /**
+                 *  vhodni podatek = koliko členov 
+                 *  izhod = približek pi/2
+                 *  
+                 *  procedura - računaj zaporedje
+                 *  
+                 *  pi/2 = sqrt(2)/2 * sqrt(2 + sqrt(2))/2 * sqrt(2+sqrt(2+sqrt(2)))/2.......
+                 * 
+                 */
+            </script>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <table width="600px"><tr><td>
+        <canvas width="250" height="250" id="urca"></canvas>
+                </td></tr></table>
+        </div>
+        <button onclick="pucaj()">Počisti platno</button>
+        <button onclick="krogi()">Krogci</button>
+        <button onclick="pisimo()">Text</button>
+        <script>
+            var platno = document.getElementById("urca");
+            var k = platno.getContext("2d");
+
+            k.beginPath();
+            k.moveTo(50, 50);
+            k.lineTo(50, 100);
+            k.lineTo(100, 100);
+            k.stroke();
+            k.beginPath();
+            k.moveTo(0, 0);
+            k.lineTo(200, 200);
+            k.stroke();
+
+            k.beginPath();
+            k.moveTo(200, 200);
+            k.lineWidth = "4";
+            k.strokeStyle = "red";
+            k.lineCap = "round";
+            k.lineTo(150, 20);
+            k.stroke();
+
+            function pucaj() {
+                platno.width = 250;
+            }
+
+            function krogi(){
+                k.beginPath();
+                k.lineWidth = "1";
+                k.arc(125,125,125/2,0, Math.PI * 3 /2);
+                k.strokeStyle = "black";
+                k.fillStyle = "#1481BA";
+                k.fill();
+                k.stroke();
+            }
+            
+            function pisimo(){
+                k.beginPath();
+                k.fillText("Ali me vidiš?", 50,50);
+                k.stroke();
+                k.beginPath();
+                k.font = "50px Georgia";
+                k.strokeText("Kaj pa tole?", 100,100);
+                k.stroke();
+            }
+
+        </script>
+    </body>
+</html>

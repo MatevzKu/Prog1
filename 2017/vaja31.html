@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Praštevila</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div><h2>Praštevila in druge zankarije</h2></div>
+        <table>
+            <tr>
+                <td>Stranica A:</td>
+                <td><input type="number" id="strA"></td>
+            </tr>
+            <tr>
+                <td>Stranica B:</td>
+                <td><input type="number" id="strB"></td>
+            </tr>
+        </table>
+        <div onclick="racunaj()">Jaz se pa delam da sem gumb</div>
+        <script>
+            var stA, stB;
+            function racunaj() {
+                stA = document.getElementById("strA").value * 1;
+                console.log(stA);
+                stB = document.getElementById("strB").value * 1;
+                stB = $("#strB").val()*1;
+                console.log(stA + stB);
+            }
+        </script>
+        <div>
+            How many primes? <input type="number" id="num">
+            <br>Where do I start? <input type="number" id="start">
+            <br><span onclick="calculate()">GO!</span>
+        </div>
+        <div id="target"></div>
+        <script>
+            function calculate() {
+                var count = document.getElementById("start").value * 1;
+                var stopNum = document.getElementById("num").value * 1;
+
+                for (; stopNum > 0; ) {
+                    var factors = 0;
+
+                    for (i = count; i > 1; i--) {
+                        if (count % i == 0) {
+                            factors++;
+                        }
+                    }
+                    console.log("Number is" + count + (factors == 1 ? " " : " not ") + "a prime number.");
+
+                    if (factors == 1) {
+                        stopNum--; 
+                        $("#target").append("<br>" + count + " is a prime.");
+                    }
+                    count++;
+                }
+            }
+        </script>
+
+
+    </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <input type="number" onclick="preveri(2,2,this)">
+            <br>  <input type="number" onclick="preveri(2,2,this)">
+            <br>  <input type="number" onclick="preveri(2,2,this)">
+            <br>  <input type="number" onclick="preveri(2,2,this)">
+        </div>
+        <div id="knofi"></div>
+        <script>
+            
+            var globalka = null;
+            function preveri(vrstica,stolpec,kazalec)
+            {
+                var proste = [1,6,8];
+                
+                globalka = kazalec;
+                var gumb = "";
+                for(i = 0; i < proste.length; i++)
+                {
+                    gumb += "<button onclick='updateSudoku(";
+                    gumb += proste[i] + ")'>";
+                    gumb += proste[i] + "</button>";
+                }
+                document.getElementById("knofi").innerHTML = gumb;
+                
+            }
+            
+            function updateSudoku(cifra){
+                globalka.value = cifra;
+                //sudoku[vrstica?][stolpec??] = cifra;
+            }    
+            
+        </script>
+        <div>
+            Cifra: <input type="number" onchange="updateNum(this)">
+            <br>Decimalke: <input type="number" onchange="updateDec(this)">
+            <br><button onclick="go()">Zaokroži</button>
+            <br><span id="rezultat"></span>
+        </div>
+        
+        <script>
+            var cifra = null;
+            var decim = null;
+            
+            function updateNum(kazalec){
+                cifra = kazalec.value *1;
+            }
+            
+            function updateDec(kazalec){
+                decim = kazalec.value *1;
+            }
+            
+            function go(){
+                document.getElementById("rezultat").innerHTML = cifra.toFixed(decim);
+            }
+            
+            
+            var zb1 = [10,20,30];
+            var zb2 = zb1;
+            var zb3 = [];
+            for(m = 0; m < zb1.length; m++)
+                zb3.push(zb1[m]);
+            
+            zb1.pop();
+            zb2.push(40);
+            console.log(zb1);
+            console.log(zb2);
+            console.log(zb3);
+            
+            
+            
+        </script>
+        
+        
+    </body>
+</html>

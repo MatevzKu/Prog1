@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Hazard in Catan</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h4>Hazard prvi del - kocke</h4>
+            <script>
+            function metKocke()
+            {
+                return (Math.floor(Math.random()*6) +1)
+            }
+            
+            document.write("Na kocki je padla: " + metKocke());
+            
+            var meti = [0,0,0,0,0,0,0];
+            
+            var num = 10000;
+            
+            for(i = 0; i < num; i++)
+            {
+                meti[metKocke()]++;
+            }
+            
+            document.write("<br>Statistika metov:" + meti);
+            
+            function histogram(data,start)
+            {
+                document.write("<h4>Statistika metov</h>");
+                var step = prompt("Koliko metov naj predstavlja znak?")*1;
+                // Vaja - uporabnik naj še pove kakšen znak hoče
+                document.write("<h4># = " + step + " metov</h4>");
+                
+                for(i = start; i< data.length; i++)
+                {
+                    document.write("<br>" + i + ":");
+                    var x = Math.round(data[i] / step);
+                    while(x > 0)
+                    {
+                        document.write("#");
+                        x--;
+                    }
+                }                
+            }
+            
+            histogram(meti,1);
+            
+            </script>
+        </div>
+        
+        
+        <div>
+            <h4>Naseljenci otoka Catan - zakaj ne maramo sedmice</h4>
+            <script>
+                
+                var num2 = 50000;
+                
+                var meti2 = [];
+                for(n = 0; n < 13; n++)
+                    meti2.push(0);
+                
+                for(j = 0; j < num2; j++)
+                {
+                    meti2[(metKocke() + metKocke())]++;
+                }
+                
+                histogram(meti2,2);
+                
+                
+                
+            </script>
+        </div>
+        
+        
+        <div>
+            <h3>2D array ali kako zvoziti lab. vajo</h3>
+            <script>
+                
+                var grid = [[1,2,3], [4,5,6] , [7,8,9]];
+                
+                grid[1][1] = grid[0][1];
+                grid[0][1] = " ";
+                
+                document.write("grid_1 = " + grid[0]);
+                document.write("<br>grid_12 = "  + grid[0][1]);
+                
+                document.write("<table border='1'>");
+                for(i = 0; i < 3; i++)
+                {
+                    document.write("<tr>");
+                    for(j=0; j < 3; j++)
+                    {
+                        document.write("<td>");
+                        document.write(grid[i][j]);
+                        document.write("</td>");
+                    }
+                    document.write("<tr>");
+                }
+                
+                
+            </script>
+        </div>
+    </body>
+</html>

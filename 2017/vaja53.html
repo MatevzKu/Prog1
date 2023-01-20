@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Kraja identitete</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>EMSO:<input type="text" id="num">
+            <br><span onclick="check1()">Preveri</span>
+            <br><span onclick="check2()">Preveri2</span>
+        </div>
+        <script>
+            var emso = null;
+            function check1() {
+                var start = new Date().getTime();
+                emso = document.getElementById("num").value;
+                if (emso.length == 13 && emso.split('').map(Number).map(isNaN).indexOf(true) == -1) {
+                    var num = 7;
+                    var cikel = 2;
+                    var checksum = 0;
+                    for (i = 0; i < emso.length; i++) {
+                        checksum += num * emso[i];
+                        if (num == 2 && cikel == 2) {
+                            num = 7;
+                            cikel = 1;
+                        } else {
+                            num--;
+                        }
+                    }
+                    if (checksum % 11 == 0) {
+                        console.log("Cifra štima");
+                    } else {
+                        console.log("Cifra ni prava!");
+                    }
+                } else {
+                    console.log("Nisi vtipkal pravilne številke");
+                }
+                var stop = new Date().getTime();
+                console.log("Zagonil sem " + (stop - start) + " ms");
+            }
+
+            function check2() {
+                var start = new Date().getTime();
+                emso = document.getElementById("num").value;
+                if (emso.length == 13 && emso.split('').map(Number).map(isNaN).indexOf(true) == -1) {
+                    var num = [7,6,5,4,3,2,7,6,5,4,3,2,1];
+                    var checksum = 0;
+                    for (i = 0; i < emso.length; i++) {
+                        checksum += num[i] * emso[i];
+                    }
+                    if (checksum % 11 == 0) {
+                        console.log("Cifra štima");
+                    } else {
+                        console.log("Cifra ni prava!");
+                    }
+                } else {
+                    console.log("Nisi vtipkal pravilne številke");
+                }
+                var stop = new Date().getTime();
+                console.log("Zagonil sem " + (stop - start) + " ms");
+            }
+
+        </script>
+    </body>
+</html>

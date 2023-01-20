@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style>
+            .skritSem {
+                display : none;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <div id="xy"></div>
+        <div>
+
+            <script>
+
+
+                var vsebina = '<table><tr><td>';
+                vsebina += 'Koliko Členov:</td><td><input type="num';
+                vsebina += 'ber" id="cifra">';
+                vsebina += '</td></tr></table>';
+                var tar = document.getElementById("xy");
+                tar.innerHTML = vsebina;
+            </script>
+
+        </div>
+        
+        <div>
+            <button onclick="skrij()">Zdaj me ne vidiš</button>
+            <button onclick="pokazi()">Zdaj me vidiš</button>
+            <button onclick="racunaj()">Približek Pija prosim</button>
+            <script>
+                function skrij()
+                {
+                    document.getElementById("xy").className += " skritSem";
+                }
+                
+                function pokazi(){
+                    var tar = document.getElementById("xy");
+                    tar.className = tar.className.replace(" skritSem","");
+                }
+                
+                
+            </script>
+            
+        </div>
+        <div id="izpis"></div>
+        <div>
+            <script>
+                /* PI = 4/1 - 4/3 + 4/5 - 4/7 .....
+                 * 
+                 * @returns {undefined}
+                 * 
+                 * 
+                 */
+                
+                function racunaj()
+                {
+                    var priblizek = 0;
+                    var imenovalec = 1;
+                    var predznak = 1;
+                    var zaporedje = [];
+                    var limit = document.getElementById("cifra").value *1;
+                    var tar = document.getElementById("izpis");
+                    
+                    for(i = 0; i < limit; i++){
+                        priblizek += predznak * 4 / imenovalec;
+                        zaporedje.push(priblizek);
+                        predznak *= -1;
+                        imenovalec += 2;
+                         tar.innerHTML += "<br>Izračunani približek = " + priblizek;
+                    }
+                    
+                    
+                    alert(zaporedje.length);
+                    tar.innerHTML += "<br>Vsebina zaporedja = " + zaporedje;
+                    
+                    tar.innerHTML += "<br>37ti element = " + zaporedje[36];
+                    
+                    
+                    var miniSudoku = [[1,2],[3,4]];
+                    
+                    tar.innerHTML += "<br>Minisudoku = " + miniSudoku;
+                    
+                    tar.innerHTML += "<br>2vrstica 1 stolpec = " + miniSudoku[1][0];
+                                   
+                   
+                    
+                    
+                    
+                }
+                
+                
+            </script>
+            
+            
+        </div>
+    </body>
+</html>

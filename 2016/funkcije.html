@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-size : 25px;
+                font-weight: bold;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div id="tarca" onclick="preveriMe2([1,2,3,4,5])"  ></div>
+        <div id="cifra"></div>
+        <div id="stack"></div>
+        <button onclick="cifreDeluks()">Generator cifer</button>
+        <button onclick="preveriMe()">Preveri poteze</button>
+
+
+        <script>
+
+
+            function cifreDeluks() {
+                vsebina = "Knerka cifra" + Math.random();
+                console.log(vsebina);
+                pisiNekam(vsebina, "cifra");
+                pisiNekam(vsebina, "stack", false);
+            }
+
+            function pisiNekam(content, target, overwrite = true) {
+                var tar = document.getElementById(target);
+                if (overwrite) {
+                    tar.innerHTML = content;
+                }
+                else {
+                    tar.innerHTML += content;
+                }
+            }
+
+
+            var izbrane = [2, 4, 6, 8, 1];
+            var mozne = [];
+
+            function preveriMe() {
+                mozne = [];
+                for (i = 1; i <= 9; i++)
+                {
+                    if (izbrane.indexOf(i) == -1)
+                    {
+                        mozne.push(i);
+                    }
+                }
+                pisiNekam(mozne, "tarca");
+            }
+
+
+            function preveriMe2(choice) {
+                mozne = [];
+                for (i = 1; i <= 9; i++)
+                {
+                    if (choice.indexOf(i) == -1)
+                    {
+                        mozne.push(i);
+                    }
+                }
+                pisiNekam(mozne, "tarca");
+            }
+
+
+
+
+            vsebine += "td class='";
+            if(i%3== 0)
+                vsebine += "desni ";
+            
+            
+            
+            
+            vsebine += "' onclick='preveriPotezo(" + (i-1) + "," + (j-1) + ")'>";   
+
+
+
+
+
+        </script>
+
+
+
+
+    </body>
+</html>

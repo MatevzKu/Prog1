@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Vaja4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Napiši program ki za dano točko ugotovi ali se nahaja znotraj krožnice
+            s polmerom 0,5m in centrom v koordinatnem izhodišču.</div>
+
+
+        <script>
+            function kroznica() {
+                var x;
+                var y;
+                do {
+                    x = prompt("Vnesi x (v metrih):") * 1;
+                    y = prompt("Vnesi y (v metrih):") * 1;
+                } while (isNaN(x) || isNaN(y))
+
+                var r_pravi = 0.5;
+                var r = Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+                var tekst = document.getElementById("tarca").innerHTML;
+                if (r <= r_pravi)
+                    tekst = tekst + "Točka se nahaja znotraj krožnice!<br>";
+                else
+                    tekst = tekst + "Točka je daleč daleč stran!<br>";
+                document.getElementById("tarca").innerHTML = tekst;
+            }
+        </script>
+        <button onclick="kroznica()">Vnesi podatke</button>
+        <div id="tarca"></div>
+
+        <div>
+        Napiši program, ki ugotovi ali je leto prestopno.
+        </div>
+        <button onclick="letnica()">Vnesi leto</button>
+        <script>
+        function letnica()
+        {
+            var leto = prompt("vnesi leto:")*1;
+            if( ((leto%4==0) && (leto%100 != 0)) || (leto % 400 == 0))
+                alert("leto je presotpno!");
+            else
+                alert("Tisti ki so rojeni 29.2. letos nimajo zabave.");
+        }
+        </script>
+
+    </body>
+</html>

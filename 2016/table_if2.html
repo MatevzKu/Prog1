@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-size: 30px;
+            }
+            td {
+                border : solid 1px black;
+            }
+            table {
+                border-collapse: collapse;
+            }
+            .desni {
+                border-right: 2px solid red;
+            }
+            .modri {
+                color : blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="tabla"></div>
+        <script>
+            var tar = document.getElementById("tabla");
+            var vse = "<table>";
+
+            for (i = 1; i <= 10; i++)
+            {
+                vse += "<tr>";
+
+                for (j = 1; j <= 10; j++)
+                {
+                    if (i >= j)
+                    {
+                        vse += "<td ";
+                        if (j % 3 == 0) {
+                            vse += "class='desni'";
+                        }
+                        vse += ">";
+                        vse += Math.pow(i, j);
+                        vse += "</td>";
+                    }
+                    else
+                    {
+                        vse += "<td></td>";
+                    }
+                }
+
+
+                vse += "</tr>";
+            }
+            vse += "</table>";
+            tar.innerHTML = vse;
+        </script>
+        <div id="tab2"></div>
+        <script>
+            var tar = document.getElementById("tab2");
+            var vse = "<table>";
+
+            for (i = 1; i <= 10; i++)
+            {
+                vse += "<tr>";
+
+                for (j = 1; j <= 15; j++)
+                {
+
+                    vse += "<td class='";
+                    if (j % 3 == 0) {
+                        vse += "desni ";
+                    }
+                    if (j % 4 == 0) {
+                        vse += "modri ";
+                    }
+                    vse += "'>";
+                    if (i <= j)
+                    {
+                        vse += Math.pow(i, j);
+                    }
+                    vse += "</td>";
+
+                }
+
+
+                vse += "</tr>";
+            }
+            vse += "</table>";
+            tar.innerHTML = vse;
+        </script>
+
+        <div id="pracifre"></div>
+        <script>
+            var cifra = 100;
+            var tar = document.getElementById("pracifre");
+            var vse = "<h2>Spisek praštevil</h2>";
+
+            for (n = cifra; n > 1; n--)
+            {
+                var stevec = 0;
+                for (m = n; m > 1; m--)
+                {
+                    if (n % m == 0)
+                    {
+
+                        stevec++;
+                    }
+                }
+                if (stevec == 1)
+                {
+                    vse += n + " JE praštevilo <br>";
+                }
+                else
+                {
+                    vse += n + " NI praštevilo<br>";
+                }
+            }
+
+            tar.innerHTML = vse;
+
+
+        </script>
+    </body>
+</html>

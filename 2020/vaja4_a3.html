@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var kocka,kocka2,rezultat;
+            var kajJePadlo = [];
+            var statistika = [];
+            
+            for(i=0;i<13;i++){
+                statistika[i] = 0;
+           }
+          
+            for(i=0;i<15000;i++){
+                kocka = Math.floor(Math.random()*6+1);
+                kocka2 = Math.floor(Math.random()*6+1);
+                rezultat = kocka + kocka2;
+                kajJePadlo.push(rezultat);
+                statistika[rezultat]++;
+                //console.log(rezultat);      
+            }
+            
+            var tekst = "Statistika metov \n"
+            for(i = 2;i<13;i++){
+                if(i<10){
+                    tekst += i + "  : ";
+                }
+                else{
+                    tekst += i + " : ";
+                }
+                var cifra = Math.ceil(statistika[i]/100);
+                while(cifra>0){
+                    tekst += "*";
+                    cifra--;
+                }
+                tekst += "\n";
+            }
+            console.log(tekst);
+            
+            var x = [1,2,3,45,12];
+            var y = [4,5,6,23];
+            var produkt = 0;
+            
+            for(i = 0; i < x.length;i++){
+                produkt += x[i]*y[i];
+            }
+            console.log("Skalarni produkt je enak :" + produkt);
+            
+            var t = [1,5,8,1,4,2,5,1,4,5,6,7,1,4,13,0];
+            var u = [1,4,0];
+            
+            for(i=0;t[i]!=0;i++){
+                if(t[i] == u[0]){
+                    var pisi = true;
+                    for(j=0;u[j];j++){
+                        if(u[j] != t[i+j]){
+                            pisi = false;
+                        }
+                    }
+                    if(pisi){
+                        console.log("Zaporedje našel na : " + i);
+                    }
+                }
+            }
+            
+           prenos = [[0,0,1,1,0,1,1,1],
+                     [1,0,1,1,0,1,0,0],
+                     [0,1,1,1,0,0,1,1],
+                     [1,1,0,1,0,0,1,0]];
+                 
+           for(i = 0; i < 4; i++){
+               var sum = 0;
+               for(j = 0; j < 8; j++){
+                   sum += prenos[i][j];
+               }
+               if(sum%2==0){
+                   console.log("Vrstica " + i + " je OK");
+               }else{
+                   console.log("V  " + i + "-ti vrstici je napaka" );
+               }
+           }
+           for(i = 0; i < 8; i++){
+               var sum = 0;
+               for(j = 0; j < 4; j++){
+                   sum += prenos[j][i];
+               }
+               if(sum%2==0){
+                   console.log("Stolpec " + i + " je OK");
+               }else{
+                   console.log("V  " + i + "-tem stolpcu je napaka" );
+               }
+           }  
+    
+          
+    
+            
+        </script>
+    </body>
+</html>

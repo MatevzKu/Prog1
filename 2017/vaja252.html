@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <table>
+                <tr>
+                    <td>Prva stranica:</td>
+                    <td><input type="number" id="strA"></td>
+                </tr><tr>
+                    <td>Druga stranica:</td>
+                    <td><input type="number" id="strB"></td>
+                </tr><tr>
+                    <td>Tretja stranica:</td>
+                    <td><input type="number" id="strC"></td>
+                </tr><tr>
+                    <td>Kot:</td>
+                    <td><input type="number" id="kot"></td>
+                </tr>
+            </table>
+            <button onclick="beri()">Klik</button>
+        </div>
+        <script>
+            var stA, stB;
+            function beri() {
+                stA = document.getElementById("strA").value*1;
+                console.log(stA);
+                stB = $("#strB").val()*1;
+                console.log(stB);
+            }
+            
+            function pisi(){
+                var tmp = $("#plot").html();
+                tmp += "<b>a dela?</b>";
+                $("#plot").html(tmp);
+                tmp += "<i>Kaj pa tole?</i>";
+                //$("#plot").text(tmp);
+            }
+        </script>
+        <div id="plot" onclick="pisi()">Klikni če si upaš!</div>
+        <div>
+            Višina : <input type="number" id="rows" value="1">
+            Širina : <input type="number" id="cols" value="1">
+        </div>
+        <div onclick="risi()">Time to draw!</div>
+        <div id="canv"></div>
+        <script>
+            function risi(){
+                var height = $("#rows").val()*1;
+                var length = $("#cols").val()*1;
+                var content = "<table style='border : 1px solid;'>";
+                for(i = 0; i < height; i++){
+                    content += "<tr>";
+                    var j = 0;
+                    for(; j < length; ){
+                        content+= "<td>" + (i+j) + "</td>";
+                        j++;
+                    }                    
+                    content += "</tr>";
+                }
+                content += "</table>";
+                $("#canv").html(content);
+            }
+        </script>
+        
+    </body>
+</html>

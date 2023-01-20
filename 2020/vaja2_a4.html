@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>vaja 1 - A4</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            console.log("Živjo");
+            var x = 15;
+            console.log(x);
+            console.log("Vrednost x = " + x + " V/m");
+            //var leto = 2012;
+            let leto = prompt("Katero leto te zanima?")*1;
+            console.log("Zanima te leto " + leto);
+            
+            //IF ZANKA
+            /*  if (kombinacije pogojev){
+             *      kaj se zgodi če so pogoji izpolnjeni
+             *      let nekaj
+             *      }
+             *  else if(dodatni pogoj){
+             *      kaj se zgodi če ti pogoji veljajo7
+             *      }
+             *      ....
+             *      
+             *  else{
+             *      kaj se zgodi če noben pogoj ne velja
+             *  }
+             * 
+             */
+            
+            // Naloga - ali je vpisano leto prestopno?
+            if(leto%400==0){
+                console.log("je prestopno");
+            }
+            else if(leto%100==0){
+                console.log("ni prestopno");
+            }
+            else if(leto%4==0){
+                console.log("je prestopno");
+            }
+            else{
+                console.log("ni prestopno");
+            }
+            
+            if(((leto%4 == 0) && (leto%100!=0)) || (leto%400==0)){
+                console.log("Leto je prestopno");
+            }
+            else{
+                console.log("Leto ni prestopno");
+            }
+            
+            
+            //Ponavljanje reči v nedogled...
+            var N = 15;
+            var priblizek = 1;
+            var imenovalec = 0;
+            var i = 0;
+            for(;i<N;){
+                imenovalec = Math.sqrt(2 + imenovalec);
+                priblizek = priblizek * 2/imenovalec;
+                console.log(priblizek);
+                i++;
+            }
+            
+            console.log(Math.PI/2);
+            
+            
+            
+            
+            
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

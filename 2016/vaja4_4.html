@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="cilj"></div>
+        <script>
+            var cifra = prompt("Zmisli si cifro buksl.");
+            var tar = document.getElementById("cilj");
+            var vsebina = "";
+
+            if (cifra % 2 == 0)
+            {
+                vsebina = "<h3>Cifra je soda</h3>";
+                if (cifra % 4 == 0)
+                {
+                    vsebina += "<h3>Cifra je mnogokratnik števila 4</h3>";
+                }
+                else
+                {
+                    vsebina += "<h3>Cifra ni mnogokratnik števila 4</h3>";
+                }
+            }
+            else
+            {
+                vsebina = "<h3>Cifra je liha</h3>";
+            }
+            
+            tar.innerHTML = vsebina;
+        </script>
+        <div id="cilj2"></div>
+        <script>
+            var tar2 = document.getElementById("cilj2");
+            var vsebina2 = "";
+            
+            if(cifra%4==0)
+            {
+                vsebina2 = "<h3>Cifra je mnogokratnik 4.</h3>";
+            }
+            else if(cifra%2==0)
+            {
+                vsebina2 = "<h3>Cifra je soda.</h3>";
+            }
+            else
+            {
+                vsebina2 = "<h3>Cifra je liha.</h3>";
+            }
+            
+            tar2.innerHTML = vsebina2;        
+        </script>
+        <div id="postevanka"></div>
+        <script>
+            var tar = document.getElementById("postevanka");
+            var cifra = prompt("do koliko naj štejem?")*1;
+            var pot = prompt("do katere potence?")*1;
+            
+            var vsebina = "";
+            vsebina += "<table style='border 1px solid red;'>";
+            //vsebina += "<tr><th>cifra<th><th>kvadrat</th><th>kub</th></tr>";
+            
+            //vsebina += "<button onclick='javascript:alert(\"bu!\")'>klikni</button>";
+            for(i = 0; i <= cifra; i++)
+            {
+                vsebina += "<tr>";
+                
+                for(j = 1; j <=pot; j++)
+                {
+                    vsebina += "<td>" + Math.pow(i,j) + "</td>";
+                }
+                
+                vsebina += "</tr>";
+            }
+            
+            vsebina += "</table>";
+            vsebina += "Vpisal si cifro " + cifra;
+            vsebina += " Če ji prištejem 5 dobim " + (cifra +5);
+            tar.innerHTML = vsebina;
+            
+            
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="skripte/vaja93.js"></script>
+        <style>
+            body {
+                font-size: 20px;
+                color: aqua;
+                background-color: yellowgreen;
+            }
+            
+            #tukaj {
+                color : red;
+                font-weight: bold;
+                
+            }
+            
+            .mali {
+                font-size : 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="tukaj"></div>
+        <div class="mali">Ali me vidiš?</div>
+        <script>
+
+
+            pisi("blabla", "tukaj");
+            pisi("pa še tole ", "tukaj", true);
+            pisi("in za konec še tole", "tukaj");
+
+
+            function demo() {
+                var a = 10;
+                var b = 15;
+                var c = "12345";
+
+                return {prvaCifra: a, drugaCifra: b, tekst: c};
+            }
+
+            function urca() {
+                var timer = new Date();
+                var ura = timer.getHours();
+                var minute = timer.getMinutes();
+                var sekunde = timer.getSeconds();
+                console.log(sekunde);
+            }
+
+            //setInterval(urca, 500);
+            // kazalec(k,2,140,minute)
+            function redovalnica(ocena) {
+                switch (ocena) {
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                        console.log("Nezadostno");
+                        break;
+                    case 6:
+                        console.log("Zadostno");
+                        break;
+                    case 7:
+                    case 8:
+                        console.log("Uspešno");
+                        break;
+                    case 9:
+                        console.log("Zelo uspešno");
+                        break;
+                    case 10:
+                        console.log("Odlično");
+                        break;
+                }
+            }
+        </script>
+    </body>
+</html>

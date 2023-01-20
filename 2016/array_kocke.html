@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            .skrit {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="target">Tole enkrat vidiš enkrat pa ne.</div>
+        <button onclick="preklopi()">Toggle</button>
+        <script>
+            function preklopi() {
+                var tar = document.getElementById("target");
+                if (tar.className.match("skrit"))
+                {
+                    tar.className = tar.className.replace("skrit", "");
+                }
+                else
+                {
+                    tar.className += "skrit ";
+                }
+            }
+        </script>
+
+        <div id="kazino"></div>
+        <div>
+            Koliko kock naj pade?
+            <input type="number" id="cifra">
+
+        </div>
+        <button onclick="rollBones()">Meči kocke</button>
+        <script>
+            var tar = document.getElementById("kazino");
+            var vsebina = "<h2>Pozdravljeni pri igri</h2>";
+            vsebina += "Metali bomo kocke";
+            var meti = [];
+            var statistika = [0,0,0,0,0,0,0,0,0,0,0,0];
+            
+
+            function rollBones() {
+                var num = document.getElementById("cifra").value * 1;
+
+
+                for (i = 0; i < num; i++)
+                {
+                    var met1 = Math.floor(Math.random() * 6 +1);
+                    var met2 = Math.floor(Math.random() * 6 +1);
+                    var met = met1+met2;
+                    statistika[met-1]++;
+                    meti.push(met);
+                    vsebina +=  met + ",";
+                    if (i % 50 == 0){
+                        vsebina += "<br>";
+                    }
+                }
+                vsebina += "<br>Kako so padale kocke: " + statistika;
+                
+                
+                
+                vsebina += "<br>Še grafično<br>";
+                for(j = 1; j<statistika.length;j++)
+                {
+                    vsebina += (j+1) + " :";
+                    
+                    for(m = 0; m < Math.round(statistika[j]/200); m++)
+                    {
+                        vsebina += "#";
+                    }
+                    vsebina += "<br>";
+                }
+                
+                for(j = 0; j < statistika.length; j++)
+                    statistika[j] = statistika[j]*100/num;
+                
+                vsebina += "<br>Po procentih: " + statistika;
+                
+                
+                
+                
+                tar.innerHTML = vsebina;
+                var cif = prompt("Kateri met te zanima")*1 -1;
+                alert("Padla je" + meti[cif]);
+                
+            }
+
+
+        </script>
+    </body>
+</html>

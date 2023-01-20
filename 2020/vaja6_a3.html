@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            //var tab = [9,8,7,6,5,4,3,2,1];
+            var tab = [];
+            for(n=0;n<500;n++){
+                tab.push(Math.random());
+            }
+            
+            
+            tab2 = tab.slice();
+            var start = performance.now();
+            
+            for(j = 0; j < tab.length;j++){
+                for(i=0; i < tab.length-1;i++){
+                    if(tab[i]>tab[i+1]){
+                        temp = tab[i+1];
+                        tab[i+1] = tab[i];
+                        tab[i] = temp;
+                    }
+                }
+            }
+            //console.log(tab);
+            
+            var stop = performance.now();
+            console.log("(insertion - Porabili smo " + (stop-start) + " ms");
+            
+            start = performance.now()
+            for(i = 0; i < tab2.length-1;i++){
+                startM = i;
+                for(j=i+1;j<tab2.length;j++){
+                    if(tab2[j]<tab2[startM]){
+                        startM = j;
+                    }
+                }
+                temp = tab2[startM];
+                tab2[startM] = tab2[i];
+                tab2[i] = temp;
+            }
+            stop = performance.now()
+            console.log("selection - Porabilo smo " + (stop-start) + " ms");
+            
+            function prijatelj(cifra){
+                var sumaDeli = 0;
+                var delitelj = 1;
+                while(delitelj < (cifra/2+1)){
+                    if(cifra%delitelj==0){
+                        sumaDeli += delitelj;
+                    }
+                    delitelj++;
+                }                              
+                return sumaDeli;
+            }
+            
+            start = performance.now();
+            var meja = 2000;
+            for(cifra1 = 1; cifra1<meja;cifra1++){
+                deli1 = prijatelj(cifra1);
+                for(cifra2 = cifra1+1; cifra2<meja; cifra2++){                   
+                    deli2 = prijatelj(cifra2);
+                    if((deli1 == cifra2) && (deli2 == cifra1) && (cifra1 != cifra2)){
+                        console.log("Prijatelja sta " + cifra1 + " " + cifra2);
+                    }
+                }
+            }
+            stop = performance.now();
+            console.log("Porabili smo " + (stop-start) + " ms");
+   
+            start = performance.now();
+            var meja = 2000;
+            for(cifra1 = 1; cifra1<meja;cifra1++){
+                deli1 = prijatelj(cifra1);
+                if((deli1 > cifra1)&&(prijatelj(deli1)==cifra1)){
+                        console.log("Prijatelja sta " + cifra1 + " " + deli1);
+                }
+            }
+            stop = performance.now();
+            console.log("Porabili smo " + (stop-start) + " ms");    
+    
+            
+        </script>
+    </body>
+</html>

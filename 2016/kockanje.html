@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-size: 25px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>Programerska kuharica</h1>
+            
+            <h2>Za nekaj ponavljati</h2>
+            <pre>
+                for(s čim štejem; do kam štejem; kako štejem)
+                {
+                     kaj se ponavlja
+                }
+            </pre>
+            <h2>Če izbiram črno / belo</h2>
+            <pre>
+                if(pogoj ali več pogojev)
+                {
+                    kaj se zgodi če pogoj(i) velja
+                }
+                else    <---- tole je opcijsko!
+                {
+                    kaj se zgodi če ne.
+                }
+            </pre>
+            <h2>Kaj pa če imam več izbir?</h2>
+            <pre>
+                if(pogoj1) {kaj če velja pogoj1}
+                else if(pogoj2) {kaj če velja pogoj2}
+                else if(pogoj3) {kaj če velja pogoj3}
+                ...
+                else {kaj če ne velja noben od zgornjih pogojev}
+            </pre>
+            <h2>lep izpis vsebine</h2>
+            <pre>
+                &lt;div id="tarca"&gt; &lt;/div&gt;
+                &lt;script&gt;
+                var tar = document.getElementById("tarca");
+                var vsebina = "Tule notri pišem vse kar hočem da se vidi";
+                vsebina += "Pri tem pazim na narekovaje!!!";
+                vsebina += "Videlo se bo samo tisto kar prilepi sem";
+                tar.innerHTML = vsebina;
+                &lt;/script&gt;
+            </pre>
+            <h2>Kako dobim podatke brez prompta</h2>
+            <pre>
+               &lt;input id="data" type="KaRabim"&gt;
+                &lt;script&gt;
+                var tar = document.getElementById("data").value;
+                &lt;/script&gt;
+            </pre>
+        </div>
+        <div id="kazino"></div>
+        <div>
+            Koliko kock naj vržem: 
+            <input type="number" id="cifra">
+            <button onclick="rollBones()">Roll the bones</button>
+            <button onclick="procenti()">Dobi procente</button>
+        </div>
+        <script>
+            var meti = [];
+            var statsi = [0,0,0,0,0,0,0,0,0,0,0,0];
+            var tar = document.getElementById("kazino");
+            
+            function rollBones(){
+                var lim = document.getElementById("cifra").value *1;
+                for(i = 0; i < lim; i++)
+                {
+                    var met1 = Math.floor(Math.random()*6+1);
+                    var met2 = Math.floor(Math.random()*6+1);
+                    var met = met1+met2;
+                    meti.push(met);
+                    statsi[met-1]++;
+                }
+                    
+                tar.innerHTML += "<br>Padle so cifre: " + statsi;
+                //tar.innerHTML += "<br> Meti so: " + meti; 
+            }
+            
+            function procenti() {
+                var proc = [];
+                var suma = 0;
+                for(i = 0; i < statsi.length; i++)
+                    suma += statsi[i];
+                
+                for(j = 0; j < statsi.length; j++)
+                    proc.push(statsi[j]*100/suma)
+                
+                tar.innerHTML += "<br>Procenti pa so" + proc; 
+                
+                var step = 100;
+                for(k = 0; k < statsi.length; k++)
+                {
+                    tar.innerHTML += "<br>" + (k+1) + ":";
+                    var n = Math.floor(statsi[k]/step);
+                    for(m = 0; m < n; m++)
+                        tar.innerHTML += "#";
+                }
+                
+            }
+            
+            
+        </script>
+        
+        
+    </body>
+</html>

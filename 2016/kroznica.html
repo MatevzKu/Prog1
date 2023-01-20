@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <script>
+            function preveriKrog() {
+                var x_k = document.getElementById("x_koor").value *1;
+                var y_k = document.getElementById("y_koor").value *1;
+                var rad = document.getElementById("radius").value *1;
+
+                var dolzina = Math.sqrt(Math.pow(x_k, 2) + Math.pow(y_k, 2));
+
+                var vsebina = "";
+                if (dolzina <= rad)
+                {
+                    vsebina += "Točka se nahaja znotraj krožnice";
+                }
+                else
+                {
+                    vsebina += "Točka se nahaja zunaj krožnice";
+                }
+
+                var tar = document.getElementById("stanje");
+                tar.innerHTML = vsebina;
+            }
+
+        </script>
+        <div>
+            <table>
+                <tr>
+                    <td>X koordinata:</td>
+                    <td>
+                        <input type="number" id="x_koor" placeholder="Vnesi cifro">               
+                    </td>
+                </tr>
+                <tr>
+                    <td>Y koordinata:</td>
+                    <td>
+                        <input type="number" id="y_koor" name="y_koor">               
+                    </td>
+                </tr>
+                <tr>
+                    <td>Polmer kroga:</td>
+                    <td>
+                        <input type="number" id="radius">               
+                    </td>
+                </tr>
+            </table>
+
+
+        </div>
+        <div id="stanje"></div>
+        <div>
+            <button onclick="preveriKrog()">Klikni za krog</button>
+            <br>
+            pazi zdaj tole, nekje v temle tekstu se nahaja interaktivni košček na 
+            <span onclick="preveriKrog()" style="font-weight: bold;">katerega lahko</span> klikneš za zabavo.
+        </div>
+        <!--  <script>
+              preveriKrog();
+          </script>-->
+
+
+    </body>
+</html>

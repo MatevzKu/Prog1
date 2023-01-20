@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <style>
+            td, tr, div {
+                border: blue 1px solid;
+            }
+            
+            table {
+                width: 90%;
+                border: red 15px solid;
+            }
+            
+            .nekaj {
+                border-bottom: yellow 2px solid;
+            }
+            
+            .zgornji {
+                border-top: magenta 10px solid;
+            }
+            
+            #tarca {
+                border-left: green 5px solid;
+            }
+            
+            
+        </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>prva celica druga celica tretja celica
+            četrta peta šesta
+            sedma osma deveta</div>
+        <div>
+            <table border="1" style="width:90%">
+                <tr>
+                    <th>ime_stolpca</th><th>ime</th><th>vpisna</th>
+                </tr>
+                <tr>
+                    <td>vsebina</td><td>Janez novak</td><td>12345</td>
+                </tr>
+                <tr>
+                    <td>ja sem pa čisto sam.</td><td>            <table border="1" style="width:90%">
+                            <tr>
+                                <th>ime_stolpca</th><th>ime</th><th>vpisna</th>
+                            </tr>
+                            <tr>
+                                <td>vsebina</td><td>Janez novak</td><td>12345</td>
+                            </tr>
+                            <tr>
+                                <td>ja sem pa čisto sam.</td><td>
+                                    <table border="1" style="width:90%">
+                                        <tr>
+                                            <th>ime_stolpca</th><th>ime</th><th>vpisna</th>
+                                        </tr>
+                                        <tr>
+                                            <td>vsebina</td><td>Janez novak</td><td>12345</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ja sem pa čisto sam.</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table></td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <table border="1" style="width:90%">
+                <tr>
+                    <th>ime_stolpca</th>
+                    <th>ime</th>
+                    <th>vpisna</th>
+                </tr>
+                <tr>
+                    <td>vsebina</td><td>Janez novak</td><td>12345</td>
+                </tr>
+                <tr>
+                    <td>ja sem pa čisto sam.</td>
+                </tr>
+            </table>
+        </div>
+        <div id="tarca">
+            <table>
+                <tr>
+                    <td>1</td>
+                    <td style="border: blue 1px solid">2</td>
+                    <td>3</td>
+                </tr>                <tr>
+                    <td class="nekaj zgornji">4</td>
+                    <td class="nekaj">5</td>
+                    <td class="nekaj">6</td>
+                </tr>
+            </table>
+        </div>
+
+
+    </body>
+</html>

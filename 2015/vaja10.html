@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Funkcije in spremenljivke</div>
+        <script>
+            var x = 10;
+            x += 10;
+        </script>
+
+        <div>Tole samo porabi plac</div>
+        <script>
+            document.write("<br>Vrednost x = " + x);
+
+            function spremeniMe()
+            {
+                var x = 35;
+                document.write("<br>" + x);
+            }
+
+            spremeniMe();
+            document.write("<br>" + x);
+
+            function izpis(tekst, novaVrstica)
+            {
+                if (novaVrstica == undefined)
+                    novaVrstica = true;
+
+                if (novaVrstica)
+                    document.write("<br>" + tekst);
+                else
+                    document.write(tekst);
+            }
+
+            izpis("tole gre v novo vrstico");
+            izpis("tole pa ne", false);
+            izpis("pa še ena nova vrstica");
+
+
+
+        </script>
+        <div id="stil" onclick="spremeniBarvo('Blue')">Stilski izziv</div>
+        <script>
+
+            function spremeniBarvo(barva)
+            {
+                var y = Math.round(Math.random() * 5);
+
+
+                var x = document.getElementById("stil");
+                x.innerHTML = "Drugačen stilski izziv";
+                x.style.color = barva;
+                x.style.fontSize = "50px";
+                switch (y) {
+                    case 5:
+                        barva = "Blue";
+                        break;
+                    case 4:
+                        barva = "Red";
+                        break;
+                    case 3:
+                        barva = "Yellow";
+                        break;
+                    case 2:
+                        barva = "Green";
+                        break;
+                    case 1:
+                        barva = "Purple";
+                        break;
+                    default:
+                        barva = "Black";
+                }
+                //document.write(barva);
+                x.onclick = spremeniBarvo(barva);
+            }
+
+            //spremeniBarvo();
+
+        </script>
+        
+        <script>
+            var tekst = "zadnjeVajeLetos";
+            
+            var x = tekst[2].toUpperCase();
+            tekst[2] = tekst[2].toUpperCase();
+            izpis(tekst);
+            
+            var novTekst = tekst.substr(0,2) + tekst[2].toUpperCase() + tekst.substr(3);
+            izpis(novTekst);
+            
+            
+            var vektor = [];
+            for(i= 0; i < 5; i++)
+                vektor.push(i);
+            
+            izpis(vektor);
+            
+            vektor.reverse();
+            
+            izpis(vektor);
+            
+        </script>
+        
+    </body>
+</html>

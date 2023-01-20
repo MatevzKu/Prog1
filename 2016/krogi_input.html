@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-size : 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>TODO write content</div> 
+
+        <script>
+            function kroznica() {
+                /*
+                var x_koor = prompt("Vnesi x Koordinato") * 1;
+                var y_koor = prompt("Vnesi y Koordinato") * 1;
+                var rad = prompt("Vnesi radij krožnice") * 1;*/
+                var x_koor = document.getElementById("x_k").value*1;
+                var y_koor = document.getElementById("y_k").value*1;
+                var rad = document.getElementById("radius").value*1;
+                
+        
+
+
+                var razdalja_tocke = Math.sqrt(Math.pow(x_koor, 2) + Math.pow(y_koor, 2));
+
+                var vsebina = "";
+                if (razdalja_tocke < rad)
+                {
+                    vsebina += "Točka se nahaja v krožnici";
+                }
+                else
+                {
+                    vsebina += "Točka se ne nahaja v krožnici";
+                }
+                var tar = document.getElementById("rezultat");
+                tar.innerHTML = vsebina;
+                
+                document.getElementById("radius").value = "";
+            }
+
+        </script>
+        <div id="rezultat"></div>
+        <div>
+            <table>
+                <tr>
+                    <td>X koordinata:</td>
+                    <td><input type="number" id="x_k" name="x_k"></td>
+                </tr>
+                <tr>
+                    <td>Y koordinata:</td>
+                    <td><input type="number" id="y_k"></td>
+                </tr>
+                <tr>
+                    <td>Polmer krožnice:</td>
+                    <td><input type="number" id="radius"></td>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <button onclick="kroznica()">Klikni me.</button>
+            <table>
+                <tr>
+                    <td onclick="kroznica()" style="border: solid 1px;">Dela tudi brez gumba.</td>
+                </tr>
+            </table>
+            en cel kup teksta ki <span onclick="kroznica()">skuša </span>biti interaktiven.....    
+            
+        </div>
+        
+
+    </body>
+</html>

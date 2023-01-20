@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Zanke in pogoji</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Primer kratkega if-a</div>
+        <script>
+            var x = prompt("Zmisli si cifro:") * 1;
+
+
+            document.write("Cifra je ");
+            if (x % 2 == 0)
+                document.write("soda");
+            else
+                document.write("liha");
+
+            document.write("<br>Cifra je " + (x % 2 == 0 ? "soda" : "liha"));
+
+
+
+        </script>
+
+        <div>
+            <br>Fibonachi na 101 način ali kako uporabiti zanke
+
+            <script>
+                var x0 = 0;
+                var x1 = 1;
+                var n = prompt("Kateri člen te zanima?") * 1;
+
+                if (n == 1)
+                    document.write("<br>Prvi člen je:" + x0);
+                else if (n == 2)
+                    document.write("<br>Drugi člen je:" + x1);
+                else
+                {
+                    var x = 0;
+                    for (; x < (n - 2); )
+                    {
+                        var temp = x1;
+                        x1 = x1 + x0;
+                        x0 = temp;
+                        x++;
+                    }
+                    document.write("<br>" + n + "-ti člen zaporedja je:" + x1);
+                    x = 0;
+                    x0 = 0;
+                    x1 = 1;
+                    while (x < (n - 2))
+                    {
+                        var temp = x1;
+                        x1 = x1 + x0;
+                        x0 = temp;
+                        x++;
+                    }
+                    document.write("<br>" + n + "-ti člen zaporedja je:" + x1);
+                    x = 0;
+                    x0 = 0;
+                    x1 = 1;
+                    do {
+                        var temp = x1;
+                        x1 = x1 + x0;
+                        x0 = temp;
+                        x++;
+                    } while (x < (n - 2))
+                    document.write("<br>" + n + "-ti člen zaporedja je:" + x1);
+
+
+                }
+
+            </script>
+        </div>
+
+        <div>
+            <br>In sedaj še generiranje vsebine
+            <script>
+                var osnova = prompt("Katera baza te zanima?") * 1;
+                do {
+                    var max_pot = prompt("Do katere potence naj računam?") * 1;
+                } while (max_pot < 0)
+                    
+                /*var max_pot = -99;
+                while(max_pot < 0)
+                {
+                    max_pot = prompt("Do katere potence naj računam?") * 1;
+                }*/
+
+                document.write("<table border='1'><tr>");
+                for (i = 0; i <= max_pot; i++)
+                {
+                    document.write("<td>");
+                    document.write(Math.pow(osnova, i));
+                    document.write("</td>");
+                }
+                document.write("</tr></table>");
+            </script>
+        </div>
+    </body>
+</html>

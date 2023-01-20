@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var intro = "Daj mi tole napiši.";
+            console.log(intro);
+            
+            document.write(intro + "<br>pa še tole prosim.");
+        </script>
+        <button onclick="pisi()">Klikni če si upaš</button>
+        <script>
+            function pisi(){
+                document.write(intro);
+            }
+        </script>
+        <div id="tarca"></div>
+        <script>
+            document.getElementById("tarca").innerHTML = intro;
+            
+            var cifra = prompt("Zmisli si cifro")*1;
+            console.log("Če prištejem 10 dobim: " + (cifra + 10));
+            
+            if(cifra%2 == 0) {
+                // Kaj naredim če pogoj velja
+                console.log("cifra je soda");
+            }
+            else{
+                // Kaj naredim če pogoj ne velja
+                console.log("cifra je liha");
+            }
+            var rad = cifra * Math.PI / 180.0;
+            var kos = Math.cos(rad);
+            console.log("Cos " + cifra + " = " + kos);
+            
+            
+        </script>
+            
+    </body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-size: 25px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h2>Zanke</h2>
+            <pre>
+            for(s čim štejem; do kam štejem; kako štejem)
+            {
+            kaj ponavljam
+            }
+            </pre>
+            <h2>Binarno odločanje</h2>
+            <pre>
+            if(kombinacija pogojev)
+            {
+                kaj naredim če je pogoj izpolnjen
+            }
+            else    <--- tale del je opcijski
+            {
+                kaj naredim če pogoj ni izpolnjen
+            }
+            </pre>
+            <h2>več opcij</h2>
+            <pre>
+                if(pogoj1) {kaj če velja pogoj1}
+                else if(pogoj2) {kaj če velja pogoj2}
+                else if(pogoj3) {kaj če velja pogoj3}
+                ...
+                else {kaj če ni bil izpolnjen noben pogoj}
+            </pre>
+            <h2>Elegantno dobi podatke od uporabnika</h2>
+            <pre>
+                &lt;input id="nekaj" type="karRabiš"&gt;
+                &lt;script&gt;
+                var vrednost = document.getElementById("nekaj").value
+                &lt;/script&gt;
+            </pre>
+            <h2>Izpisovanje vsebine</h2>
+            <pre>
+            &lt;div id="cilj"&gt;&lt;/div&gt;
+            &lt;script&gt;
+            var vsebina = "Tule sestaviš kar hočeš napisati."
+            vsebina += "paziš na narekovaje!!!!";
+            vsebina += "Samo tisto kar prilimaš sem se bo izpisalo"
+            var vrednost = document.getElementById("nekaj");
+            vrednost.innerHTML = vsebina
+            &lt;/script&gt;
+            </pre>  
+        </div>
+        <div id="kazino"></div>
+        <div>
+            Koliko metov naj izvedem: 
+            <input id="cifra" type="number"><br>
+            <button onclick="rollBones()">Roll the bones</button>
+            <button onclick="statistika()">Dobi procente</button>
+        </div>
+        <script>
+            var meti = [];
+            var stats = [0,0,0,0,0,0,0,0,0,0,0,0];
+            var tar = document.getElementById("kazino");
+            function rollBones(){
+                var lim = document.getElementById("cifra").value*1;
+                for(i = 0; i < lim; i++)
+                {
+                    var met1 = Math.floor(Math.random()*6+1);
+                    var met2 = Math.floor(Math.random()*6+1);
+                    meti.push(met1 + met2);
+                    stats[(met1+met2-1)]++;
+                }
+                //tar.innerHTML += "<br>Padle so sledeče cifre: " + meti;
+                tar.innerHTML += "<br>Statistika metov: " + stats;
+            }
+            
+            function statistika(){
+                var suma = 0;
+                for(i = 0; i < stats.length; i++)
+                    suma += stats[i];
+                
+                var proc = [];
+                for(j = 0; j < stats.length; j++)
+                {
+                    proc.push(stats[j]*100 / suma);
+                }
+                tar.innerHTML += "<br>Verjetnost posametne cifre: " + proc;
+                
+                
+                var step = 100;
+                for(k = 1; k < stats.length; k++)
+                {
+                    var n = Math.floor(stats[k]/step);
+                    tar.innerHTML += "<br>" + (k+1) + ": ";
+                    for(m = 0; m <= n; m++)
+                        tar.innerHTML += "#";
+                }
+                
+                
+                
+            }
+    
+        </script>
+    </body>
+</html>

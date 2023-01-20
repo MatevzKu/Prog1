@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>6. vaja</title>
+        <style>
+            td {width: 50px;
+                height: 50px;
+                font-size: 25px;
+                text-align: center;}
+        </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h1>Manipulacija tabel (break & if)</h1>
+            <script>
+
+                var max_baza = prompt("Do katere številke naj računam?") * 1;
+                var max_pot = prompt("Do katere potence?") * 1;
+                document.write("<table>");
+                for (j = 1; j <= max_baza; j++)
+                {
+                    document.write("<tr>");
+                    for (i = 1; i <= max_pot; i++)
+                    {
+                        pisiCelico(j, i);
+                    }
+                    document.write("</tr>");
+                }
+                document.write("</table>");
+
+
+                function pisiCelico(baza, potenca)
+                {
+                    document.write("<td>");
+                    if (potenca >= baza)
+                    {
+                        document.write(Math.pow(baza, potenca));
+                    }
+                    document.write("</td>");
+                }
+
+            </script>  
+        </div>
+        <div>
+            <h1>(Ne)Uporabnost funkcij</h1>
+            <p>e = 1 + 1/1! + 1/2! + 1/3!.....</p>
+            <script>
+                
+                var x = prompt("Koliko členov uporabim?")*1;
+                var cajt = new Date();
+                var t1 = cajt.getTime();
+                var e = 1;
+                
+                for(i = 1; i < x; i++)
+                {
+                    var f = fakulteta(i);
+                    f = 1 / f;
+                    e += f;
+                }
+                
+                document.write("<br>Vrednost e = " + e);
+                cajt = new Date();
+                var t2 = cajt.getTime();
+                function fakulteta(cifra)
+                {
+                    var x = cifra;
+                    cifra--;
+                    while(cifra > 0)
+                    {
+                        
+                        x = x * cifra;
+                        cifra--;
+                    }
+                    return x;
+                    document.write("Če tole vidimo je nekaj hudo narobe");
+                }
+                
+                
+                var e = 1;
+                var num = 1;
+                for(i = 1; i < x; i++)
+                {
+                    num *= i
+                    var f = 1 / num;
+                    e += f;
+                }
+                
+                document.write("<br>Vrednost e = " + e);
+                cajt = new Date();
+                var t3 = cajt.getTime();
+                
+                var delta1 = (t2-t1)/1000;
+                var delta2 = (t3-t2)/1000;
+                
+                //document.write("<br>" + t1);
+                //document.write("<br>" + t2);
+                document.write("<br>Prvi je rabil: " + delta1 + " sekund");
+                document.write("<br>Druge je rabil: " + delta2 + " sekund");
+            </script>
+        </div>
+    </body>
+</html>

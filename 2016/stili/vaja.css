@@ -1,0 +1,48 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 19, 2016, 11:52:33 AM
+    Author     : matevzk
+*/
+
+ td {
+              border-style: solid;
+              color: blue;
+          }
+          
+          body {
+              font-size: 20px;
+              font-weight: bold;
+              font: bold 20px arial, sans-serif
+          }
+          
+          .nekaj {
+              background-color: lightgreen;
+              border-width: 5px;
+              text-align: center;
+              color: green;
+          }
+          
+          .levi {
+              border-left-style: solid;
+          }
+          
+          .spodnji {
+              border-bottom-style: solid;
+              border-bottom-color: red;
+              border-bottom : solid 3px;
+          }
+          
+          .levi.spodnji {
+              background-color: grey;
+          }
+          
+          
+          
+          #tarca{
+              color: red;
+              font-size: 40px;
+          }

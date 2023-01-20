@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var skatla = [1,2,3,4];
+            
+            function pristejElementom(zbirka,offset){
+                for(i=0;i<zbirka.length;i++){
+                    zbirka[i] += offset;
+                }
+            }
+            
+            console.log(skatla);
+            pristejElementom(skatla,5);
+            console.log(skatla);
+            
+            function maloMesano(zbirka){
+                zbirka[0] = 12;
+                zbirka = [1,2,3];
+                zbirka[4] = 22;
+                console.log(zbirka);
+                return zbirka;
+            }
+            
+            var skatla2 = [4,5,6,7];
+            console.log(skatla2);
+            
+            
+        </script>
+    </body>
+</html>

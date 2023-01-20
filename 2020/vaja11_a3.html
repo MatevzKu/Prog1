@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            sklad = Object();
+            sklad.podatki = [];
+            sklad.max = 3;
+            sklad.vrh = 0;
+            
+            sklad.push = function(element){
+                if(sklad.vrh < sklad.max){
+                    sklad.podatki[sklad.vrh] = element;
+                    sklad.vrh++;
+                }
+                else{
+                    console.log("Stack overflow!");
+                }
+            }
+            
+            sklad.pop = function(){
+                if(sklad.vrh > 0){
+                    sklad.vrh = sklad.vrh -1;
+                    return sklad.podatki[sklad.vrh];
+                }
+                else{
+                    console.log("Stack underflow!");
+                    return -99;
+                }
+            }
+            
+            sklad.size = function(){
+                return sklad.vrh;
+            }
+            
+            sklad.clear = function(){
+                sklad.vrh = 0;
+            }
+            
+            sklad.clear();
+            poslji_pakete = 100;
+            prejeti_paketi = 0;
+            t_branja = 5;
+            t_pisanja = 5;
+            i = 1;
+            
+            while(poslji_pakete > 0 || sklad.size() > 0){
+                if(i%t_pisanja == 0 && poslji_pakete > 0){
+                    sklad.push(99);
+                    poslji_pakete--;
+                }
+                
+                if(i%t_branja == 0){
+                    x = sklad.pop();
+                    if(x != -99){
+                        prejeti_paketi++;
+                    }
+                }
+                i++;
+            }
+            console.log("Prejeli smo " + prejeti_paketi + " od 100, torej imamo " + ((100-prejeti_paketi)) + " % izgub" );
+            
+            
+            
+        </script>
+    </body>
+</html>

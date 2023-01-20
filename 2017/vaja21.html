@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Koledar</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Prestopna leta<br>
+            <ul>
+                <li>Deljivo s 4 (leto%4 == 0)</li>
+                <li>Ni deljivo s 100 (leto%100 != 0)</li>
+                <li>Je deljivo s 400 (leto%400 == 0)</li>
+            </ul>
+
+        </div>
+        <script>
+            var year = prompt("Enter the desired year", -1) * 1;
+            if (isNaN(year)) {
+                console.log("You did not input a number!");
+            }
+            if (year % 400 == 0) {
+                console.log("This is a leap year");
+            } else if (year % 4 == 0) {
+                if (year % 100 != 0) {
+                    console.log("Leto je prestopno");
+                } else {
+                    console.log("Leto ni prestopno");
+                }
+            } else {
+                console.log("This is not a leap year");
+            }
+
+            if ((leto % 4 == 0 && leto % 100 != 0) || leto % 400 == 0) {
+                console.log("Leto je prestopno");
+            } else {
+                console.log("Leto ni prestopno");
+            }
+
+            var prestopno = ((leto % 4 == 0 && leto % 100 != 0) || leto % 400 == 0);
+
+            console.log("Leto " + (prestopno ? "je" : "ni") + " prestopno");
+
+            var min = 0;
+            var max = 10;
+            var highScore = 0;
+            var nadaljuj = true;
+            while (nadaljuj) {
+                var cifra1 = Math.floor(Math.random() * (max - min + 1) + 1);
+                var cifra2 = Math.floor(Math.random() * (max - min + 1) + 1);
+                var rezultat = cifra1 * cifra2;
+
+                var test = prompt("Koliko je " + cifra1 + "*" + cifra2) * 1;
+                if (test == rezultat) {
+                    console.log("Bravo znaš poštevanko");
+                    highScore++;
+                } else {
+                    console.log("Več sreče prihodnjič");
+                    nadaljuj = false;
+                }
+            }
+            console.log("Pravilno si odgovoril na " + highScore + " vprašanj.");
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Dodatni triki</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="mojeFunkcije.js"></script>
+    </head>
+    <body>
+        <div>Deljenje lastnih umotvorov z drugimi.
+        
+            <script>                
+                pisi("Tole bi moralo it v novo vrstico!");
+                pisi("Tole pa ne",false);
+            </script>
+
+        </div>
+        
+        <div>
+            Iskanje po DOM
+            
+            <table border="1" width="50%">
+                <tr>
+                    <td onclick="pobarvanka(this)">Ena</td>
+                    <td onclick="pobarvanka(this)">Dva</td>
+                </tr>
+                <tr>
+                    <td onclick="pobarvanka(this)">Tri</td>
+                    <td onclick="pobarvanka(this)">Štiri</td>
+                </tr>
+            </table>
+        </div>
+        
+        <script>
+            var klik = 1;
+            function pobarvanka(celica)
+            {
+                if(klik==1){
+                    celica.style.color="red";
+                    celica.innerHTML = "blabla";
+                    klik=2;
+                }
+                else
+                {
+                    celica.style.color="green";
+                    klik=1;
+                }
+            }
+        </script>
+        
+        
+        <table width="50%" border="1">
+            <tr>
+                <td id="11" onclick="pobarvaj2('11')">ena</td>
+                <td id="12" onclick="pobarvaj2('12')">dva</td>
+            </tr>
+            <tr>
+                <td id="21" onclick="pobarvaj2('21')">tri</td>
+                <td id="22" onclick="pobarvaj2('22')">štiri</td>
+            </tr>
+        </table>
+        
+        <script>
+            var prviKlik = "";
+            var akcija=1;
+            
+            function pobarvaj2(id)
+            {
+                if(id==prviKlik)
+                {
+                    return 0;
+                }
+                else
+                {
+                    if(akcija== 1)
+                    {
+                        prviKlik = id;
+                        akcija = 2;
+                        console.log("zabeležen prvi klik.");
+                    }
+                    else
+                    {
+                        akcija = 1;
+                        var cel1 = document.getElementById(prviKlik);
+                        var cel2 = document.getElementById(id);
+                        cel2.innerHTML = cel1.innerHTML;
+                        cel1.innerHTML = "";
+                        cel2.style.color = "red";
+                    }
+                }
+            }
+        </script>
+    </body>
+</html>

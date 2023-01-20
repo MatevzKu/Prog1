@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="skripte/vaja91.js"></script>
+        <link rel="stylesheet" type="text/css" href="vaja91.css">
+    </head>
+    <body>
+        <div id="testko" onclick="spremeniMe(this)">TODO write content</div>
+        <div id="cilj">Ali vidim rdeče?</div>
+        <div class="veliki" onclick="spremeniMe(this)">Mega font?</div>
+        <div onmouseover="catchMe(this)">Ujami me če me moreš</div>
+        <div id="skritSem" style="display:none">Tole se ne vidi sploh.</div>
+        <script>
+
+        function spremeniMe(element){
+            //var element = document.getElementById(id);
+            element.classList.toggle("veliki");
+            element.classList.toggle("mali");
+        }
+        
+        function catchMe(element){
+            element.style.display = "none";
+            var el = document.getElementById("skritSem");
+            el.style.display = "block";
+        }
+        
+        
+            var stevec = 1;
+            /* do {
+             if (stevec % 1000 == 0 ){*/
+
+            
+            setInterval(urca,500);
+            
+            
+            
+            /* }
+             stevec++;
+             } while (true)*/
+        </script>
+    </body>
+</html>

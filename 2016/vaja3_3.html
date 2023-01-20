@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-size : 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script>
+            var cifra = 100;
+            cifra += 10; // cifra = cifra + 10;
+            cifra *= 5;
+            cifra /= 4;
+            cifra -= 12;
+            var vsebina = "Vrednost cifre je ";
+
+            var debug = false;
+            if (debug) {
+                alert(vsebina + (cifra + 5));
+            }
+            
+            if(pogooj)
+            {
+                kaj se zgodi če je pogoj true
+            }
+            else
+            {
+                kaj se zgodi če je pogoj false
+            }
+            
+            
+            
+            
+            vsebina = "";
+            vsebina += "blabla";
+            vsebina += "in še bla";
+            console.log(vsebina);
+
+            document.write("Pa da <b>vidimo</b> če se tole pojavi!<br>");
+            document.write(vsebina);
+
+            function sesujMe()
+            {
+                document.write("Opppps!");
+            }
+        </script>
+        <button onclick="sesujMe()">Klikni če si upaš</button>
+        <div id="cilj"></div>
+        <script>
+            var element = document.getElementById("cilj");
+            element.innerHTML = "Pa da vidimo tole";
+            function dodaj()
+            {
+                element.innerHTML += "<b>bu</b><br>";
+            }
+        </script>
+        <button onclick="dodaj()">Klikni za bu</button>
+
+        <div id="sudoku"></div>
+        <script>
+            var tabela = document.getElementById("sudoku");
+            var vsebina = "<table>";
+            vsebina += "<tr>";
+            vsebina += "<td>12</td><td>34</td>";
+            vsebina += "</tr>";
+            vsebina += "</table>";
+
+            tabela.innerHTML = vsebina;
+
+
+
+        </script>
+    </body>
+</html>

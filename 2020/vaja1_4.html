@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Petek_1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Tole me ne zanima</div>
+        <script>
+           var tekst =  "Tole pa bo delovalo";
+           var student_1 = "Janez";
+           // tule sem deklariral vse študente
+           var student_2 = "Upsi";
+           student_2  = 123;
+           
+           // Tule jih bom pa izpisal na zaslon
+           document.write("Prvi: " + student_1 + " dobi 10");
+           console.log("Drugi: " + student_2 + " pa 9" );
+           
+           //Takole pa lahko dobim kako vrednost
+           var letnica = prompt("Zmisli si leto:")*1;
+           
+           /*Naloga: ali je leto prestopno?
+            * pogoj 1: če je deljivo s 4 JE
+            * pogoj 2: če je deljivo s 100 NI
+            * pogoj 3: če je deljivo s 400 JE
+            */
+           
+           if(letnica%400==0){
+               console.log("Leto je prestopno");
+           }
+           else if(letnica%100==0){
+               console.log("Leto ni prestopno");
+           }
+           else if(letnica%4==0){
+               console.log("Leto je prestopno");
+           }
+           else{
+               console.log("Leto ni prestopno");
+           }
+               
+	if(((letnica%4==0)&&(letnica%100!=0))||(letnica %400 == 0)){
+		console.log("JE PRESTOPNO");
+           }else{
+		console.log("NI PRESTOPNO");
+	}
+
+	/*
+*	for(i = 0; i < 10; i++){ // i+=2  -> i = i +2
+*		tole se ponavlja!¨
+*	}
+*	ALI
+*	var i = 0;
+*	for(;i<10;){
+*		i++;
+*		tole se ponavlja
+*	}
+*/
+
+	for(i=0; i< 5; i++){
+		console.log("Vrednost i = " + i);
+	}
+
+	//zaporedje
+	var prvi = 0;
+	var drugi = 1;
+	var cifra = 15;
+	var temp;
+	for(i=0;i<cifra;i++){
+		temp = prvi+drugi;
+		prvi = drugi;
+		drugi = temp;
+		console.log(temp);
+	}
+
+        </script>
+    </body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="skripte/vaja92.js"></script>
+        <style>
+            .veliki {
+                font-size: 50px;
+                font-weight: bolder;
+            }
+            
+            #tekst {
+                color : red;
+            }
+            
+            body {
+                background-color: yellowgreen;
+                font-size: 20px;
+                font-weight: lighter;
+            }
+        </style>
+        
+        
+    </head>
+    <body>
+        <div id="tekst"></div>
+        <div class="veliki">Ali tole vidiš?</div>
+        <script>
+            
+            function skrijMe(){
+                var n = document.getElementById("tekst");
+                n.style.display = "none";
+            }
+            
+            
+            function nakljucniRacun(maxA = 10, maxB = 20, operatorji = "+-*/") {
+                console.log(maxA);
+                console.log(maxB);
+                console.log(operatorji);
+
+                return {maxA: maxA, maxB: maxB, operands: operatorji};
+            }
+
+            function urca() {
+                var timer = new Date();
+                var ura = timer.getHours();
+                var minute = timer.getMinutes();
+                var sekunde = timer.getSeconds();
+                console.log(sekunde);
+                //kazalec(k,5,100,ure*5);
+                //kazalec(k,5,80,minute);
+            }
+
+            //setInterval(urca, 500);
+
+            nakljucniRacun(10, 20, "+-*/");
+            printaj("blabla", "tekst");
+
+
+            function opozoriMe(stopnja = 2, opozorilo = "Pazi!") {
+                switch (stopnja) {
+                    case 1:
+                    case 2:
+                    case 3:
+                        console.log(opozorilo);
+                        break;
+                    case 4:
+                    case 5:
+                    case 6:
+                        alert(opozorilo);
+                        break;
+            }
+            }
+        </script>
+    </body>
+</html>

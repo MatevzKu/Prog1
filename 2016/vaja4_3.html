@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-size: 30px;
+            }
+            table {
+                border: 1px solid;
+            }
+        </style>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script>
+            var cifra = 10;
+            cifra = true;
+            cifra = "abc";
+            cifra = 10.5;
+
+            var debug = false;
+            if (debug)
+            {
+                alert("vrednost številke je " + (cifra + 10));
+            }
+            /*
+            if(pogoj)
+            {
+                kaj naredim če je pogoj izpolnjen
+            }
+            else
+            {
+                kaj naredim če ni
+            }
+            */
+
+            var vsebina = "";
+            vsebina += "ena vrstica<br>";
+            vsebina += "druga vrstica<br>";
+            vsebina = vsebina + "pa še tretja";
+
+            console.log(vsebina);
+            //console.krneki();
+
+            document.write(vsebina);
+            document.write(vsebina);
+            document.write(vsebina);
+
+        </script>
+        <div>
+            <script>
+                document.write(vsebina);
+            </script>
+        </div>
+        <button onclick="uniciVse()">Klilkni če si upaš</button>
+        <script>
+            function uniciVse()
+            {
+                document.write(vsebina);
+            }
+        </script>
+        <div id="tarca"></div>
+        <script>
+            var element = document.getElementById("tarca");
+            element.innerHTML = "Da vidimo če tole dela";
+
+            element.innerHTML += "<br><b>Bu!</b>";
+        </script>
+        <button onclick="dodaj()">Klilkni za bu!</button>
+        <script>
+            function dodaj() {
+                element.innerHTML += "<br><b>Bu!</b>";
+            }
+        </script>
+        <div id="sudoku"></div>
+        <script>
+            var target = document.getElementById("sudoku");
+            var tabela = "<table>";
+            tabela += "<tr>";
+            tabela += "<td>12</td><td>34</td>";
+            tabela += "</tr>";
+            tabela += "</table>";
+
+            target.innerHTML = tabela;
+
+        </script>
+    </body>
+</html>

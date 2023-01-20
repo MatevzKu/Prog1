@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            Cifra <input type="number" id="num">
+            <br><span onclick="pisiCifro()">Textify</span>
+        </div>
+        <div id="semPisi"></div>
+        <script>
+            var slovar = ["", "ena", "dva", "tri", "štiri", "pet", "šest", "sedem", "osem", "devet"];
+
+            function nadTri(cifra) {
+                var beseda = "";
+                var tmp = cifra % 10;
+                if (tmp > 0) {
+                    beseda += slovar[tmp] + "in";
+                }
+                beseda += slovar[(Math.floor(cifra / 10))] + "deset";
+                return beseda;
+                //document.getElementById("semPisi").innerHTML += beseda + "<br>";
+            }
+
+            function dvajsetka(cifra) {
+                var beseda = "";
+                var tmp = cifra % 10;
+                if (tmp > 0) {
+                    beseda += slovar[tmp] + "in";
+                }
+                beseda += "dvajset";
+                return beseda;
+                //document.getElementById("semPisi").innerHTML += beseda + "<br>";
+            }
+
+            function desetka(cifra) {
+                var slovar = ["", "e", "dva", "tri", "štiri", "pet", "šest", "sedem", "osem", "devet"];
+                var beseda = "";
+                var tmp = cifra % 10;
+                if (tmp > 0) {
+                    beseda += slovar[tmp] + "najst";
+                }
+                return beseda;
+                alert("Če tole vidiš je asistent zaj....");
+                //document.getElementById("semPisi").innerHTML += beseda + "<br>";
+            }
+
+            function pisiCifro() {
+                var stevilka = document.getElementById("num").value * 1;
+                var beseda = null;
+                if (stevilka > 29) {
+                    beseda = nadTri(stevilka);
+                } else if (stevilka > 19) {
+                    beseda = dvajsetka(stevilka);
+                } else if (stevilka > 10) {
+                    beseda = desetka(stevilka);
+                } else {
+                    switch(stevilka){
+                        case 10: beseda = "deset"; break;
+                        case 9: beseda = "devet"; break;
+                        case 8: beseda = "osem"; break;
+                        case 7: beseda = "sedem"; break;
+                        case 6: beseda = "šest"; break;
+                        case 5: beseda = "pet"; break;
+                        case 4: beseda = "štiri"; break;
+                        case 3: beseda = "tri"; break;
+                        case 2: beseda = "dve"; break;
+                        case 1: beseda = "ena"; break;
+                        default: beseda = "Pojma nimam";
+                    }
+                }
+                document.getElementById("semPisi").innerHTML += beseda + "<br>";
+            }
+
+
+        </script>
+    </body>
+</html>

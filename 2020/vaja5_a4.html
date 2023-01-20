@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            prenos = [[0,0,1,1,0,1,0,1],[1,1,1,1,1,1,0,0],[0,1,0,1,0,0,1,1],[1,1,0,1,0,0,1,0]];
+            
+            for(i=0;i<4;i++){
+                sum = 0;
+                for(j=0;j<8;j++){
+                    sum += prenos[i][j];                    
+                }
+                if(sum%2 != 0){
+                    console.log("Napaka v vrstici " + i);
+                }
+                else{
+                    console.log("vrstica BP");
+                }
+            }
+            zaderiSe("upsi");
+            
+            for(i=0;i<8;i++){
+                sum = 0;
+                for(j=0;j<4;j++){
+                    sum += prenos[j][i];                    
+                }
+                if(sum%2 != 0){
+                    console.log("Napaka v stolpcu " + i);
+                }
+                else{
+                    console.log("stolpec BP");
+                }
+            }            
+            
+            function zaderiSe(tekst,alarm=false){
+                if(alarm){
+                    alert(tekst);
+                }
+                else{
+                    console.log(tekst);
+                }
+            }
+            
+            zaderiSe("blah",true);
+            output = "nekaj za printat";
+            zaderiSe(output);
+            
+            function racunaj(x){
+                var rezultat = x*Math.PI/180;
+                z++;
+                return rezultat;
+                console.log("Asistent nima pojma!");
+            }
+            var x = 180;
+            var z = 32;
+            var y = racunaj(x);
+            zaderiSe(racunaj(x));
+            
+            console.log(y);
+            console.log(x);
+            
+            function postevanka(a,b, starost = 18){
+                var c = 12;
+                
+                var vsota = a+b;
+                var razlika = a-b;
+                var produkt = a*b;
+                var kvocient = a/b;
+                zaderiSe("deluje",true);
+                return [vsota,razlika,produkt,kvocient]
+               
+            }
+            
+            
+        </script>
+    </body>
+</html>

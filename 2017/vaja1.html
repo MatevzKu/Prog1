@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>var introTekst = "Dajmo tole na page.";
+            document.write(introTekst);</script>
+        <div>Pozdravljen, če želiš videti kaj pišem 
+            poglej v konzolo</div>
+        <script>
+            
+            console.log("Ali me vidiš?");
+            console.log(introTekst);
+            document.write(introTekst);
+        </script>
+        <button onclick="pisi()">Klikni če si upaš</button>
+        <script>
+            function pisi(){
+                document.write("Upsi.");
+            }
+        </script>
+        <div id="tarca"></div>
+        <script>
+            document.getElementById("tarca").innerHTML  = "Bla";
+        </script>
+        <script>
+            var cifra = prompt("Zmisli si eno cifro:")*1;
+            console.log("Vpisal si: " + cifra);
+            var vsota = cifra + 15;
+            console.log("Če prištejem 15 dobim: " + vsota);
+            console.log("Če prištejem 10 pa:" +( cifra+10));
+        </script>
+        
+        <script>
+            var kot = prompt("Vnesi kot:")*1;
+            var konverzija = kot * Math.PI / 180.0;
+            console.log("Sinus tvojega kota je:" + Math.sin(konverzija));
+        </script>
+        
+        <script>
+            var num = prompt("in še eno cifro prosim:")*1;
+            
+            if(num%2 == 0){
+                console.log("Cifra je soda");
+            }
+            else{
+                console.log("Cifra je liha");
+            }
+            
+        </script>
+    </body>
+</html>

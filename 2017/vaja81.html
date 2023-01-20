@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <input id="prva" type="number"><br>
+            <span onclick="swithcTime()">Klik!</span>
+        </div>
+        <div id="tarca"></div>
+        <script>
+            function swithcTime() {
+                var cifra = document.getElementById("prva").value * 1;
+                if(cifra == 0) {
+                    alert("zamočil si!");
+                }else{
+                izpis(cifra);
+            }
+
+            }
+
+            function izpis(cifra = 5, beseda) {
+                var tekst = "Vaša ocena je:";
+                console.log(beseda);
+                console.log(cifra);
+                switch (cifra) {
+                    case 1:
+                    case 2:
+                    case 3:
+                    case 4:
+                    case 5:
+                        tekst += " nezadostno.";
+                        break;
+                    case 6:
+                        tekst += " pozitivno (komaj).";
+                        break;
+                    case 7:
+                        tekst += " pozitivno.";
+                        break;
+                    case 8:
+                    case 9:
+                        tekst += " uspešno.";
+                        break;
+                    case 10:
+                        tekst += " zelo uspešno.";
+                        break;
+                }
+                document.getElementById("tarca").innerHTML += tekst + "<br>";
+            }
+            
+            function randInt(n,k = 1){
+                var skatla = [];
+                for(i = 0; i < k; i++){
+                    skatla.push(Math.floor(Math.random() * n));
+                }
+                var zaklad = {razpon : n, koliko : k, cifre : skatla};
+                return skatla[0];
+            }
+            
+            function nakljucniRacun(maxA,maxB,operatorji){
+                var rez = [];
+                var a = randInt(maxA) + 1;
+                var b = randInt(maxB) + 1;
+                var k = randInt(operatorji.length);
+                var op = operatorji[k];
+                console.log(a.cifre);
+                console.log(op);
+                switch(op){
+                    case "+" : rez[0] = a + " + " + b + " = "; rez[1] = a+b; break;
+                    case "-" : rez[0] = a + " - " + b + " = "; rez[1] = a-b; break;
+                    case "*" : rez[0] = a + " * " + b + " = "; rez[1] = a*b; break;
+                    case "/" : rez[0] = a + " / " + b + " = "; rez[1] = a/b; break;
+                }
+                return rez;
+            }
+            
+            console.log(nakljucniRacun(20,30,"+*/"));
+            
+        </script>
+    </body>
+</html>

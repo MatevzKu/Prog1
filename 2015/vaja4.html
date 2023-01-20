@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Ugotovi ali je točka podana kot x,y znotraj ali izven krožnice 
+        s polmerom 0,5m in središčem v koordinatnem izhodišču.</div>
+        
+        <script>
+        function kroznica()
+        {
+            var x;       
+            var y; 
+            do
+            {
+                x = prompt("Vpiši x koordinato (v metrih):")*1;
+                y = prompt("Vpiši y koordinato (v metrih):")*1;
+            }
+            while(isNaN(x) || isNaN(y))
+            var r_pravi = 0.5;
+            var r = Math.sqrt(Math.pow(x,2) + Math.pow(y,2));
+            var tekst = document.getElementById("rezultat");
+            if(r <= r_pravi)
+                tekst.innerHTML = "Točka je znotraj krožnice";
+                //document.write('<div style="color:green;font-size:50px;"></div>');
+            else
+                tekst.innerHTML = "Točka je zunaj krožnice";
+                //document.write('<div style="color:red;font-size:50px;">Točka je zunaj krožnice</div>');
+        }
+        </script>
+        <button onclick="kroznica()">Vnesi podatke</button>
+        <div id="rezultat"></div>
+    </body>
+</html>

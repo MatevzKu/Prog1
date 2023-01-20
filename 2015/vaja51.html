@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Zanke na 101 način</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Optimizacija kode - If stavek gnezdenje in krajši zapis
+            <script>
+                var x = prompt("Vpiši številko:") * 1;
+                if (x % 5 == 0)
+                    document.write("<br>Najvoišja (meni znana) cifra s katero lahko delim je 5");
+                else if (x % 4 == 0)
+                    document.write("<br>Najvoišja (meni znana) cifra s katero lahko delim je 4");
+                else
+                    document.write("<br>Ne poznam cifre s kero bi delil.");
+
+                if (x % 2 == 0)
+                    document.write("<br>Cifra " + x + " je soda");
+                else
+                    document.write("<br>Cifra " + x + " je liha");
+
+                document.write("<br>Cifra " + x + " je " + (x % 2 == 0 ? "soda" : "liha"));
+
+
+            </script>
+        </div>
+        <div>
+            <br>Zdaj pa zanke na 101 način.
+            1.) Fibonachi
+
+            <script>
+                var x0 = 0;
+                var x1 = 1;
+                do {
+                    var n = prompt("Kateri člen te zanima?") * 1;
+                } while (n < 1)
+
+                if (n == 1)
+                    document.write("Prvi člen zaporedja je 0");
+                else if (n == 2)
+                    document.write("Drugi člen zaporedja je 1");
+                else
+                {
+                    var i = 0;
+                    for (; i < (n - 2); )
+                    {
+                        var temp = x1;
+                        x1 = x1 + x0;
+                        x0 = temp;
+                        i++;
+                    }
+                    document.write("<br>");
+                    document.write(n + "-ti člen zaporedja je:" + x1);
+
+                    i = 0;
+                    x0 = 0;
+                    x1 = 1;
+                    while (i < (n - 2)) {
+                        var temp = x1;
+                        x1 = x1 + x0;
+                        x0 = temp;
+                        i++;
+                    }
+                    document.write("<br>");
+                    document.write(n + "-ti člen zaporedja je:" + x1);
+
+                    i = 0;
+                    x0 = 0;
+                    x1 = 1;
+                    do {
+                        var temp = x1;
+                        x1 = x1 + x0;
+                        x0 = temp;
+                        i++;
+                    } while (i < (n - 2))
+                    document.write("<br>");
+                    document.write(n + "-ti člen zaporedja je:" + x1);
+                }
+
+
+            </script>
+        </div>
+        <div>
+            <br> Praktična zanka - tabela poštevanke
+            <script>
+                var max_baza = prompt("Do katere številke naj računam?")*1;
+                var max_pot = prompt("Do katere potence?")*1;
+                document.write("<table>");
+                for(i = 0; i < max_baza ; i ++)
+                {
+                    document.write("<tr>");
+                    
+                    for(j = 0; j < max_pot; j++)
+                    {
+                        document.write("<td>");
+                        document.write(Math.pow((i+1),(j+1)));
+                        document.write("</td>");
+                    }
+                    
+                    document.write("</tr>");
+                }
+                document.write("</table>");
+                
+            </script>
+        </div>
+    </body>
+</html>

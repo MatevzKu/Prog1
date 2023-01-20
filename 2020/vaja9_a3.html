@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+           kodirnik = Object();
+           kodirnik.hex = [['0',0],['1',1],['2',2,],['3',3],['4',4],['5',5],['6',6],['7',7],
+                            ['8',8],['9',9],['A',10],['B',11],['C',12],['D',13],['E',14],['F',15]];
+           kodirnik.konec = 16;
+           
+           kodirnik.najdi = function(key){
+               var i;
+               for(i = 0; i < kodirnik.konec; i++){
+                   if(kodirnik.hex[i][0] == key){
+                       return kodirnik.hex[i][1];
+                   }
+               }
+               return -1;
+           }
+           
+           kodirnik.hex2dec = function(cifra){
+               var i;
+               var dec = 0;
+               
+               tabela = Array.from(cifra.toUpperCase());
+               tabela.push(-1);
+               
+               for(i=0;tabela[i]!=-1;i++){};
+               var potenca = i-1;
+               
+               for(i = 0; tabela[i] != -1; i++){
+                   dec += kodirnik.najdi(tabela[i])*Math.pow(16,potenca);
+                   potenca--;
+               }
+               
+               return dec;
+           }
+           
+           kodirnik.dec2bin = function(dec){
+               var i;
+               var bin = [];
+               var bin_len = 0;
+               while(dec > 0){
+                   bin[bin_len] = dec % 2;
+                   bin_len++;
+                   dec = (dec - dec%2)/2;
+               }
+               var binRev = [];
+               for(i = bin_len;i > 0; i--){
+                   binRev[i-1] = bin[bin_len-i];
+               }
+               binRev.push(-1);
+               
+               return binRev;
+           }
+           
+        </script>
+    </body>
+</html>

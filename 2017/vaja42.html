@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>1,2,3,4,1,2,3,-1</div>
+        <script>
+            /*var cifra = 0;
+            while(cifra >= 0 && !isNaN(cifra)){
+                cifra = prompt("Zmisli si cifro:")*1;
+            }*/
+            
+            var max_count = 0;
+            var prejsnja = 0;
+            var curr_count = 0;
+            
+            do{
+                var cifra2 = prompt("Še eno cifro prosim:")*1;
+                if(cifra2 > prejsnja){
+                    curr_count++;
+                }
+                else{
+                    if(curr_count > max_count){
+                        max_count = curr_count;
+                    }
+                    curr_count = 0;
+                }
+                prejsnja = cifra2;
+                console.log(prejsnja);
+            }while(cifra2 >= 0 && !isNaN(cifra2));
+            console.log("Najdaljše naraščajoče zaporedje je bilo dolgo " + max_count + "številk");
+        </script>
+        <script>
+            var skatla = [];
+            var vsi_vnosi = [0];
+            var celKupCifer = [1,2,3,4,5,6,7];
+            console.log(celKupCifer[0]);
+            console.log(celKupCifer.length);
+            
+            var vnosi = [0];
+            var max_count2 = 0;
+            var curr_count2 = 0;
+            do{
+                vnosi.push(prompt("Cifra za zbirko")*1);
+                var k = vnosi.length -1;
+                if(vnosi[k]>vnosi[k-1]){
+                    curr_count2++;
+                }
+                else{
+                    if(curr_count2 > max_count2){
+                        max_count2 = curr_count2;
+                    }
+                    curr_count2 = 0;
+                }
+            }while(vnosi[k] >= 0 && !isNaN(vnosi[k]));
+            console.log(vnosi);
+            console.log("Sedaj pa je bilo največ " + max_count2);
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-size: 30px;
+                font-weight: bold;
+            }
+        </style>
+        <script type="text/javascript" src="vaje3.js"></script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <div id="target">
+
+        </div>
+        <button onclick="dogodek()">Klikni za vpis</button>
+        <input type="number" id="nekaj" onclick="strasniTrik(this)">
+        <script>
+            pisiNekam("hello world", "target");
+            pisiNekam("<br> Če delam prav se je tole prilimalo zraven", "target", false);
+            var redovalnica = [];
+            
+            
+            function strasniTrik(pointer)
+            {
+                pointer.value=Math.random();
+            }
+           
+
+            function vpis()
+            {
+                var ime = prompt("Vnesi ime");
+                var priimek = prompt("Vnesi priimek");
+                var vpisna = prompt("pa še vpisno")*1;
+                var pin = prompt("In PIN od tvoje bančne")*1;
+                
+                var student = {name:ime, surname: priimek, idNum : vpisna, bank :pin};
+                
+                
+                return student;
+            }
+            
+            function dogodek() {
+                redovalnica.push(vpis());
+                pisiNekam(redovalnica,"target");
+                
+            }
+             //vpis();
+            
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div></div>
+        <script>
+            var a = prompt("Zmisli si cifro", -99) * 1;
+            if (!isNaN(a)) {
+                console.log("Če tvoji cifri dodam 10 dobim: " + (a + 10));
+            } else {
+                console.log("Nisi vnesel pravilne številke");
+            }
+            
+            var leto = prompt("Vpiši leto")*1;
+            if(leto%400 == 0){
+                console.log("Leto je prestopno");
+            }
+            else if(leto % 4 == 0){
+                if(leto % 100 == 0) {
+                    console.log("Leto ni prestopno");
+                }
+                else{
+                    console.log("Leto je prestopno");
+                }
+            }
+            else{
+                console.log("Leto ni prestopno");
+            }
+            
+            //alert("Zloba sem");
+            
+            if((leto % 400 == 0)||( leto % 4 == 0 && leto % 100 != 0)){
+                console.log("Leto je prestopno");
+            }
+            else{
+                console.log("Leto ni prestopno");
+            }
+            
+            
+            console.log("Leto " + ( (leto % 400 == 0)||( leto % 4 == 0 && leto % 100 != 0) ? "je" : "ni" ) +" prestopno");
+            // pogoj ? kaj če velja : kaj če ne velja
+            var pravilno = true;
+            var highScore = 0;
+            var maxNum = prompt("do katere cifre si upaš računati?",10)*1;
+            //var maxNum = 10;
+            do{
+            var prvaCifra = Math.round(Math.random()*maxNum);
+            var drugaCifra = Math.round(Math.random()*maxNum);
+            var rezultat = prvaCifra * drugaCifra;
+            var test = prompt("Koliko je " + prvaCifra +" krat " + drugaCifra + "?")*1;
+            if(rezultat == test){
+                console.log("Bravo pravilno si odgovoril");
+                highScore++;
+            }
+            else {
+                console.log("Ne bo šlo, poskusi znova");
+                pravilno = false;
+            }
+        }while(pravilno);
+        console.log("Pravilno si odgovoril na " + highScore + " vprašanj");
+        </script>  
+    </body>
+</html>

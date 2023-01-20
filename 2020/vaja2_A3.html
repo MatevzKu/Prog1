@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>TODO write content</div>
+        <script>
+            console.log("Pozdravljen (oddaljeni) svet");
+            var x = 18; //deklaracija spremenljivke
+            //angleška abeceda, številke in _
+            // ne začnem s številko
+            
+            if((x == 13 ) || (x < 10)){
+                console.log("Pogoj izpolnjen");
+            }
+            else{
+                console.log("Pogoj ni izpolnjen");
+          }
+          
+          /* Vhodni podatek: letnica
+           * Izhodni podatek: ali je leto prestopno
+           * 1.) Če je leto deljivo s 4 JE
+           * 2.) Če je leto deljivo s 100 NI - 1500
+           * 3.) Če je leto deljivo s 400 JE - 1600
+           */
+          
+//          var letnica = prompt("Vpiši letnico")*1;
+//          console.log(letnica);
+//          if(letnica%400==0){   // ali je letnica deljiva s 4
+//              console.log("Leto JE prestopno");
+//          }
+//          else if(letnica%100==0){
+//              console.log("Leto NI prestopno");
+//          }
+//          else if(letnica%4==0){
+//              console.log("Leto JE prestopno");
+//          }
+//          else{
+//              console.log("Leto NI prestopno");
+//          }
+//          
+//          if((letnica%400==0)||((letnica%100!=0)&&(letnica%4==0))){
+//              console.log("Leto je prestopno");
+//          }
+//          else{
+//              console.log("Leto ni prestopno");
+//              console.log("Prav zares ni prestopno");
+//          }
+//          
+//          for(i = 0; i < 5; i++){
+//              console.log(i);
+//          }
+//            
+//          var j = prompt("Kje naj začnem?")*1;
+//          var meja = prompt("Do kam štejem?")*1;
+//          for(;j<meja;){
+//              console.log(j);
+//              j++;
+//          }
+//          
+//          var pin = prompt("povej PIN")*1;
+//          while(pin != 1234){
+//              console.log("Napačen pin, poskusi znova");
+//              pin = prompt("povej PIN")*1;
+//          }
+//          console.log("uspelo ti je");
+//          
+//          
+//          do{
+//              var pin2 = prompt("še enkrat")*1;
+//          }while(pin2 != 1234);
+//          console.log("Uspelo ti je");
+//            
+        var N = 15;
+        var priblizek = 1;
+        var imen = 0;
+        
+        for(n = 0;n<N; n++){
+            imen = Math.sqrt(2 + imen);
+            priblizek = priblizek * 2/imen;
+            console.log("Vrednost " + n  + " clena: " + priblizek);
+        }
+        console.log(Math.PI/2);
+    
+    
+    
+    
+        </script>
+    </body>
+</html>

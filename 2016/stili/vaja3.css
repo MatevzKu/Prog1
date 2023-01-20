@@ -1,0 +1,52 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 21, 2016, 10:56:52 AM
+    Author     : matevzk
+*/
+#logotip {
+    background-color: lightblue;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#navbar {
+    float: left;
+    width: 34%;
+    background-color: yellow;
+    min-height: 200px;
+}
+#vsebina{
+    float: left;
+    width: 65%;
+    background-color: lightgray;
+    min-height: 200px;
+    border-style: solid;
+
+    border: solid 2px;
+    border-color: red;
+}
+
+#copyright {
+    clear: both;
+}
+
+.velikoXXL {
+    font-size: 50px;
+    font-weight: bolder;
+}
+
+p {
+    color : green;
+}
+
+.modro {
+    color : blue;
+}
+
+#cilj {
+    color : purple;
+}

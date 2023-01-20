@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Labos2</title>
+	</head>
+	 <body>
+	 <br>a:
+    <input type="text" id="txt1" name="text1">
+    <br>b:
+    <input type="text" id="txt2" name="text2">
+    <br>    
+    <button onclick="add()">Add</button>
+    <p id="demo"></p>
+    <script>
+	function add() {
+	var a = document.getElementById("txt1").value;
+	var b = document.getElementById("txt2").value;
+	var c = [];
+	var d;
+	a="0" +a;
+	b="0" +b;
+		if(a.length>b.length) {
+			while(a.length>b.length){
+				b="0" +b;
+			}
+		} else if(b.length>a.length) {
+				while(b.length>a.length){
+					a="0" +a;
+				}
+			}
+		c.length=a.length;
+	var x=0;
+	var y=0;
+	for (i=a.length-1; i>= 0; i--) {
+		d= a[i]*1 + b[i]*1 + y;
+			if (d>=10) {
+				x=(d-10);
+				y=1;
+			c[i]=x*1;
+		}else {
+			c[i]=d;
+			y=0;
+		}
+		d=0;
+		c[i-1]=0;
+		}
+		if(c[0]==0){
+			c.shift();
+		}
+		c=c.join("")
+		document.getElementById("demo").innerHTML = c ;
+	}
+	</script>
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>clock</title>
+	</head>
+	<body>  
+		<canvas id="canvas" width="375" height="375" style="background-color:#66ff99">
+		</canvas>
+		<script>
+		var canvas = document.getElementById("canvas");
+		var c = canvas.getContext("2d");
+		var radius = canvas.height / 2;	
+		c.translate(radius, radius);
+		radius = radius * 0.90
+		setInterval(drawClock, 1000);
+			
+			function drawClock() {
+			  drawFace(c, radius);
+			  drawNumbers(c, radius);
+			  drawTime(c, radius);
+			}
+			
+				function drawFace(c, radius) {
+				  var grad;
+				  c.beginPath();
+				  c.arc(0, 0, radius, 0, 2*Math.PI);
+				  c.fillStyle = '#ffffcc';
+				  c.fill();			
+				  grad = c.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+				  grad.addColorStop(0, '#ff9900');
+				  grad.addColorStop(0.5, 'white');
+				  grad.addColorStop(1, '#ff9900');
+				  c.strokeStyle = grad;
+				  c.lineWidth = radius*0.1;
+				  c.stroke();
+				  c.beginPath();
+				  c.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+				  c.fillStyle = '#3399ff';
+				  c.fill();
+				}
+				function drawNumbers(c, radius) {
+				  var ang;
+				  var num;
+				  c.font = radius*0.15 + "px arial";
+				  c.textBaseline="middle";
+				  c.textAlign="center";
+				  for(num = 1; num < 13; num++){
+					ang = num * Math.PI / 6;
+					c.rotate(ang);
+					c.translate(0, -radius*0.85);
+					c.rotate(-ang);
+					c.fillText(num.toString(), 0, 0);
+					c.rotate(ang);
+					c.translate(0, radius*0.85);
+					c.rotate(-ang);
+				  }
+				}				
+				
+				function drawTime(c, radius){
+					var now = new Date();
+					var sat = now.getHours();
+					var minute = now.getMinutes();
+					var sekunde = now.getSeconds();
+					//sat
+					sat=sat%12;
+					sat=(sat*Math.PI/6);
+					drawHand(c, sat, radius*0.5, radius*0.07);
+					//minute
+					minute=(minute*Math.PI/30);
+					drawHand(c, minute, radius*0.8, radius*0.05);
+					// sekunde
+					sekunde=(sekunde*Math.PI/30);
+					drawHand(c, sekunde, radius*0.9, radius*0.02);
+				}
+				
+				function drawHand(c, pos, length, width) {
+					c.beginPath();
+					c.lineWidth = width;
+					c.lineCap = "round";
+					c.moveTo(0,0);
+					c.rotate(pos);
+					c.lineTo(0, -length);
+					c.stroke();
+					c.rotate(-pos);
+				}	
+				
+		</script>
+	</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            var x = 10;
+            x += 10;
+        </script>
+        <div>Lokalno / globalno</div>
+        <script>
+            document.write(x);
+
+            function pristej()
+            {
+                var x = 35;
+                document.write("<br>" + x);
+            }
+            pristej();
+            document.write("<br>" + x);
+
+            function izpis(tekst, newLine)
+            {
+                if (newLine == undefined)
+                    newLine = true;
+                if (newLine)
+                    document.write("<br>" + tekst);
+                else
+                    document.write(tekst);
+            }
+
+            izpis("tole gre v novo vrsto");
+            izpis("tole ne gre", false);
+            izpis("tole pa spet");
+
+        </script>
+
+        <div id="cilj" onclick="spremeniMe()">Stilski izzivi</div>
+
+        <script>
+
+            function spremeniMe() {
+                var x = document.getElementById("cilj");
+                x.innerHTML = "Spremenil sem se";
+                x.style.fontSize = "50px";
+                var y = Math.round(Math.random() * 4);
+                var color = "Black";
+                switch (y) {
+                    case 4:
+                        color = "Blue";
+                        break;
+                    case 3:
+                        color = "Red";
+                        break;
+                    case 2:
+                        color = "Purple";
+                        break;
+                    case 1:
+                        color = "Green";
+                        break;
+                    default:
+                        color = "Orange";
+                }
+                x.style.color = color;
+            }
+
+
+
+
+        </script>
+
+        <div>Igre s tekstom</div>
+        
+        <script>
+            var tekst = "zadnje vaje letos";
+            var index = 2;
+            tekst[index] = tekst[index].toUpperCase();
+            tekst = tekst.substring(0,index) + tekst[index].toUpperCase() + tekst.substr(index+1)
+            izpis(tekst);
+            
+            
+            var x = [0,0,0,1,2,3];
+            izpis(x);
+            izpis(x.reverse());
+        </script>
+        
+    </body>
+</html>

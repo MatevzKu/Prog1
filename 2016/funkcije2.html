@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-size: 40px;
+                font-weight: bold;
+            }
+        </style>
+        <script type="text/javascript" src="vaje4.js"></script>
+    </head>
+    <body>
+        <div id="target"></div>
+        <button onclick="wrapper()">Klikni za vpis</button>
+        <script>
+
+
+            pisi("Tole je prvo", "target");
+            pisi("<br>Tole pa bi se moralo prilepit zraven", "target", false);
+
+
+            var redovalnica = [];
+            
+            function vpis() {
+                var ime = prompt("Vnesi Ime");
+                var priimek = prompt("Vnesi Priimek");
+                var vpisna = prompt("vpisna:")*1;
+                var pin = prompt("Pin od tvoje bančne")*1;
+                
+                var student = [ime,priimek,vpisna,pin];
+                var student = {"name" : ime, "surname" : priimek, "ID" : vpisna, "bank" : pin};
+                
+                return student;
+                
+            }
+            
+            function wrapper() {
+                redovalnica.push(vpis());
+                pisi(redovalnica,"target");
+                pisi("<br>" + redovalnica[0].name, "target", false);
+            }
+
+        </script>
+        
+        <input id="nekaj" onclick="strasniTrik(this)" type="number">
+        <input id="nekaj2" onclick="strasniTrik(this)" type="number">
+        
+        <script>
+            
+            function strasniTrik(pointer)
+            {
+                pointer.value = Math.random();
+            }
+            
+            
+        </script>
+
+
+    </body>
+</html>

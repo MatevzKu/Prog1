@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Petek_23</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Tole me ne zanima</div>
+        <script>
+	document.write("Hello 2");
+	console.log("Hello World");
+
+	var x = 12; //Samo angleščina in cifre in _
+	var y,z;
+	console.log("x = " + x + " nekih enot");
+	x = prompt("Zmisli si cifro")*1;
+	if(x == 12){
+		console.log("zadetek");
+	}
+	else if (x < 12){
+		console.log("prenizko");
+	}
+	else if((x > 13) && (x < 50)){
+		console.log("previsoko");
+	}
+	else{
+		console.log("čisti fail");
+	}	
+//  	== enako
+// 	!= različno
+// 	&& logični IN
+// 	|| logični ALI
+//	x%3==0	 ali je x deljivo s 3	
+
+// Naloga - Ali je leto prestopno?
+// pazimo na 4,100 in 400  (2012,1500,1600);
+	
+	var leto = prompt("Vpiši leto")*1;
+	if(leto%400==0){
+		console.log("Leto je prestopno");
+	}
+	else if(leto%100==0){
+		console.log("Leto ni prestopno");
+	}
+	else if(leto%4==0){
+		console.log("Leto je prestopno");
+	}
+	else{
+		console.log("Leto ni prestopno");
+	}
+
+	if((leto%400==0)||((leto%4==0)&&(leto%100!=0))){
+		console.log("Leto JE prestopno");
+	}
+	else{
+		console.log("Leto NI prestopno");
+	}
+		
+	x = -33;
+	console.log(2<x<5);
+	console.log((2<x)&&(x<5));
+	(2<x)<5
+
+	var prva = 0;	
+	var druga = 1;
+	meja = 20;
+	meja = prompt("Koliko členov?")*1;
+	for(i = 0; i < meja; i++){
+		var temp = prva+druga;
+		prva = druga;
+		druga = temp;
+		console.log(temp);
+	}
+
+
+	var j = 0;
+	for(;j<15;){
+		console.log("Vrednost j = " + j);
+		j+=2;
+	}
+
+
+        </script>
+    </body>
+</html>

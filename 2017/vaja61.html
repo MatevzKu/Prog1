@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Z besedo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Številka:<input type="number" id="num">
+            <br><span onclick="pisiCifro()">Klik!</span>
+        </div>
+        <div id="printout"></div>
+        <script>
+            function textify(cifra) {
+
+                var slovar = ["", "ena", "dva", "tri", "štiri", "pet", "šest", "sedem", "osem", "devet"];
+                var beseda = "";
+                var enice = cifra % 10;
+                beseda += slovar[enice];
+                if (enice != 0) {
+                    beseda += "in";
+                }
+                var desetica = (cifra - enice) / 10;
+                beseda += slovar[desetica] + "deset";
+                return beseda;
+                //document.getElementById("printout").innerHTML += beseda + "<br>";
+            }
+
+            function dvajsetke(cifra) {
+                var slovar = ["", "ena", "dva", "tri", "štiri", "pet", "šest", "sedem", "osem", "devet"];
+                var enica = cifra % 20;
+                var beseda = slovar[enica];
+                if (enica != 0) {
+                    beseda += "in";
+                }
+                beseda += "dvajset";
+                return beseda
+                //document.getElementById("printout").innerHTML += beseda + "<br>";
+            }
+
+
+            function desetke(cifra) {
+                var slovar = ["", "e", "dva", "tri", "štiri", "pet", "šest", "sedem", "osem", "devet"];
+                var enica = cifra % 10;
+                var beseda = slovar[enica] + "najst";
+                return beseda;
+            }
+
+            function pisiCifro() {
+                var beseda = "";
+                var cifra = document.getElementById("num").value * 1;
+                if (cifra > 29 && cifra < 100) {
+                    beseda = textify(cifra);
+                } else if (cifra > 19 && cifra < 100) {
+                    beseda = dvajsetke(cifra);
+                } else if (cifra > 10 && cifra < 100) {
+                    beseda = desetke(cifra);
+                } else {
+                    switch (cifra) {
+                        case 10 :
+                            beseda = "deset";
+                            break;
+                        case 9:
+                            beseda = "devet";
+                            break
+                        case 8:
+                            beseda = "osem";
+                            break;
+                        case 7:
+                            beseda = "sedem";
+                            break;
+                        case 6:
+                            beseda = "šest";
+                            break;
+                        case 5:
+                            beseda = "pet";
+                            break;
+                        case 4:
+                            beseda = "štiri";
+                            break;
+                        case 3:
+                            beseda = "tri";
+                            break;
+                        case 2:
+                            beseda = "dva";
+                            break;
+                        case 1:
+                            beseda = "ena";
+                            break;
+                        case 0:
+                            beseda = "nič";
+                            break;
+                        default:
+                            beseda = "Nimam pojma";
+                    }
+                }
+                document.getElementById("printout").innerHTML += beseda + "<br>";
+            }
+        </script>        
+    </body>
+</html>

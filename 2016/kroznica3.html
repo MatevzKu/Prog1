@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-size: 30px;
+                color : blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <table>
+                <tr>
+                    <td>X koordinata:</td>
+                    <td><input type="number" id="x_koor" placeholder="Vnesi cifro"></td>
+                </tr>
+                <tr>
+                    <td>Y koordinata:</td>
+                    <td><input type="number" id="y_koor"></td>
+                </tr>
+                <tr>
+                    <td>Polmer kroga:</td>
+                    <td><input type="number" id="radius"></td>
+                </tr>
+            </table>
+        </div>
+
+
+        <div id="stanje"></div>
+        <script>
+            function preveriKrog() {
+                var x_k = document.getElementById("x_koor").value * 1;
+                var y_k = document.getElementById("y_koor").value * 1;
+                var rad = document.getElementById("radius").value * 1;
+
+
+                var razdalja = Math.sqrt(Math.pow(x_k, 2) + Math.pow(y_k, 2));
+                var vsebina = "";
+                if (razdalja <= rad)
+                {
+                    vsebina += "Točka se nahaja znotraj krožnice.";
+                }
+                else
+                {
+                    vsebina += "Točka se nahaja zunaj krožnice.";
+                }
+
+                var tar = document.getElementById("stanje");
+                tar.innerHTML = vsebina;
+            }
+            //preveriKrog();
+        </script>
+        <button onclick="preveriKrog()">Klikni me</button>
+        <div>
+            tole je en zelo dolg kos tekst.Če klikne na pravo 
+            <span onclick="preveriKrog()">besedo</span> se
+            bo nekaj zgodilo. In tako naprej in tako naprej.
+        </div>
+
+
+    </body>
+</html>

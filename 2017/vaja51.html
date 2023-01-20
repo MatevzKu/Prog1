@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Kraja identitete</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            Number:<input type="number" id="ems">
+            <br><span onclick="check1()">Preveri1</span>
+            <span onclick="check2()">Preveri2</span>
+        </div>
+        <script>
+            var emso = null;
+            function check1() {
+                var start = new Date().getTime();
+                emso = document.getElementById("ems").value;
+                emso = emso.split('').map(Number);
+                if (emso.length == 13 && emso.map(isNaN).indexOf(true) == -1) {
+
+                    var cifra = 7;
+                    var cikel = 2;
+                    var checksum = 0;
+                    for (i = 0; i < emso.length; i++) {
+                        checksum += emso[i] * cifra;
+                        if (cifra == 2 && cikel == 2) {
+                            cifra = 7;
+                            cikel--;
+                        } else {
+                            cifra--;
+                        }
+                        //console.log(cifra);
+                    }
+                    if (checksum % 11 == 0) {
+                        console.log("Valid number");
+                    } else {
+                        console.log("Invalid number");
+                    }
+                } else {
+                    console.log("Wrong input data!");
+                }
+                var stop = new Date().getTime();
+                console.log("spent " + (stop - start) + " ms");
+            }
+
+
+            function check2() {
+                var start = new Date().getTime()
+                emso = document.getElementById("ems").value;
+                emso = emso.split('').map(Number);
+                var cifre = [7, 6, 5, 4, 3, 2, 7, 6, 5, 4, 3, 2, 1]
+                if (emso.length == 13 && emso.map(isNaN).indexOf(true) == -1) {
+                    var checksum = 0;
+                    for (i = 0; i < emso.length; i++) {
+                        checksum += emso[i] * cifre[i];
+
+                    }
+                    if (checksum % 11 == 0) {
+                        console.log("Valid number");
+                    } else {
+                        console.log("Invalid number");
+                    }
+                } else {
+                    console.log("Wrong input data!");
+                }
+                var stop = new Date().getTime();
+                console.log("Spent " + (stop - start) + " ms");
+            }
+        </script>
+    </body>
+</html>
