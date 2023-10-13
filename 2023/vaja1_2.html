@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log("Pa začnimo");
+        console.log("Čisto zares");
+
+        leto = prompt("Zmisli si letnico prosim?") * 1;
+
+        function prestopno(cifra) {
+            leto = cifra;
+            console.log("leto = " + leto);
+            console.log("cifra = " + cifra);
+            if (leto % 400 == 0) {
+                console.log("Leto " + leto + " je prestopno");
+            }
+            else if (leto % 100 == 0) {
+                console.log("leto " + leto + " ni prestopno");
+            }
+            else if (leto % 4 == 0) {
+                console.log("leto " + leto + " je prestopno");
+            }
+            else {
+                console.log("Leto " + leto + " ni prestopno");
+            }
+            return;
+        }
+
+        prestopno(leto);
+
+
+    </script>
+</body>
+
+</html>
