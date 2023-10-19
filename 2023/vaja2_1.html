@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        prvi = 0;
+        drugi = 1;
+
+        n = 15;
+        //i = 0;
+        for(i = 0; i < n; i++){
+            temp = prvi + drugi;
+            prvi = drugi;
+            drugi = temp;
+            console.log(i + " : " + temp);
+            
+        }
+
+        prvi = 0;
+        drugi = 1;
+        stevilo_clenov = 0;
+        while(drugi < 20000){
+            temp = prvi + drugi;
+            prvi = drugi;
+            drugi = temp;
+            stevilo_clenov++;
+            console.log(stevilo_clenov + ": " + temp);       
+        }
+
+        prvi = 0;
+        drugi = 1;
+        stevilo_clenov = 0;
+        do{
+            temp = prvi + drugi;
+            prvi = drugi;
+            drugi = temp;
+            stevilo_clenov++;
+            console.log(stevilo_clenov + ": " + temp);       
+        }while(drugi < 20000)
+
+
+        geslo = 123;
+        geslo = Math.round(Math.random()*100);
+        input = 0;
+        do{
+            console.log(geslo);
+            input = prompt("PIN prosim")*1;
+        }while(input != geslo);
+
+        prib = 1;
+        imenovalec = 0;
+        for(i = 0; i < 50; i++){
+            imenovalec = Math.sqrt(2 + imenovalec);
+            prib *= 2 / imenovalec;
+            console.log("for " + prib);
+        }
+
+        prib = 1;
+        imenovalec = 0;
+        while(Math.abs(Math.PI/2 - prib) > 1e-4){
+            imenovalec = Math.sqrt(2 + imenovalec);
+            prib *= 2 / imenovalec;
+            console.log(prib);
+        }
+
+/*
+        input = prompt("PIN")*1;
+        while(input != geslo){
+            input = prompt("PIN")*1;
+        }*/
+    </script>
+</body>
+</html>

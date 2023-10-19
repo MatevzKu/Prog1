@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        priblizek = 1;
+        imenovalec = 0;
+        i = 0
+        for(; i < 15; ){
+            imenovalec = Math.sqrt(2 + imenovalec);
+            priblizek *= 2/imenovalec;
+            console.log(priblizek);
+            i++
+        }
+
+        priblizek = 1;
+        imenovalec = 0;
+        while( Math.abs(Math.PI/2 - priblizek) > 1e-3 ){
+            imenovalec = Math.sqrt(2 + imenovalec);
+            priblizek *= 2/imenovalec;
+            console.log("2: " + priblizek);
+
+        }
+
+
+        priblizek = 1;
+        imenovalec = 0;
+        do{
+            imenovalec = Math.sqrt(2 + imenovalec);
+            priblizek *= 2/imenovalec;
+            console.log("3: " + priblizek);
+        }while( Math.abs(Math.PI/2 - priblizek) > 1e-3 )
+        
+
+        geslo  = 1234;
+        user_input = prompt("PIN prosim")*1;
+        while(user_input != geslo){
+            user_input = prompt("PIN prosim")*1;
+        }
+
+        console.log("Uspel si!");
+        geslo = Math.round(Math.random()*10000);
+        do{
+            console.log(geslo);
+            user_input = prompt("PIN prosim")*1;
+        }while(user_input != geslo);
+
+        console.log("Spet si uspel");
+
+    </script>
+</body>
+</html>
