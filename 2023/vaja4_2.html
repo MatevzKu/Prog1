@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        skatla = [12,34,56,78,90,123]
+
+        dolzina = 6;
+        for(i = 0; i < dolzina; i++){
+            console.log(skatla[i]);
+        }
+
+        skatla2 = [6,12,34,56,78,90,123]
+
+        for(i = 1; i <= skatla2[0]; i++){
+            console.log(skatla2[i])
+        }
+
+        skatla3 = [12,34,56,78,90,123,-99]
+
+        for(i = 0; skatla3[i] != -99; i++){
+            console.log(skatla3[i])
+        }
+
+        matrika = [[1,2],[3,4],[5,6]]
+        console.log(matrika);
+
+
+        magija = [1,2,3,4,5]
+
+        function woodoo(box){
+            box[0] = 99;
+            box[12] = 1234;
+            box = [4,5]
+            console.log(box)
+            return;
+        }
+
+
+        stat_met = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        for(j = 0; j < 10000;j++){
+            vmesni_met = Math.floor(Math.random()*6+1) + Math.floor(Math.random()*6+1)
+            stat_met[vmesni_met]++;
+        }
+        console.log(stat_met);
+
+
+
+    </script>
+</body>
+</html>

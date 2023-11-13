@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        magija = [1,2,3,4,5]
+
+        function woodoo(box){
+            box[0] = 999;
+            box[15] = 33;
+            box = [6,7,8,9];
+            box[0] = 12;
+            console.log(box);
+            return;
+        }
+
+
+        function dupliciraj(box){
+            vsota = 0;
+            for(i = 0; i < box.length;i++){
+                box[i] *= 2;
+                vsota += box[i];
+            }
+            return vsota;
+        }
+
+
+        function sumDel(cifra){
+            var delitelj = 1;
+            var sum = 0;
+            while(delitelj <= cifra/2){
+                if(cifra%delitelj == 0){
+                    sum += delitelj;
+                }
+                delitelj++;
+            }
+            return sum;
+        }
+
+        N = 2500;
+
+        start = performance.now()
+
+        for(cifra1 = 1; cifra1 < N; cifra1++){
+            a = sumDel(cifra1);
+            /*for(cifra2 = cifra1+1; cifra2 < N; cifra2++){
+                
+                b = sumDel(cifra2);
+                if(a == cifra2 && b == cifra1){
+                    console.log(cifra1 + " " + cifra2 );
+                }
+            }*/
+            if(sumDel(a) == cifra1){
+                console.log(a + " " + cifra1);
+            }
+
+        }
+
+        stop = performance.now()
+        console.log("Tale hudič je porabil " + (stop-start) + " ms" );
+
+
+    </script>
+</body>
+</html>

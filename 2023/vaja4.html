@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        skatla = [1,2,3,4,5]
+
+        dolzina = 5;  // function tiskaj(sktala, dolzina)
+        for(i = 0; i < dolzina;i++){
+            console.log(skatla[i])
+        }
+
+        skatla_z_dolzino = [5,1,2,3,4,5]
+        for(i=1; i <= skatla_z_dolzino[0];i++){
+            console.log(skatla_z_dolzino[i])
+        }
+
+        skatla_cuvaj = [1,2,3,4,5,-99]
+        for(i = 0; skatla_cuvaj[i] != -99; i++){
+            console.log(skatla_cuvaj[i]);
+        }
+
+
+        st_metov = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        for(i = 0; i < 2000; i++){
+            trenutni_met = Math.floor(Math.random()*6+1)+Math.floor(Math.random()*6+1)
+            st_metov[trenutni_met]++
+        }
+        console.log(st_metov)
+
+
+        function manipulacijaTabele(skatla){
+            skatla[4] = 22;
+            skatla[12] = 9999;
+            skatla = [1,2,3]
+            skatla[0] = 12324
+            console.log("V funkciji");
+            console.log(skatla)
+            return;
+        }
+
+        manipulacijaTabele(st_metov)
+        console.log("izven funckije")
+        console.log(st_metov);
+    </script>
+</body>
+</html>
