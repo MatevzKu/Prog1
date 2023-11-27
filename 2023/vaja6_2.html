@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="koder.js"></script>
+</head>
+<body>
+    <script>
+        a = [5,4,3,2,0]
+        n = 3;
+        min_ind = 4;
+        console.log(a)
+        temp = a[n]
+        a[n] = a[min_ind]
+        a[min_ind] = temp
+        console.log(a)
+
+
+        vec_a = [1,4,6];
+        vec_b = [2,3,5];
+        vektorskiProdukt = []
+        skalarniProdukt = []
+
+        function vektorji(a,b,vek,skal){
+            temp = 0;
+            for(i = 0; i < 3; i++){
+                vek.push(a[i]*b[i])
+                temp += a[i]*b[i]
+            }
+            skal.push(temp);
+            return;
+        }
+
+
+       var x = 12;
+       console.log(x);
+
+       function lokalno(y){
+        x = 33;
+        console.log(x)
+        var z = 44;
+
+            for(var i = 0; i < 4; i++){};
+
+            console.log(i);
+       }
+
+       //lokalno(x)
+       console.log(x);
+
+
+
+
+
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="bukvarna.js"></script>
+</head>
+<body>
+    <script>
+        vec_a = [1,2,3]
+        vec_b = [4,5,6]
+        vektorskiProdukt = []
+        skalarniProdukt = []
+
+     /*   function vektorji(a,b,r1,r2){
+            temp = 0;
+            for(i = 0; i < a.length; i++){
+                    r1.push(a[i]*b[i]);
+                    temp += a[i]*b[i]
+            }
+            r2.push(temp)
+        }*/
+
+        vektorji(vec_a,vec_b,vektorskiProdukt,skalarniProdukt)
+
+
+
+        zaporedje = [0,1];
+        stevilo_clenov = 15;
+        for(i = 0; i < stevilo_clenov; i++){
+            zaporedje.push(zaporedje[i] + zaporedje[i+1]);
+
+            if(i == 10){
+                break;
+            }
+
+        }
+
+        console.log(zaporedje);
+
+        j = 0;
+        while(1){
+            j++;
+            if(j == 12){
+                break;
+            }
+        }
+
+        console.log(j);
+
+
+
+    </script>
+</body>
+</html>
