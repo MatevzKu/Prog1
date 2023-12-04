@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        skatla = [];
+        cifra = 10000;
+        for(i = 0; i< cifra; i++){
+            skatla.push(Math.random())
+        }
+        skatla2 = skatla.slice();
+
+        start = performance.now()
+        for(i = 0; i < cifra; i++){
+            menjava = false;
+            for(j = 0; j < cifra-1; j++){
+                if(skatla[j] > skatla[j+1]){
+                    temp = skatla[j];
+                    skatla[j] = skatla[j+1]
+                    skatla[j+1] = temp;
+                    menjava = true;
+                }
+            }
+            if(!menjava){  // menjava == false
+                break;
+            }
+        }
+        stop = performance.now()
+        console.log("Bubble sort je porabil " + (stop - start) + " ms");
+
+
+        start2 = performance.now()
+        nadaljuj = true;
+        while(nadaljuj){
+            nadaljuj = false;
+            j = 0;
+            for(; j < cifra-1; j++){
+                if(skatla2[j] > skatla2[j+1]){
+                    temp = skatla2[j];
+                    skatla2[j] = skatla2[j+1]
+                    skatla2[j+1] = temp;
+                    nadaljuj = true;
+                }
+            }
+             for(; j > 0; j--){
+                if(skatla2[j-1]>skatla2[j]){
+                    temp = skatla2[j]
+                    skatla2[j] = skatla2[j-1]
+                    skatla2[j-1] = temp
+                    nadaljuj = true; 
+                }
+             }           
+        }
+        stop2 = performance.now()
+        console.log("Shaker sort je porabil " + (stop2 - start2) + " ms")
+
+
+        _abeceda = ['a', 'b','c','č','d',0]
+
+        function getKey(znak){
+            for(i = 0; _abeceda[i] != 0; i++){
+                if(_abeceda[i] == znak){
+                    return i
+                }
+            }
+            return -1;
+        }
+
+        function kodirajZnak(znak, zamik){
+            indeks = getKey(znak);
+            if(indeks == -1){
+                return znak;
+            }
+            else{
+                // tu sedaj kodiarm
+            }
+        }
+
+        function kodirajSporocilo(sporocilo){
+            // za vsak znak sporocila
+            // klici kidirajZnak
+        }
+
+        kodirnik = new Object()
+
+        kodirnik.konec = 16;
+        kodirnik.hex = [[0,0],[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7],[8,8],[9,9],['A',10],['B',11],['C',12],['D',13],['E',14],['F',15]];
+
+        kodirnik.najdiKljuc = function(key){
+            var i;
+            for(i = 0; i < kodirnik.konec; i++){
+                if(kodirnik.hex[i][0] == key.toUpperCase()){
+                    return kodirnik.hex[i][1];
+                }
+            }
+            return -1;
+        }
+
+    </script>
+</body>
+</html>
