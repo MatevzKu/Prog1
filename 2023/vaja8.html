@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        kodirnik = Object()
+
+        kodirnik.hex = [[0, 0], [1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6], [7, 7], [8, 8], [9, 9], ['A', 10], ['B', 11], ['C', 12], ['D', 13], ['E', 14], ['F', 15]]
+        kodirnik.konec = 16;
+        kodirnik.hex2 = [['0', 0], ['1', 1], ['2', 2], ['3', 3], ['4', 4], ['5', 5], ['6', 6], ['7', 7], ['8', 8], ['9', 9], ['A', 10], ['B', 11], ['C', 12], ['D', 13], ['E', 14], ['F', 15]]
+        kodirnik.najdiKljuc = function (key) {
+            if(typeof(key) == "string"){
+                key = key.toUpperCase()
+            }
+            i = 0
+            for (; i < kodirnik.konec; i++) {
+                if (kodirnik.hex[i][0] == key) {
+                    return kodirnik.hex[i][1]
+                }
+            }
+            return -1;
+        }
+
+        kodirnik.najdiKljuc2 = function (key) {
+            i = 0
+            for (; i < kodirnik.konec; i++) {
+                if (kodirnik.hex2[i][0] == key) {
+                    return kodirnik.hex2[i][1]
+                }
+            }
+            return -1;
+        }
+
+
+        kodirnik.hex2dec = function (hexNum) {
+            var i;
+            var dec=0;
+            for(i =0; hexNum[i] != -1; i++){};
+            var potenca = i-1;
+            for(i =0; hexNum[i] != -1; i++){
+                dec += kodirnik.najdiKljuc(hexNum[i])*Math.pow(16,potenca);
+                potenca--;
+            }
+            return dec;
+        }
+
+        kodirnik.string2dec = function (niz) {
+            var i;
+            var dec=0;
+            niz = niz.toUpperCase();
+            hexNum = niz.split('');
+            hexNum.push(-1);
+            for(i =0; hexNum[i] != -1; i++){};
+            var potenca = i-1;
+            for(i =0; hexNum[i] != -1; i++){
+                dec += kodirnik.najdiKljuc2(hexNum[i])*Math.pow(16,potenca);
+                potenca--;
+            }
+            return dec;
+        }
+
+        vhod = ['A','F',1,0,-1]
+
+
+        demoVrstica = [0,0,1,1,1,2,2,2,2,2,1,0]
+
+        function opcija1(vrstica){
+            var stevec = 0;
+            var prvi = vrstica[0];
+
+            for(i = 0; i < vrstica.length; i++){
+                if(vrstica[i] == prvi){
+                    stevec++;
+                    if((stevec == 4) && (vrstica[i] != 0)){
+                        alert("Konec igre! Zmagal je " + vrstica[i]);
+                        return;
+                    }
+                }
+                else{
+                    stevec = 1;
+                    prvi = vrstica[i]
+                }
+            }
+            return;
+        }
+
+
+        function opcija2(vrstica){
+            for(var i = 0; i < vrstica.length-3;i++){
+                if((vrstica[i] == vrstica[i+1])&&(vrstica[i]==vrstica[i+2])&&(vrstica[i]==vrstica[i+3])&&(vrstica[i] != 0)){
+                    alert("Konec igre! zmagal je " + vrstica[i]);
+                    return;
+                }
+            }
+        }
+        
+    </script>
+</body>
+
+</html>
