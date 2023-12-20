@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        f = 1;
+        n = 6;
+        while (n > 0) {
+            f *= n;
+            n--;
+        }
+        console.log("6! = " + f);
+
+        function fakt(n) {
+            if (n < 0) {
+                console.log("Totalni zaj..");
+                return;
+            }
+            if (n == 0) {
+                return 1;
+            }
+
+            return n * fakt(n - 1);
+        }
+
+        console.log("6! rekurzivno = " + fakt(6));
+
+
+        function ugani(t) {
+            if (t == "") {
+                return "";
+            }
+            return ugani(t.substring(1)) + t[0]
+        }
+
+        console.log(ugani("nekaj"));
+
+
+
+
+
+
+
+
+
+        function demo(sporocilo) {
+            sporocilo[0] = 4
+        }
+
+        msg2 = [1, 2, 3]
+        console.log(msg2);
+        demo(msg2);
+        console.log(msg2);
+
+
+
+        function demo2(a, b) {
+            /*  a = 1;
+              b = 2;*/
+            c = a
+            d = b
+            console.log(c);
+            console.log(d);
+        }
+
+        demo2(1, 2);
+        test1 = 1;
+        test2 = 2;
+        demo2(test1, test2);
+
+        function prviNivo(x) {
+            console.log("bbla");
+
+        }
+
+        function drugiNivo(y) {
+            console.log("ups");
+        }
+
+        slovarVrednosti = [1, 2, 3, 4, 5, 6, 7, -1]
+
+        for(i=0; slovarVrednosti[i] != -1; i++){
+            console.log(slovarVrednosti[i]);
+        }
+
+ /*       if(){
+            while(){
+                console.log("bla")
+                else{
+
+        if(){
+            while(){
+
+            }
+        }else{
+
+        }          */  
+    </script>
+</body>
+
+</html>

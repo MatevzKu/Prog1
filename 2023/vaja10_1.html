@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        sklad = Object();
+        sklad.podatki = [];
+        sklad.vrh = 0;
+        sklad.maxSize = 5;
+
+        sklad.push = function(element){
+            if(sklad.vrh < sklad.maxSize){
+                sklad.podatki[sklad.vrh] = element;
+                sklad.vrh++;
+            }
+            else{
+                console.log("Stack overflow!!");
+            }
+        }
+
+        sklad.pop = function(){
+            if(sklad.vrh > 0){
+                sklad.vrh--;
+                return sklad.podatki[sklad.vrh];
+            }
+            else{
+                console.log("Stack underflow!!");
+                return undefined;
+            }
+        }
+
+        sklad.size = function(){
+            return sklad.vrh;
+        }
+
+        sklad.clear = function(){
+            sklad.vrh = 0;
+        }
+
+
+        function dec2bin(cifra){
+            //var bin = [];
+            var bin_len = 0;
+
+            while(cifra > 0){
+                //bin[bin_len] = cifra % 2;
+                sklad.push(cifra%2)
+                //bin_len++;
+                cifra = (cifra - cifra%2)/2;  // (cifra - cifra%10)/10
+            }
+
+            rikverc = []
+            bit = sklad.pop();
+            while( bit != undefined){
+                rikverc.push(bit);
+                bit = sklad.pop()
+            }
+
+
+            return rikverc;
+        }
+
+    </script>
+</body>
+</html>

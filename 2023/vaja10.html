@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+
+        sklad = Object();
+        sklad.podatki = [];
+        sklad.vrh = 0;
+        sklad.maxSize = 5;
+
+        sklad.push = function(element){
+            if(sklad.vrh < sklad.maxSize){
+                sklad.podatki[sklad.vrh] = element;
+                sklad.vrh = sklad.vrh + 1;
+            }
+            else{
+                console.log("Stack overflow!!!");
+            }
+            //return "I done it!!";
+        }
+
+        sklad.pop = function(){
+            if(sklad.vrh > 0){
+                sklad.vrh = sklad.vrh -1;
+                return sklad.podatki[sklad.vrh];
+            }
+            else{
+                console.log("Stack empty!!!!");
+                return -1;
+            }
+        }
+
+        sklad.size = function(){
+            return sklad.vrh;
+        }
+
+        sklad.clear = function(){
+            sklad.vrh = 0;
+        }
+
+
+        function dec2bin(cifra){
+            var i;
+            var bin = [];
+            var bin_len = 0;
+
+            while(cifra > 0){
+                //bin[bin_len] = cifra%2;
+                sklad.push(cifra%2)
+                console.log(sklad);
+                bin_len++;
+                cifra = (cifra - cifra%2)/2;
+            }
+
+            console.log(sklad);
+            var rikverc = [];
+
+            do{
+                bit = sklad.pop();
+                console.log(bit);
+                if(bit != -1){
+                    rikverc.push(bit)
+                }
+                else{
+                    break;
+                }
+            }while(1);
+            /*
+            for(i = bin_len; i > 0; i--){
+                rikverc[i-1] = bin[bin_len-i];
+            }*/
+
+           /* do{
+                bit = bin.pop();
+                if( bit != undefined){
+                    rikverc.push(bit)
+                }
+            }while(bit != undefined);
+*/
+
+            return rikverc;
+        }
+    </script>
+</body>
+</html>

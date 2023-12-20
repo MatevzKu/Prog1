@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var n = 6;
+        var f = 1;
+        while (n > 0){
+            f *= n;
+            n--;
+        }
+
+        console.log(f);
+
+        function fact(n) {
+            if (n < 0) {
+                console.log("Total fail")
+                return;
+            }
+            if (n == 0) {
+                return 1;
+            }
+
+            return n * fact(n - 1);
+        }
+
+        console.log(fact(6));
+
+
+        function uganiKajDelam(t) {
+            if (t == "") {
+                return "";
+            }
+            return uganiKajDelam(t.substring(1)) + t[0];
+        }
+
+        console.log(uganiKajDelam("nekaj"));
+
+
+
+        function demo(sporocilo) {
+            sporocilo[0] = 4
+        }
+
+        msg = [1, 2, 3]
+        console.log(msg);
+        demo(msg);
+        console.log(msg);
+
+        function demo2(a, b) {
+
+            console.log(a);
+            console.log(b);
+        }
+
+        demo2(1, 2);
+        test1 = 1;
+        test2 = 2;
+        demo2(test1, test2);
+
+        function prviNivo(x) {
+            console.log("bbla");
+
+        }
+
+        function drugiNivo(y) {
+            console.log("ups");
+        }
+
+        slovarVrednosti = [1, 2, 3, 4, 5, 6, 7, -1]
+
+        /*for(i=0; slovarVrednosti[i] != -1; i++){
+
+        }*/
+
+
+
+
+    </script>
+</body>
+
+</html>
